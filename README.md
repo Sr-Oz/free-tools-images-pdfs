@@ -10,7 +10,7 @@ watermarked output.
 
 ## Live site
 
-https://YOUR-USERNAME.github.io/free-tools-images-pdfs/ *(update this once deployed — see [Deploying](#deploying-to-github-pages) below)*
+https://sr-oz.github.io/free-tools-images-pdfs/
 
 ## Tools (v1)
 
