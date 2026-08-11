@@ -1,0 +1,115 @@
+# Free Online Tools for Images and PDFs
+
+Free, no-signup, privacy-first browser tools for common image and PDF tasks — compress, convert,
+resize, merge, split, and more.
+
+**Your files never leave your browser.** Every tool runs entirely as client-side JavaScript. There
+is no backend, no upload, and no server that ever sees your files — you could disconnect from the
+internet after the page loads and every tool would still work. No account, no email gate, no
+watermarked output.
+
+## Live site
+
+https://YOUR-USERNAME.github.io/free-tools-images-pdfs/ *(update this once deployed — see [Deploying](#deploying-to-github-pages) below)*
+
+## Tools (v1)
+
+### Image tools
+| Tool | URL | What it does |
+|---|---|---|
+| Compress Image | `/compress-image/` | Reduce JPEG/PNG/WebP file size with a quality slider |
+| Convert Image Format | `/convert-image/` | Convert between PNG, JPG and WebP |
+| Resize Image | `/resize-image/` | Resize by exact pixel dimensions or by percentage |
+| Crop & Rotate Image | `/crop-rotate-image/` | Rotate, flip, and drag-to-crop |
+
+### PDF tools
+| Tool | URL | What it does |
+|---|---|---|
+| Merge PDF | `/merge-pdf/` | Combine multiple PDFs into one, in any order |
+| Split PDF | `/split-pdf/` | Extract selected pages or a page range |
+| Compress PDF | `/compress-pdf/` | Reduce PDF file size (quick clean or strong/rasterized) |
+| Images to PDF | `/images-to-pdf/` | Combine JPG/PNG images into a single PDF |
+| PDF to Images | `/pdf-to-images/` | Export every page as a PNG or JPG |
+| Organize PDF Pages | `/organize-pdf/` | Rotate, delete and reorder pages |
+
+### Coming soon (v2 backlog)
+- OCR (make scanned PDFs searchable)
+- E-signatures
+- PDF to Word / Word to PDF
+- Password protect / unlock PDF
+- PDF to Excel
+
+These need either much heavier client-side models (OCR) or genuinely require server-side
+processing (format conversion beyond what browsers support natively) — they're out of scope for
+v1 on purpose. If you want to tackle one, see [Contributing](CONTRIBUTING.md).
+
+## Tech stack
+
+Plain HTML, CSS and vanilla JavaScript — **no build step, no framework, no bundler.** Each tool is
+a static page that loads two well-maintained open-source libraries straight from a CDN as ES
+modules:
+
+- [`pdf-lib`](https://pdf-lib.js.org/) — creating/editing PDFs (merge, split, rotate, compress, images→PDF)
+- [`pdf.js`](https://mozilla.github.io/pdf.js/) — rendering PDF pages to canvas (thumbnails, PDF→images)
+- Native Canvas API — all image compression/conversion/resize/crop/rotate
+
+This keeps the site trivially deployable to any static host, with nothing to compile and no
+`node_modules` required to run it locally.
+
+## Running locally
+
+Because a couple of tools load ES modules and fetch worker scripts, open the site through a local
+web server rather than double-clicking `index.html` (browsers restrict module loading from
+`file://`). Any static file server works, for example:
+
+```bash
+npx serve .
+# or
+python -m http.server 8000
+```
+
+Then open the printed local URL (e.g. `http://localhost:3000` or `http://localhost:8000`).
+
+## Project structure
+
+```
+/
+├── index.html              # Homepage listing all tools
+├── assets/
+│   ├── style.css            # Shared styles (light + dark)
+│   ├── tools.js              # Shared helpers (dropzone, downloads, formatting)
+│   └── tools/                 # Per-tool logic, one file per tool
+│       ├── pdf-common.js       # Shared pdf-lib / pdf.js loader + helpers
+│       ├── compress-image.js
+│       ├── merge-pdf.js
+│       └── ...
+├── compress-image/index.html   # Each tool lives at its own clean URL
+├── merge-pdf/index.html
+├── ...
+└── .github/workflows/deploy.yml
+```
+
+Each tool page is self-contained: its own `index.html` plus one JS file in `assets/tools/`, sharing
+the common CSS and helper functions.
+
+## Deploying to GitHub Pages
+
+This is a static site, so there's no build step:
+
+1. In your repo, go to **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (the included workflow at
+   `.github/workflows/deploy.yml` handles the rest), or set **Source** to **Deploy from a branch**
+   and pick `main` / `(root)` if you'd rather not use Actions.
+3. Push to `main` — the site will be live at `https://<username>.github.io/<repo>/` within a
+   couple of minutes.
+
+To use a custom domain later, add a `CNAME` file at the repo root containing your domain, and add
+the DNS records GitHub Pages documents for apex or subdomain setups.
+
+## Contributing
+
+Bug reports, new tools, and improvements are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE)

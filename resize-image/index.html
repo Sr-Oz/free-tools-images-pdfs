@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resize Image Online Free — By Pixels or Percentage | Free Tools for Images &amp; PDFs</title>
+<meta name="description" content="Resize images online for free by exact pixel dimensions or by percentage. Runs in your browser, no upload.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><span class="mark">🧰</span> Free Tools for Images &amp; PDFs</a>
+    <nav class="nav-links">
+      <a href="/#image-tools">Image Tools</a>
+      <a href="/#pdf-tools">PDF Tools</a>
+      <a href="https://github.com/">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="tool-page-header">
+      <h1>Resize Image</h1>
+      <p>Resize by exact pixel dimensions or by percentage. Processed locally — nothing is uploaded.</p>
+    </div>
+
+    <div class="tool-workspace">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose images or drag and drop">
+        <div class="dz-icon">📐</div>
+        <div class="dz-title">Drop images here or click to choose</div>
+        <div class="dz-sub">JPEG, PNG or WebP · multiple files supported</div>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple>
+      </div>
+
+      <ul class="file-list" id="fileList"></ul>
+
+      <div id="controls" style="display:none;">
+        <div class="radio-group" style="margin:16px 0;">
+          <label><input type="radio" name="mode" value="pixels" checked> By dimensions (px)</label>
+          <label><input type="radio" name="mode" value="percent"> By percentage</label>
+        </div>
+
+        <div class="controls-row" id="pixelControls">
+          <div class="field">
+            <label for="width">Width (px)</label>
+            <input type="number" id="width" min="1" placeholder="e.g. 1200">
+          </div>
+          <div class="field">
+            <label for="height">Height (px)</label>
+            <input type="number" id="height" min="1" placeholder="e.g. 800">
+          </div>
+          <div class="field">
+            <label><input type="checkbox" id="lockAspect" checked> Lock aspect ratio</label>
+          </div>
+        </div>
+
+        <div class="controls-row" id="percentControls" style="display:none;">
+          <div class="field">
+            <label for="percent">Scale (<span id="percentVal">50</span>%)</label>
+            <input type="range" id="percent" min="1" max="200" value="50">
+          </div>
+        </div>
+
+        <p class="help-text">Tip: for multiple images with different original sizes, percentage mode scales each proportionally; pixel mode applies the same target size to all.</p>
+      </div>
+
+      <div class="actions-row" id="actionsRow" style="display:none;">
+        <button class="btn" id="runBtn">Resize Images</button>
+        <button class="btn secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="status-box" id="status"></div>
+
+      <div class="results" id="results">
+        <div id="resultItems"></div>
+      </div>
+    </div>
+
+    <section class="info-section">
+      <h2>How it works</h2>
+      <ol>
+        <li>Add one or more images.</li>
+        <li>Choose to resize by exact width/height or by a percentage scale.</li>
+        <li>Click "Resize Images" and download each result.</li>
+      </ol>
+      <h2>Related tools</h2>
+      <ul>
+        <li><a href="/compress-image/">Compress Image</a></li>
+        <li><a href="/crop-rotate-image/">Crop &amp; Rotate Image</a></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; <span id="year"></span> Free Tools for Images &amp; PDFs. Open source, MIT licensed.</span>
+    <span><a href="https://github.com/">View on GitHub</a></span>
+  </div>
+</footer>
+
+<script src="/assets/tools.js"></script>
+<script src="/assets/tools/resize-image.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

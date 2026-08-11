@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convert Image Format Online Free — PNG, JPG, WebP | Free Tools for Images &amp; PDFs</title>
+<meta name="description" content="Convert images between PNG, JPG and WebP for free, right in your browser. No upload, no signup.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><span class="mark">🧰</span> Free Tools for Images &amp; PDFs</a>
+    <nav class="nav-links">
+      <a href="/#image-tools">Image Tools</a>
+      <a href="/#pdf-tools">PDF Tools</a>
+      <a href="https://github.com/">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="tool-page-header">
+      <h1>Convert Image Format</h1>
+      <p>Convert between PNG, JPG and WebP. Runs locally in your browser — your images are never uploaded.</p>
+    </div>
+
+    <div class="tool-workspace">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose images or drag and drop">
+        <div class="dz-icon">🔄</div>
+        <div class="dz-title">Drop images here or click to choose</div>
+        <div class="dz-sub">JPEG, PNG or WebP · multiple files supported</div>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple>
+      </div>
+
+      <ul class="file-list" id="fileList"></ul>
+
+      <div class="controls-row" id="controls" style="display:none;">
+        <div class="field">
+          <label for="format">Convert to</label>
+          <select id="format">
+            <option value="image/png">PNG</option>
+            <option value="image/jpeg" selected>JPG</option>
+            <option value="image/webp">WebP</option>
+          </select>
+        </div>
+        <div class="field" id="qualityField">
+          <label for="quality">Quality (<span id="qualityVal">90</span>%)</label>
+          <input type="range" id="quality" min="10" max="100" value="90">
+        </div>
+      </div>
+
+      <div class="actions-row" id="actionsRow" style="display:none;">
+        <button class="btn" id="runBtn">Convert Images</button>
+        <button class="btn secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <p class="help-text" id="alphaNote" style="display:none;">Converting to JPG removes transparency — transparent areas will be filled with white.</p>
+
+      <div class="status-box" id="status"></div>
+
+      <div class="results" id="results">
+        <div id="resultItems"></div>
+      </div>
+    </div>
+
+    <section class="info-section">
+      <h2>How it works</h2>
+      <ol>
+        <li>Add one or more images.</li>
+        <li>Choose the output format (and quality, for JPG/WebP).</li>
+        <li>Click "Convert Images" and download each result.</li>
+      </ol>
+      <h2>Related tools</h2>
+      <ul>
+        <li><a href="/compress-image/">Compress Image</a></li>
+        <li><a href="/resize-image/">Resize Image</a></li>
+        <li><a href="/images-to-pdf/">Images to PDF</a></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; <span id="year"></span> Free Tools for Images &amp; PDFs. Open source, MIT licensed.</span>
+    <span><a href="https://github.com/">View on GitHub</a></span>
+  </div>
+</footer>
+
+<script src="/assets/tools.js"></script>
+<script src="/assets/tools/convert-image.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

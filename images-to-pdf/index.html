@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Images to PDF Converter Online Free | Free Tools for Images &amp; PDFs</title>
+<meta name="description" content="Combine JPG or PNG images into a single PDF file, free and in your browser. No upload, no signup.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><span class="mark">🧰</span> Free Tools for Images &amp; PDFs</a>
+    <nav class="nav-links">
+      <a href="/#image-tools">Image Tools</a>
+      <a href="/#pdf-tools">PDF Tools</a>
+      <a href="https://github.com/">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="tool-page-header">
+      <h1>Images to PDF</h1>
+      <p>Turn one or more JPG or PNG images into a single PDF. Processed locally — nothing is uploaded.</p>
+    </div>
+
+    <div class="tool-workspace">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose images or drag and drop">
+        <div class="dz-icon">🖼️</div>
+        <div class="dz-title">Drop images here or click to choose</div>
+        <div class="dz-sub">JPEG or PNG · multiple files supported · use the arrows to reorder</div>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png" multiple>
+      </div>
+
+      <ul class="file-list" id="fileList"></ul>
+
+      <div class="controls-row" id="controls" style="display:none;">
+        <div class="field">
+          <label for="pageSize">Page size</label>
+          <select id="pageSize">
+            <option value="fit">Fit to each image</option>
+            <option value="a4">A4</option>
+            <option value="letter">Letter</option>
+          </select>
+        </div>
+        <div class="field" id="marginField">
+          <label for="margin">Margin (pt)</label>
+          <input type="number" id="margin" min="0" max="72" value="24">
+        </div>
+      </div>
+
+      <div class="actions-row" id="actionsRow" style="display:none;">
+        <button class="btn" id="runBtn">Create PDF</button>
+        <button class="btn secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="status-box" id="status"></div>
+    </div>
+
+    <section class="info-section">
+      <h2>How it works</h2>
+      <ol>
+        <li>Add one or more JPG/PNG images.</li>
+        <li>Reorder them and pick a page size.</li>
+        <li>Click "Create PDF" to download the combined file.</li>
+      </ol>
+      <h2>Related tools</h2>
+      <ul>
+        <li><a href="/pdf-to-images/">PDF to Images</a></li>
+        <li><a href="/merge-pdf/">Merge PDF</a></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; <span id="year"></span> Free Tools for Images &amp; PDFs. Open source, MIT licensed.</span>
+    <span><a href="https://github.com/">View on GitHub</a></span>
+  </div>
+</footer>
+
+<script src="/assets/tools.js"></script>
+<script type="module" src="/assets/tools/images-to-pdf.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

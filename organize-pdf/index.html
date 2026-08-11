@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organize PDF Pages Online Free — Rotate, Delete, Reorder | Free Tools for Images &amp; PDFs</title>
+<meta name="description" content="Rotate, delete and reorder PDF pages for free, right in your browser. No upload, no signup.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><span class="mark">🧰</span> Free Tools for Images &amp; PDFs</a>
+    <nav class="nav-links">
+      <a href="/#image-tools">Image Tools</a>
+      <a href="/#pdf-tools">PDF Tools</a>
+      <a href="https://github.com/">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="tool-page-header">
+      <h1>Organize PDF Pages</h1>
+      <p>Drag to reorder, rotate or delete pages, then save a new PDF. Processed locally — nothing is uploaded.</p>
+    </div>
+
+    <div class="tool-workspace">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a PDF file or drag and drop">
+        <div class="dz-icon">🗂️</div>
+        <div class="dz-title">Drop a PDF here or click to choose</div>
+        <div class="dz-sub">One PDF file</div>
+        <input type="file" id="fileInput" accept="application/pdf">
+      </div>
+
+      <div id="editor" style="display:none;">
+        <p class="help-text">Drag a page to reorder it. Use the buttons on each page to rotate or mark it for deletion.</p>
+        <div class="page-thumb-grid" id="pageGrid"></div>
+
+        <div class="actions-row">
+          <button class="btn" id="saveBtn">Save PDF</button>
+          <button class="btn secondary" id="clearBtn">Start over</button>
+        </div>
+      </div>
+
+      <div class="status-box" id="status"></div>
+    </div>
+
+    <section class="info-section">
+      <h2>How it works</h2>
+      <ol>
+        <li>Add a PDF file — its pages render as thumbnails.</li>
+        <li>Drag thumbnails to reorder, use ⟲/⟳ to rotate, and ✕ to mark a page for deletion.</li>
+        <li>Click "Save PDF" to download the result.</li>
+      </ol>
+      <h2>Related tools</h2>
+      <ul>
+        <li><a href="/split-pdf/">Split PDF</a></li>
+        <li><a href="/merge-pdf/">Merge PDF</a></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; <span id="year"></span> Free Tools for Images &amp; PDFs. Open source, MIT licensed.</span>
+    <span><a href="https://github.com/">View on GitHub</a></span>
+  </div>
+</footer>
+
+<script src="/assets/tools.js"></script>
+<script type="module" src="/assets/tools/organize-pdf.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

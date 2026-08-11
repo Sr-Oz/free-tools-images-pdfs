@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Online Tools for Images and PDFs — No Signup, Nothing Uploaded</title>
+<meta name="description" content="Free, no-signup tools to compress, convert, resize and crop images, and to merge, split, compress and edit PDFs. Everything runs in your browser — your files are never uploaded.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><span class="mark">🧰</span> Free Tools for Images &amp; PDFs</a>
+    <nav class="nav-links">
+      <a href="/#image-tools">Image Tools</a>
+      <a href="/#pdf-tools">PDF Tools</a>
+      <a href="https://github.com/" id="gh-link">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero container">
+    <h1>Free online tools for images and PDFs</h1>
+    <p>Compress, convert, resize, merge and edit — no account, no email, no watermark, no upload limits.</p>
+    <div class="privacy-badge">🔒 Your files never leave your browser</div>
+  </section>
+
+  <div class="container">
+    <h2 class="section-title" id="image-tools">Image tools</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/compress-image/">
+        <span class="icon">🗜️</span>
+        <h3>Compress Image</h3>
+        <p>Shrink JPEG, PNG or WebP file size with an adjustable quality slider.</p>
+      </a>
+      <a class="tool-card" href="/convert-image/">
+        <span class="icon">🔄</span>
+        <h3>Convert Image Format</h3>
+        <p>Switch between PNG, JPG and WebP in a couple of clicks.</p>
+      </a>
+      <a class="tool-card" href="/resize-image/">
+        <span class="icon">📐</span>
+        <h3>Resize Image</h3>
+        <p>Resize by exact pixel dimensions or by percentage.</p>
+      </a>
+      <a class="tool-card" href="/crop-rotate-image/">
+        <span class="icon">✂️</span>
+        <h3>Crop &amp; Rotate Image</h3>
+        <p>Crop to any area and rotate in 90° steps or freely.</p>
+      </a>
+    </div>
+
+    <h2 class="section-title" id="pdf-tools">PDF tools</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/merge-pdf/">
+        <span class="icon">📎</span>
+        <h3>Merge PDF</h3>
+        <p>Combine multiple PDFs into a single file, in any order.</p>
+      </a>
+      <a class="tool-card" href="/split-pdf/">
+        <span class="icon">✂️</span>
+        <h3>Split PDF</h3>
+        <p>Pull out individual pages or a page range into a new PDF.</p>
+      </a>
+      <a class="tool-card" href="/compress-pdf/">
+        <span class="icon">📉</span>
+        <h3>Compress PDF</h3>
+        <p>Reduce PDF file size — great for scanned or image-heavy documents.</p>
+      </a>
+      <a class="tool-card" href="/images-to-pdf/">
+        <span class="icon">🖼️</span>
+        <h3>Images to PDF</h3>
+        <p>Turn one or more JPG/PNG images into a single PDF.</p>
+      </a>
+      <a class="tool-card" href="/pdf-to-images/">
+        <span class="icon">📤</span>
+        <h3>PDF to Images</h3>
+        <p>Export every page of a PDF as a PNG or JPG image.</p>
+      </a>
+      <a class="tool-card" href="/organize-pdf/">
+        <span class="icon">🗂️</span>
+        <h3>Organize PDF Pages</h3>
+        <p>Rotate, delete and reorder pages, then save a new PDF.</p>
+      </a>
+    </div>
+
+    <section class="info-section">
+      <h2>Why these tools are actually private</h2>
+      <p style="color:var(--text-muted); max-width:680px;">
+        Most "free online" file tools quietly upload your document to a server to process it.
+        This site doesn't have a server at all for these tools — every conversion, compression and edit
+        runs locally in JavaScript inside your own browser tab using open-source libraries
+        (<a href="https://pdf-lib.js.org/" target="_blank" rel="noopener">pdf-lib</a> and
+        <a href="https://mozilla.github.io/pdf.js/" target="_blank" rel="noopener">pdf.js</a>).
+        Your files are never transmitted anywhere. You can even disconnect from the internet after the
+        page loads and the tools still work.
+      </p>
+      <p style="color:var(--text-muted);">
+        This project is open source. Coming soon (v2 backlog): OCR, e-signatures, and PDF-to-Word conversion —
+        see the <a href="https://github.com/" id="gh-link-2">README</a> for the full roadmap.
+      </p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; <span id="year"></span> Free Tools for Images &amp; PDFs. Open source, MIT licensed.</span>
+    <span><a href="https://github.com/" id="gh-link-3">View on GitHub</a></span>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
