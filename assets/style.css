@@ -143,6 +143,21 @@ img { max-width: 100%; }
   color: var(--text);
 }
 
+/* Slogan quote */
+.slogan-quote {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  padding: 20px 24px;
+  text-align: center;
+  border-left: 3px solid var(--brand);
+  background: var(--bg-alt);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
 /* Trust signals */
 .trust-signals {
   display: flex;
