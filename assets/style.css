@@ -717,6 +717,12 @@ img { max-width: 100%; }
   margin-bottom: 12px;
 }
 
+.info-section p {
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+}
+
 .info-section ol, .info-section ul {
   color: var(--text-muted);
   font-size: 0.92rem;
@@ -736,7 +742,7 @@ img { max-width: 100%; }
   background: var(--band-bg);
   color: var(--band-text);
   padding: 56px 0;
-  margin: 48px 0;
+  margin: 48px 0 0;
 }
 
 .dark-band a { color: var(--accent); }
@@ -804,6 +810,10 @@ img { max-width: 100%; }
   color: #fff9f2;
   font-size: 0.85rem;
 }
+
+/* Used when the footer directly follows a .dark-band, so there's no gap
+   of body-background color between the two. */
+.site-footer.flush { margin-top: 0; }
 
 .site-footer .container {
   display: flex;
