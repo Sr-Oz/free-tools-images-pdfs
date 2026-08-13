@@ -18,22 +18,23 @@
   --footer-gradient: linear-gradient(90deg, #ffcf67 0%, #d3321d 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #241f1e;
-    --bg-alt: #2c2422;
-    --text: #f3ece9;
-    --text-muted: #cbb3ac;
-    --border: #4a3934;
-    --brand: #ffb4a6;
-    --brand-dark: #ffcf9e;
-    --brand-contrast: #3c0802;
-    --accent: #ffcf67;
-    --success: #4ade80;
-    --danger: #ffb4a6;
-    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.4);
-  }
-}
+/* Dark mode intentionally disabled — the site always renders light,
+   regardless of the visitor's system preference. Re-enable by wrapping
+   this block back in `@media (prefers-color-scheme: dark) { :root { ... } }`
+   if a toggle is added later.
+--bg: #241f1e;
+--bg-alt: #2c2422;
+--text: #f3ece9;
+--text-muted: #cbb3ac;
+--border: #4a3934;
+--brand: #ffb4a6;
+--brand-dark: #ffcf9e;
+--brand-contrast: #3c0802;
+--accent: #ffcf67;
+--success: #4ade80;
+--danger: #ffb4a6;
+--card-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.4);
+*/
 
 * { box-sizing: border-box; }
 
