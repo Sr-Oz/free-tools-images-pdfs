@@ -148,7 +148,7 @@
         const item = document.createElement("div");
         item.className = "result-item";
         item.innerHTML = `
-          <img class="preview" src="${previewUrl}" alt="">
+          <img class="preview" src="${previewUrl}" alt="Resized preview of ${file.name}">
           <div class="info">
             <div>${outName}</div>
             <div class="meta" style="color:var(--text-muted);font-size:0.82rem;">${targetW} × ${targetH}px · ${formatBytes(blob.size)}</div>

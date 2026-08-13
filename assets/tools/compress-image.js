@@ -108,7 +108,7 @@
         item.className = "result-item";
         const previewUrl = URL.createObjectURL(blob);
         item.innerHTML = `
-          <img class="preview" src="${previewUrl}" alt="">
+          <img class="preview" src="${previewUrl}" alt="Compressed preview of ${file.name}">
           <div class="info">
             <div>${outName}</div>
             <div class="meta" style="color:var(--text-muted);font-size:0.82rem;">

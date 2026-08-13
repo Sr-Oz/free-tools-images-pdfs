@@ -43,11 +43,17 @@ These need either much heavier client-side models (OCR) or genuinely require ser
 processing (format conversion beyond what browsers support natively) — they're out of scope for
 v1 on purpose. If you want to tackle one, see [Contributing](CONTRIBUTING.md).
 
+### Other pages
+- [FAQ](/faq/) — common questions about privacy, cost, file limits and browser support
+- [Privacy Policy](/privacy-policy/) — what data is (and isn't) collected
+
 ## Tech stack
 
 Plain HTML, CSS and vanilla JavaScript — **no build step, no framework, no bundler.** Each tool is
-a static page that loads two well-maintained open-source libraries straight from a CDN as ES
-modules:
+a static page that uses two well-maintained open-source libraries, self-hosted under
+`assets/vendor/` (not loaded from a CDN — browsers block cross-origin `Worker` construction, which
+`pdf.js` needs, and self-hosting also means these tools keep working even if a third-party CDN is
+ever down):
 
 - [`pdf-lib`](https://pdf-lib.js.org/) — creating/editing PDFs (merge, split, rotate, compress, images→PDF)
 - [`pdf.js`](https://mozilla.github.io/pdf.js/) — rendering PDF pages to canvas (thumbnails, PDF→images)
@@ -75,9 +81,16 @@ Then open the printed local URL (e.g. `http://localhost:3000` or `http://localho
 ```
 /
 ├── index.html              # Homepage listing all tools
+├── faq/index.html           # FAQ
+├── privacy-policy/index.html # Privacy policy
+├── 404.html
+├── robots.txt
+├── sitemap.xml
 ├── assets/
 │   ├── style.css            # Shared styles (light + dark)
 │   ├── tools.js              # Shared helpers (dropzone, downloads, formatting)
+│   ├── img/og-image.png       # Social share image
+│   ├── vendor/                 # Self-hosted pdf-lib / pdf.js (see Tech stack)
 │   └── tools/                 # Per-tool logic, one file per tool
 │       ├── pdf-common.js       # Shared pdf-lib / pdf.js loader + helpers
 │       ├── compress-image.js

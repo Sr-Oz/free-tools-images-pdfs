@@ -193,6 +193,23 @@ img { max-width: 100%; }
   color: var(--text-muted);
 }
 
+/* Breadcrumbs */
+.breadcrumbs {
+  padding: 16px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.breadcrumbs a { color: var(--text-muted); }
+.breadcrumbs a:hover { color: var(--brand); }
+
+.breadcrumbs .sep {
+  margin: 0 6px;
+  color: var(--border);
+}
+
+.breadcrumbs .current { color: var(--text); }
+
 /* Tool page layout */
 .tool-page-header {
   padding: 40px 0 8px;

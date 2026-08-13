@@ -69,6 +69,8 @@ async function loadFile(file) {
 
   for (let i = 1; i <= pageCount; i++) {
     const canvas = await renderPageThumbCanvas(pdfJsDoc, i, 200);
+    canvas.setAttribute("role", "img");
+    canvas.setAttribute("aria-label", `Page ${i} preview`);
     const thumb = document.createElement("div");
     thumb.className = "page-thumb selected";
     thumb.dataset.page = String(i);

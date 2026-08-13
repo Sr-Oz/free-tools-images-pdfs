@@ -28,6 +28,8 @@ function renderGrid() {
     const wrap = document.createElement("div");
     wrap.className = "thumb-img-wrap";
     p.canvas.style.transform = `rotate(${p.rotationDelta}deg)`;
+    p.canvas.setAttribute("role", "img");
+    p.canvas.setAttribute("aria-label", `Page ${idx + 1} preview${p.deleted ? " (marked for deletion)" : ""}`);
     wrap.appendChild(p.canvas);
     thumb.appendChild(wrap);
 
