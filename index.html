@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Public+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 <script type="application/ld+json">
 {
@@ -47,7 +47,7 @@
 
 <main>
   <section class="hero container">
-    <h1>Free online tools for images and PDFs</h1>
+    <h1>Free online tools for <span class="gradient-text">images and PDFs</span></h1>
     <p>Compress, convert, resize, merge and edit — no account, no email, no watermark, no upload limits.</p>
     <div class="privacy-badge"><span class="material-symbols-outlined">lock</span> Your files never leave your browser</div>
   </section>
@@ -135,6 +135,12 @@
 
   <section class="dark-band">
     <div class="container">
+      <div class="terminal-box">
+        <div class="terminal-chrome">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        </div>
+        <pre class="terminal-lines" id="terminalLines" aria-hidden="true"></pre>
+      </div>
       <section class="info-section">
         <h2>Why these tools are actually private</h2>
         <p style="color:var(--text-muted); max-width:680px;">
@@ -162,6 +168,7 @@
   </div>
 </footer>
 
+<script src="/assets/typewriter.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
