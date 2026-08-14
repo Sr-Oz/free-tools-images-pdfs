@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is It Safe to Use Free Online PDF Tools? | Free Tools for Images &amp; PDFs</title>
+<meta name="description" content="What actually happens to your file when you use an online PDF tool, the real difference between server-side and client-side processing, and how to verify the claims yourself.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/blog/is-it-safe-free-online-pdf-tools/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Is It Safe to Use Free Online PDF Tools?">
+<meta property="og:description" content="What actually happens to your file when you use an online PDF tool, and how to verify the privacy claims yourself.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/blog/is-it-safe-free-online-pdf-tools/">
+<meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+"headline":"Is It Safe to Use Free Online PDF Tools?",
+"datePublished":"2026-08-14","dateModified":"2026-08-14",
+"description":"What actually happens to your file when you use an online PDF tool, and how to verify the privacy claims yourself.",
+"mainEntityOfPage":"https://sr-oz.github.io/free-tools-images-pdfs/blog/is-it-safe-free-online-pdf-tools/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Can I trust a tool just because it says it doesn't store my files?","acceptedAnswer":{"@type":"Answer","text":"Be a little skeptical of that phrase specifically. \"We don't store your files\" can still mean the file was uploaded, processed on a server, and then deleted — which still involved a transmission over the network. Client-side processing, where the file never leaves your device, is a stronger and more verifiable guarantee."}},
+  {"@type":"Question","name":"Does this mean cloud-based PDF tools are always unsafe?","acceptedAnswer":{"@type":"Answer","text":"No. Reputable services with clear security practices, and enterprise contracts with real accountability, can be perfectly reasonable for everyday documents. The calculus changes for genuinely sensitive material, where avoiding the upload entirely removes a whole category of risk."}},
+  {"@type":"Question","name":"How can I tell if a tool is really processing files client-side?","acceptedAnswer":{"@type":"Answer","text":"Open your browser's developer tools (F12), go to the Network tab, and use the tool while watching for any request that sends your file's data out. Or simpler: load the page, then disconnect from the internet and try using the tool — if it still works, nothing is being uploaded."}}
+]}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><span class="mark"><span class="material-symbols-outlined">build</span></span> Free Tools for Images &amp; PDFs</a>
+    <nav class="nav-links">
+      <a href="/#image-tools">Image Tools</a>
+      <a href="/#pdf-tools">PDF Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://github.com/Sr-Oz/free-tools-images-pdfs">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Is It Safe?</span>
+    </nav>
+
+    <div class="tool-page-header">
+      <h1>Is It Safe to Use Free Online PDF Tools?</h1>
+    </div>
+
+    <div class="tool-workspace" style="max-width: 720px;">
+      <p class="byline">Published 14 August 2026 · 6 min read</p>
+      <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
+        <p>
+          It's a fair question to ask before dragging a tax form, a signed contract, or a scan of your
+          ID into a random website. Most "free online" file tools work by uploading your document to a
+          server somewhere, and it's worth understanding exactly what that means before deciding
+          whether it matters for a particular file.
+        </p>
+
+        <h2>What "online tool" usually means</h2>
+        <p>
+          For most PDF and image tools, "online" means your file is uploaded to the provider's server,
+          processed there, and the result is sent back for you to download. That means the file
+          physically leaves your device and transits the network, and it sits — even briefly — on
+          infrastructure you don't control. You're trusting that provider's retention policy, its
+          security practices, and often its business model: a "free" service still costs something to
+          run, and it's worth asking how it actually makes money.
+        </p>
+
+        <h2>When it actually matters</h2>
+        <p>
+          Not every file needs this level of caution — a public flyer or a screenshot for a forum post
+          isn't sensitive, and using any reasonably reputable online tool for it is fine. The calculus
+          changes for anything that identifies you or exposes financial, medical, or legal
+          information: tax documents, signed contracts, ID scans, medical records, anything with a
+          signature or an account number on it. For those, the question isn't really "is this
+          particular provider trustworthy" — it's "why take on any upload risk at all when a
+          client-side tool removes the question entirely."
+        </p>
+
+        <h2>What "runs in your browser" actually means</h2>
+        <p>
+          Client-side processing is a different architecture. JavaScript running in the browser tab
+          you're already looking at reads the file using your device's own CPU and memory, and never
+          sends the file's contents anywhere over the network. This isn't a euphemism — it's a
+          verifiable technical claim, which is the important part.
+        </p>
+
+        <h2>How to verify a tool's claims yourself</h2>
+        <p>
+          Don't just take a privacy claim on faith — most modern browsers make it easy to check:
+        </p>
+        <ol>
+          <li>Open developer tools (F12 in most browsers) and switch to the Network tab.</li>
+          <li>Use the tool on a file and watch the Network tab while it processes. If a request goes
+            out that's roughly the size of your file, it's being uploaded somewhere, whatever the
+            marketing copy says.</li>
+          <li>Alternatively, load the tool's page fully, then disconnect from Wi-Fi or mobile data and
+            try using it. If it still works with no connection, nothing is being sent to a server —
+            it can't be, there's no connection to send it over.</li>
+        </ol>
+
+        <h2>Where this site stands</h2>
+        <p>
+          Every tool here runs entirely client-side, using the open-source
+          <a href="https://pdf-lib.js.org/" target="_blank" rel="noopener">pdf-lib</a> and
+          <a href="https://mozilla.github.io/pdf.js/" target="_blank" rel="noopener">pdf.js</a>
+          libraries, which are hosted on this site rather than fetched from a third party at runtime.
+          There's no server for these tools to upload to in the first place. What data is (and isn't)
+          collected beyond that is laid out plainly in the
+          <a href="/privacy-policy/">Privacy Policy</a> — as of this writing, that's nothing: no
+          analytics, no accounts, no cookies.
+        </p>
+
+        <div class="cta-box">
+          <p>See it for yourself</p>
+          <a class="btn" href="/">Browse the tools</a>
+        </div>
+
+        <h2>Frequently asked questions</h2>
+        <details class="faq-item" open>
+          <summary>Can I trust a tool just because it says it doesn't store my files?</summary>
+          <p>Be a little skeptical of that phrase specifically. "We don't store your files" can still
+            mean the file was uploaded, processed on a server, and then deleted — which still involved
+            a transmission over the network. Client-side processing, where the file never leaves your
+            device, is a stronger and more verifiable guarantee.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does this mean cloud-based PDF tools are always unsafe?</summary>
+          <p>No. Reputable services with clear security practices, and enterprise contracts with real
+            accountability, can be perfectly reasonable for everyday documents. The calculus changes
+            for genuinely sensitive material, where avoiding the upload entirely removes a whole
+            category of risk.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How can I tell if a tool is really processing files client-side?</summary>
+          <p>Open your browser's developer tools (F12), go to the Network tab, and use the tool while
+            watching for any request that sends your file's data out. Or simpler: load the page, then
+            disconnect from the internet and try using the tool — if it still works, nothing is being
+            uploaded.</p>
+        </details>
+
+        <h2>Related guides</h2>
+        <ul>
+          <li><a href="/blog/compress-pdf-without-losing-quality/">How to Compress a PDF Without Losing Quality</a></li>
+          <li><a href="/faq/">Frequently asked questions about this site</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><span class="material-symbols-outlined">build</span> Free Tools for Images &amp; PDFs</div>
+        <p>Free, no-signup tools that run entirely in your browser. Nothing is ever uploaded.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Image Tools</h5>
+        <a href="/compress-image/">Compress Image</a>
+        <a href="/convert-image/">Convert Image Format</a>
+        <a href="/resize-image/">Resize Image</a>
+        <a href="/crop-rotate-image/">Crop &amp; Rotate Image</a>
+      </div>
+      <div class="footer-col">
+        <h5>PDF Tools</h5>
+        <a href="/merge-pdf/">Merge PDF</a>
+        <a href="/split-pdf/">Split PDF</a>
+        <a href="/compress-pdf/">Compress PDF</a>
+        <a href="/images-to-pdf/">Images to PDF</a>
+        <a href="/pdf-to-images/">PDF to Images</a>
+        <a href="/organize-pdf/">Organize PDF Pages</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="/blog/">Blog</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="https://github.com/Sr-Oz/free-tools-images-pdfs">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Free Tools for Images &amp; PDFs. Made with passion and empathy in Australia. 🦘
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

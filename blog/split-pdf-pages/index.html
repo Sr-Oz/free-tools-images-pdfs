@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to Split a PDF Into Separate Pages | Free Tools for Images &amp; PDFs</title>
-<meta name="description" content="How to extract specific pages from a PDF or split a whole document into individual page files, free and in your browser.">
+<meta name="description" content="How to extract specific pages from a PDF or break a whole document into individual page files, plus the page-range syntax and where the tool's limits are.">
 <link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/blog/split-pdf-pages/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Split a PDF Into Separate Pages">
-<meta property="og:description" content="How to extract specific pages from a PDF or split a whole document into individual page files, free and in your browser.">
+<meta property="og:description" content="How to extract specific pages from a PDF or break a whole document into individual page files.">
 <meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/blog/split-pdf-pages/">
 <meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,8 +19,15 @@
 {"@context":"https://schema.org","@type":"BlogPosting",
 "headline":"How to Split a PDF Into Separate Pages",
 "datePublished":"2026-08-14","dateModified":"2026-08-14",
-"description":"How to extract specific pages from a PDF or split a whole document into individual page files.",
+"description":"How to extract specific pages from a PDF or break a whole document into individual page files.",
 "mainEntityOfPage":"https://sr-oz.github.io/free-tools-images-pdfs/blog/split-pdf-pages/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Can I split a password-protected PDF?","acceptedAnswer":{"@type":"Answer","text":"Not currently. The tool needs to read the PDF's pages to render thumbnails and extract them, and an encrypted file can't be read without its password first."}},
+  {"@type":"Question","name":"Does splitting reduce the quality of the pages?","acceptedAnswer":{"@type":"Answer","text":"No. Extracted pages are copied exactly as they were in the source file — nothing is re-rendered or recompressed."}},
+  {"@type":"Question","name":"What page-range syntax does the tool accept?","acceptedAnswer":{"@type":"Answer","text":"Comma-separated numbers and ranges, like 1-3,5,8-10 — that selects pages 1 through 3, page 5, and pages 8 through 10."}}
+]}
 </script>
 </head>
 <body>
@@ -48,44 +55,105 @@
     </div>
 
     <div class="tool-workspace" style="max-width: 720px;">
-      <p class="byline">Published 14 August 2026 · 3 min read</p>
+      <p class="byline">Published 14 August 2026 · 5 min read</p>
       <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
         <p>
-          Sometimes you don't want a whole PDF — you want page 4, or pages 10 through 15, or you need
-          to break a 40-page scan into one file per page for an upload form that only accepts single
-          pages. Splitting a PDF is quick once you can see the pages you're working with.
+          Sometimes you don't want a whole PDF — you want page 4 out of a 40-page contract, or you
+          need to break a scanned booklet into one file per page because an upload form only accepts
+          single pages. Splitting is quick once you can actually see the pages you're working with,
+          rather than guessing page numbers from a file you can't preview.
+        </p>
+
+        <h2>Two different ways to split</h2>
+        <p>
+          There are two genuinely different things people mean by "split a PDF," and
+          <a href="/split-pdf/">the Split PDF tool</a> handles both:
+        </p>
+        <ul>
+          <li><strong>Extract selected pages into one new file.</strong> Useful when you want, say,
+            pages 3 to 7 of a larger document pulled out as their own PDF.</li>
+          <li><strong>Split into one file per page.</strong> Useful for upload forms or workflows that
+            only accept single-page files, or when every page needs to be filed separately.</li>
+        </ul>
+
+        <h2>Common scenarios</h2>
+        <p>
+          A few situations where this comes up a lot: pulling just the signature page out of a
+          40-page contract to send for a quick re-sign, breaking a scanned booklet into individual
+          chapter files, extracting a single invoice from a batch-scanned stack of paperwork, or
+          splitting a multi-page form into one page per applicant because the system on the other end
+          genuinely can't handle a multi-page upload. In each case, the alternative — re-scanning just
+          the part you need — is slower and often not even possible if you no longer have the original
+          paper.
         </p>
 
         <h2>Step by step</h2>
         <ol>
-          <li>Open <a href="/split-pdf/">the Split PDF tool</a> and add your file.</li>
-          <li>Every page renders as a thumbnail so you can see what you're selecting.</li>
+          <li>Open the tool and add your PDF — every page renders as a thumbnail so you can see what
+            you're selecting instead of guessing from page numbers alone.</li>
           <li>Click pages to select them, or type a range like <code>1-3,5,8-10</code> into the text
-            field — clicking and typing stay in sync.</li>
+            field — clicking and typing stay in sync with each other, so you can start with a typed
+            range and fine-tune it by clicking.</li>
           <li>Choose "Extract Selected Pages" for one combined file, or "Download Each Selected Page
-            Separately" if you need individual files.</li>
+            Separately" for individual files.</li>
         </ol>
 
-        <h2>A few practical tips</h2>
+        <h2>A few things worth knowing</h2>
         <ul>
           <li><strong>Downloading many separate files will prompt your browser.</strong> Most browsers
-            ask permission before allowing several downloads at once — that's your browser protecting
+            ask permission before allowing several downloads at once — that's the browser protecting
             you from download spam, not a bug in the tool.</li>
-          <li><strong>Selecting nothing selects nothing.</strong> If you want the whole document minus
-            one page, it's often faster to use "Select all" then click the one page to deselect it.</li>
-          <li><strong>Thumbnails are rendered locally.</strong> The preview images are generated in
-            your browser using <a href="https://mozilla.github.io/pdf.js/" target="_blank" rel="noopener">pdf.js</a>
-            — the file is never sent anywhere just to show you what's in it.</li>
+          <li><strong>Selecting the inverse is often faster.</strong> If you want the whole document
+            minus one page, click "Select all" and then click the one page you don't want, rather than
+            clicking through every page you do want.</li>
+          <li><strong>Password-protected PDFs won't open.</strong> The tool needs to read the file to
+            generate thumbnails, and an encrypted PDF can't be read without its password first.</li>
         </ul>
+
+        <h2>After you split</h2>
+        <p>
+          A split file often isn't the final step. If the pages you extracted came out in the wrong
+          order or need one flipped the right way up, <a href="/organize-pdf/">Organize PDF Pages</a>
+          handles reordering and rotation on the extracted file. And if the pages were part of a large
+          scanned document, the extracted file inherits that same file size — running it through
+          <a href="/compress-pdf/">Compress PDF</a> afterward is worth doing if you're now sending just
+          one or two pages and the file still feels unexpectedly large.
+        </p>
+
+        <h2>What happens to file names</h2>
+        <p>
+          When you extract selected pages into one file, the download keeps a name based on your
+          original file with "-pages" added, so it's easy to tell apart from the source. When you
+          download each page separately, every file is named with its page number included, so a
+          folder of them sorts in the right order automatically instead of ending up as a pile of
+          identically-named downloads you have to open one by one to identify.
+        </p>
 
         <div class="cta-box">
           <p>Ready to split your PDF?</p>
           <a class="btn" href="/split-pdf/">Open Split PDF</a>
         </div>
 
+        <h2>Frequently asked questions</h2>
+        <details class="faq-item" open>
+          <summary>Can I split a password-protected PDF?</summary>
+          <p>Not currently. The tool needs to read the PDF's pages to render thumbnails and extract
+            them, and an encrypted file can't be read without its password first.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does splitting reduce the quality of the pages?</summary>
+          <p>No. Extracted pages are copied exactly as they were in the source file — nothing is
+            re-rendered or recompressed.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What page-range syntax does the tool accept?</summary>
+          <p>Comma-separated numbers and ranges, like <code>1-3,5,8-10</code> — that selects pages 1
+            through 3, page 5, and pages 8 through 10.</p>
+        </details>
+
         <h2>Related guides</h2>
         <ul>
-          <li><a href="/blog/merge-pdf-online/">How to Merge PDF Files Online for Free</a></li>
+          <li><a href="/blog/merge-pdf-online/">How to Merge Multiple PDFs Into One File</a></li>
           <li><a href="/blog/organize-pdf-pages/">How to Rotate, Delete and Reorder PDF Pages</a></li>
         </ul>
       </section>

@@ -334,6 +334,25 @@ img { max-width: 100%; }
   transform: translateY(-4px) scale(1.015);
 }
 
+.blog-meta {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.blog-meta .tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 .tool-card .icon {
   display: inline-flex;
   align-items: center;
@@ -722,6 +741,13 @@ img { max-width: 100%; }
   text-align-last: justify;
   hyphens: auto;
 }
+
+.faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.faq-item summary { cursor: pointer; padding: 16px 18px; font-weight: 600; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; float: right; color: var(--text-muted); }
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item p { margin: 0; padding: 0 18px 16px; color: var(--text-muted); text-align: left; }
 
 .cta-box {
   display: flex;

@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Merge PDF Files Online for Free | Free Tools for Images &amp; PDFs</title>
-<meta name="description" content="Step-by-step guide to combining multiple PDFs into one file for free, entirely in your browser — no upload, no signup.">
+<title>How to Merge Multiple PDFs Into One File | Free Tools for Images &amp; PDFs</title>
+<meta name="description" content="How to combine several PDFs into a single file in the right order, what actually happens to the content when you do, and where the limits are.">
 <link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/blog/merge-pdf-online/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to Merge PDF Files Online for Free">
-<meta property="og:description" content="Step-by-step guide to combining multiple PDFs into one file for free, entirely in your browser — no upload, no signup.">
+<meta property="og:title" content="How to Merge Multiple PDFs Into One File">
+<meta property="og:description" content="How to combine several PDFs into a single file in the right order, what happens to the content, and where the limits are.">
 <meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/blog/merge-pdf-online/">
 <meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -17,10 +17,17 @@
 <link rel="stylesheet" href="/assets/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting",
-"headline":"How to Merge PDF Files Online for Free",
+"headline":"How to Merge Multiple PDFs Into One File",
 "datePublished":"2026-08-14","dateModified":"2026-08-14",
-"description":"Step-by-step guide to combining multiple PDFs into one file for free, entirely in your browser.",
+"description":"How to combine several PDFs into a single file in the right order, what happens to the content, and where the limits are.",
 "mainEntityOfPage":"https://sr-oz.github.io/free-tools-images-pdfs/blog/merge-pdf-online/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Can I merge password-protected PDFs?","acceptedAnswer":{"@type":"Answer","text":"Not currently with this tool. An encrypted PDF can't be read without its password first, and password removal isn't something this tool does yet. You'd need to remove the password with another tool before merging."}},
+  {"@type":"Question","name":"Is there a limit to how many files I can merge?","acceptedAnswer":{"@type":"Answer","text":"No artificial limit. Since everything runs on your device rather than a server, the practical ceiling is your browser's available memory — for a handful of typical documents that's not something you'll run into."}},
+  {"@type":"Question","name":"Will merging reduce the quality of my PDFs?","acceptedAnswer":{"@type":"Answer","text":"No. Pages are copied into the new file exactly as they were — nothing is re-rendered or re-compressed in the process."}}
+]}
 </script>
 </head>
 <body>
@@ -44,18 +51,26 @@
     </nav>
 
     <div class="tool-page-header">
-      <h1>How to Merge PDF Files Online for Free</h1>
+      <h1>How to Merge Multiple PDFs Into One File</h1>
     </div>
 
     <div class="tool-workspace" style="max-width: 720px;">
-      <p class="byline">Published 14 August 2026 · 3 min read</p>
+      <p class="byline">Published 14 August 2026 · 5 min read</p>
       <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
         <p>
-          Merging PDFs is one of those tasks that comes up more than you'd expect: combining scanned
-          receipts into one file for expenses, stitching a cover letter onto a resume, or pulling
-          several chapters of a report into a single document before sending it. You don't need
-          desktop software or a paid subscription for this — a browser and a couple of files is
-          enough.
+          Combining scanned receipts into one file for an expense report, attaching a cover letter to
+          a resume, stitching several chapters of a report together before sending it — merging PDFs
+          is one of those small tasks that comes up constantly. It's also one people often solve badly,
+          by emailing five separate attachments and letting the recipient sort them out. Here's how to
+          do it properly, and what actually happens to your files when you do.
+        </p>
+
+        <h2>Why merge instead of sending files separately</h2>
+        <p>
+          A single combined file is easier for the person on the other end: one thing to download, one
+          thing to print, one thing to file away. It also guarantees the reading order — five separate
+          attachments can get opened, printed, or reviewed in any order, while a merged PDF reads top
+          to bottom exactly as you arranged it.
         </p>
 
         <h2>Step by step</h2>
@@ -64,21 +79,49 @@
           <li>Drop in two or more PDF files, or click to choose them from your device.</li>
           <li>Use the ↑ / ↓ buttons next to each file to put them in the order you want the merged
             document to read.</li>
-          <li>Click "Merge PDFs." The combined file downloads straight away.</li>
+          <li>Click "Merge PDFs." The combined file downloads immediately.</li>
         </ol>
 
-        <h2>A few practical tips</h2>
+        <h2>What actually happens to the content</h2>
+        <p>
+          Merging doesn't re-render or re-compress anything — each page is copied into the new file
+          exactly as it existed in the source PDF, using the open-source
+          <a href="https://pdf-lib.js.org/" target="_blank" rel="noopener">pdf-lib</a> library. Text
+          stays selectable if it was selectable before, images stay at their original resolution, and
+          the final file size is roughly the sum of the source files (there's a small amount of shared
+          overhead, so it's often slightly less than a simple sum, not more).
+        </p>
+        <p>
+          One thing that doesn't carry over: if any of your source PDFs have a bookmarks panel or
+          table-of-contents outline (the clickable sidebar some PDF readers show for jumping between
+          sections), that navigation structure isn't preserved in the merged file — only the page
+          content itself is. For most everyday documents that's not something you'll notice, but it's
+          worth knowing if you're merging something like a long reference manual that relies on its
+          bookmarks.
+        </p>
+
+        <h2>A quick example</h2>
+        <p>
+          Say you're filing an expense report: three photos of receipts saved as PDFs from your
+          phone's scanner app, plus a cover sheet you typed up separately. Add all four to the tool,
+          drag the cover sheet to the top of the list with the ↑ button, check that the receipts are
+          in a sensible order underneath it, and merge. You get one file to attach to the email instead
+          of four — and the person reading it doesn't have to guess which receipt is which by opening
+          each attachment individually.
+        </p>
+
+        <h2>Where this hits limits</h2>
         <ul>
-          <li><strong>Order matters and won't fix itself.</strong> The tool merges files in the exact
-            order shown in the list, so double-check it before merging — there's no "sort by name"
-            magic happening behind the scenes.</li>
-          <li><strong>Page count adds up, file size doesn't always.</strong> A merged PDF's size is
-            roughly the sum of its parts; if the result feels too large, run it through
-            <a href="/compress-pdf/">Compress PDF</a> afterward.</li>
-          <li><strong>Nothing is uploaded.</strong> The merge happens in your browser using the
-            open-source <a href="https://pdf-lib.js.org/" target="_blank" rel="noopener">pdf-lib</a>
-            library — your files never touch a server, which matters if any of the documents are
-            sensitive.</li>
+          <li><strong>Password-protected PDFs can't be merged directly.</strong> The tool needs to
+            read each page to copy it, and an encrypted file can't be read without the password first
+            — that's a limitation worth knowing about rather than discovering mid-task.</li>
+          <li><strong>Order doesn't fix itself.</strong> Files merge in exactly the order shown in the
+            list. There's no automatic sort by filename or date — check the order before you click
+            merge.</li>
+          <li><strong>A large combined file stays large.</strong> If the result feels too big to email,
+            that's a separate problem — run it through
+            <a href="/compress-pdf/">Compress PDF</a> afterward rather than expecting merging to shrink
+            anything.</li>
         </ul>
 
         <div class="cta-box">
@@ -86,10 +129,29 @@
           <a class="btn" href="/merge-pdf/">Open Merge PDF</a>
         </div>
 
+        <h2>Frequently asked questions</h2>
+        <details class="faq-item" open>
+          <summary>Can I merge password-protected PDFs?</summary>
+          <p>Not currently with this tool. An encrypted PDF can't be read without its password first,
+            and password removal isn't something this tool does yet. You'd need to remove the password
+            with another tool before merging.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there a limit to how many files I can merge?</summary>
+          <p>No artificial limit. Since everything runs on your device rather than a server, the
+            practical ceiling is your browser's available memory — for a handful of typical documents
+            that's not something you'll run into.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Will merging reduce the quality of my PDFs?</summary>
+          <p>No. Pages are copied into the new file exactly as they were — nothing is re-rendered or
+            re-compressed in the process.</p>
+        </details>
+
         <h2>Related guides</h2>
         <ul>
           <li><a href="/blog/split-pdf-pages/">How to Split a PDF Into Separate Pages</a></li>
-          <li><a href="/blog/organize-pdf-pages/">How to Rotate, Delete and Reorder PDF Pages</a></li>
+          <li><a href="/blog/why-pdf-file-size-keeps-growing/">Why Does My PDF File Size Keep Growing?</a></li>
         </ul>
       </section>
     </div>
