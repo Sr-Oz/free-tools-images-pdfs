@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PDF to Images Online Free — Export as PNG or JPG | Free Tools for Images &amp; PDFs</title>
-<meta name="description" content="Export every page of a PDF as a PNG or JPG image, free and in your browser. No upload, no signup.">
-<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/pdf-to-images/">
+<title>Add Page Numbers to a PDF Online Free | Free Tools for Images &amp; PDFs</title>
+<meta name="description" content="Add page numbers to a PDF in the position and format you choose, free and in your browser. No upload, no signup.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/add-page-numbers/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PDF to Images Online Free — Export as PNG or JPG">
-<meta property="og:description" content="Export every page of a PDF as a PNG or JPG image, free and in your browser. No upload, no signup.">
-<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/pdf-to-images/">
+<meta property="og:title" content="Add Page Numbers to a PDF Online Free">
+<meta property="og:description" content="Add page numbers to a PDF in the position and format you choose, free and in your browser.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/add-page-numbers/">
 <meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
@@ -33,23 +33,17 @@
 <main>
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">PDF to Images</span>
+      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">Add Page Numbers</span>
     </nav>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
-      {"@type":"ListItem","position":2,"name":"PDF Tools","item":"https://sr-oz.github.io/free-tools-images-pdfs/#pdf-tools"},
-      {"@type":"ListItem","position":3,"name":"PDF to Images","item":"https://sr-oz.github.io/free-tools-images-pdfs/pdf-to-images/"}
-    ]}
-    </script>
+
     <div class="tool-page-header">
-      <h1>PDF to Images</h1>
-      <p>Export every page of a PDF as a PNG or JPG image. Processed locally — nothing is uploaded.</p>
+      <h1>Add Page Numbers to a PDF</h1>
+      <p>Number every page in the position and format you choose. Processed locally — nothing is uploaded.</p>
     </div>
 
     <div class="tool-workspace">
       <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a PDF file or drag and drop">
-        <div class="dz-icon"><span class="material-symbols-outlined">image</span></div>
+        <div class="dz-icon"><span class="material-symbols-outlined">123</span></div>
         <div class="dz-title">Drop a PDF here or click to choose</div>
         <div class="dz-sub">One PDF file</div>
         <input type="file" id="fileInput" accept="application/pdf">
@@ -58,36 +52,33 @@
       <div id="editor" style="display:none;">
         <div class="controls-row">
           <div class="field">
-            <label for="format">Format</label>
-            <select id="format">
-              <option value="image/png">PNG</option>
-              <option value="image/jpeg" selected>JPG</option>
+            <label for="position">Position</label>
+            <select id="position">
+              <option value="bottom-center" selected>Bottom center</option>
+              <option value="bottom-right">Bottom right</option>
+              <option value="bottom-left">Bottom left</option>
+              <option value="top-center">Top center</option>
+              <option value="top-right">Top right</option>
+              <option value="top-left">Top left</option>
             </select>
-          </div>
-          <div class="field" id="qualityField">
-            <label for="quality">Quality (<span id="qualityVal">90</span>%)</label>
-            <input type="range" id="quality" min="30" max="100" value="90">
           </div>
           <div class="field">
-            <label for="dpi">Resolution</label>
-            <select id="dpi">
-              <option value="96">96 DPI</option>
-              <option value="150" selected>150 DPI (recommended)</option>
-              <option value="200">200 DPI</option>
-              <option value="300">300 DPI (print quality)</option>
-            </select>
+            <label for="format">Format</label>
+            <input type="text" id="format" value="Page {n} of {total}" style="min-width:220px;">
+          </div>
+          <div class="field">
+            <label for="startNum">Start at</label>
+            <input type="number" id="startNum" value="1" min="0" style="width:80px;">
+          </div>
+          <div class="field">
+            <label for="fontSize">Font size</label>
+            <input type="number" id="fontSize" value="10" min="6" max="24" style="width:80px;">
           </div>
         </div>
-
+        <p class="help-text">Use <code>{n}</code> for the page number and <code>{total}</code> for the total page count — e.g. "Page {n} of {total}" or just "{n}".</p>
         <div class="actions-row">
-          <button class="btn" id="renderBtn">Render Pages</button>
+          <button class="btn" id="runBtn">Add Page Numbers</button>
           <button class="btn secondary" id="clearBtn">Start over</button>
-        </div>
-
-        <div class="page-thumb-grid" id="pageGrid"></div>
-
-        <div class="actions-row" id="downloadAllRow" style="display:none;">
-          <button class="btn secondary" id="downloadAllBtn">Download All Pages</button>
         </div>
       </div>
 
@@ -98,13 +89,13 @@
       <h2>How it works</h2>
       <ol>
         <li>Add a PDF file.</li>
-        <li>Choose an output format, quality and resolution.</li>
-        <li>Click "Render Pages", then download images individually or all at once.</li>
+        <li>Choose a position, format, starting number and font size.</li>
+        <li>Click "Add Page Numbers" to download the numbered PDF.</li>
       </ol>
       <h2>Related tools</h2>
       <ul>
-        <li><a href="/images-to-pdf/">Images to PDF</a></li>
-        <li><a href="/split-pdf/">Split PDF</a></li>
+        <li><a href="/watermark-pdf/">Watermark PDF</a></li>
+        <li><a href="/organize-pdf/">Organize PDF Pages</a></li>
       </ul>
     </section>
   </div>
@@ -157,7 +148,7 @@
 </footer>
 
 <script src="/assets/tools.js"></script>
-<script type="module" src="/assets/tools/pdf-to-images.js"></script>
+<script type="module" src="/assets/tools/add-page-numbers.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

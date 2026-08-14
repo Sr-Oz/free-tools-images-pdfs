@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PDF to Images Online Free — Export as PNG or JPG | Free Tools for Images &amp; PDFs</title>
-<meta name="description" content="Export every page of a PDF as a PNG or JPG image, free and in your browser. No upload, no signup.">
-<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/pdf-to-images/">
+<title>Resize PDF Page Size Online Free — A4, Letter, Legal | Free Tools for Images &amp; PDFs</title>
+<meta name="description" content="Change a PDF's page size to A4, Letter or Legal, scaling content to fit without clipping or distortion. Free and in your browser.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/resize-pdf-pages/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PDF to Images Online Free — Export as PNG or JPG">
-<meta property="og:description" content="Export every page of a PDF as a PNG or JPG image, free and in your browser. No upload, no signup.">
-<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/pdf-to-images/">
+<meta property="og:title" content="Resize PDF Page Size Online Free — A4, Letter, Legal">
+<meta property="og:description" content="Change a PDF's page size to A4, Letter or Legal, scaling content to fit without clipping or distortion.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/resize-pdf-pages/">
 <meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
@@ -33,23 +33,17 @@
 <main>
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">PDF to Images</span>
+      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">Resize PDF Pages</span>
     </nav>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
-      {"@type":"ListItem","position":2,"name":"PDF Tools","item":"https://sr-oz.github.io/free-tools-images-pdfs/#pdf-tools"},
-      {"@type":"ListItem","position":3,"name":"PDF to Images","item":"https://sr-oz.github.io/free-tools-images-pdfs/pdf-to-images/"}
-    ]}
-    </script>
+
     <div class="tool-page-header">
-      <h1>PDF to Images</h1>
-      <p>Export every page of a PDF as a PNG or JPG image. Processed locally — nothing is uploaded.</p>
+      <h1>Resize PDF Page Size</h1>
+      <p>Change every page to A4, Letter or Legal. Content is scaled to fit — never clipped or stretched. Processed locally.</p>
     </div>
 
     <div class="tool-workspace">
       <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a PDF file or drag and drop">
-        <div class="dz-icon"><span class="material-symbols-outlined">image</span></div>
+        <div class="dz-icon"><span class="material-symbols-outlined">crop_free</span></div>
         <div class="dz-title">Drop a PDF here or click to choose</div>
         <div class="dz-sub">One PDF file</div>
         <input type="file" id="fileInput" accept="application/pdf">
@@ -58,36 +52,26 @@
       <div id="editor" style="display:none;">
         <div class="controls-row">
           <div class="field">
-            <label for="format">Format</label>
-            <select id="format">
-              <option value="image/png">PNG</option>
-              <option value="image/jpeg" selected>JPG</option>
+            <label for="paperSize">Target page size</label>
+            <select id="paperSize">
+              <option value="a4" selected>A4</option>
+              <option value="letter">Letter</option>
+              <option value="legal">Legal</option>
             </select>
-          </div>
-          <div class="field" id="qualityField">
-            <label for="quality">Quality (<span id="qualityVal">90</span>%)</label>
-            <input type="range" id="quality" min="30" max="100" value="90">
           </div>
           <div class="field">
-            <label for="dpi">Resolution</label>
-            <select id="dpi">
-              <option value="96">96 DPI</option>
-              <option value="150" selected>150 DPI (recommended)</option>
-              <option value="200">200 DPI</option>
-              <option value="300">300 DPI (print quality)</option>
+            <label for="orientation">Orientation</label>
+            <select id="orientation">
+              <option value="auto" selected>Match each page's original</option>
+              <option value="portrait">Force portrait</option>
+              <option value="landscape">Force landscape</option>
             </select>
           </div>
         </div>
-
+        <p class="help-text">Content is scaled proportionally to fit the new page size — nothing gets cropped or stretched out of shape. If the aspect ratio doesn't match, you'll get a thin margin on one side.</p>
         <div class="actions-row">
-          <button class="btn" id="renderBtn">Render Pages</button>
+          <button class="btn" id="runBtn">Resize Pages</button>
           <button class="btn secondary" id="clearBtn">Start over</button>
-        </div>
-
-        <div class="page-thumb-grid" id="pageGrid"></div>
-
-        <div class="actions-row" id="downloadAllRow" style="display:none;">
-          <button class="btn secondary" id="downloadAllBtn">Download All Pages</button>
         </div>
       </div>
 
@@ -98,13 +82,13 @@
       <h2>How it works</h2>
       <ol>
         <li>Add a PDF file.</li>
-        <li>Choose an output format, quality and resolution.</li>
-        <li>Click "Render Pages", then download images individually or all at once.</li>
+        <li>Choose a target paper size and orientation.</li>
+        <li>Click "Resize Pages" to download the result.</li>
       </ol>
       <h2>Related tools</h2>
       <ul>
-        <li><a href="/images-to-pdf/">Images to PDF</a></li>
-        <li><a href="/split-pdf/">Split PDF</a></li>
+        <li><a href="/crop-pdf/">Crop PDF Pages</a></li>
+        <li><a href="/organize-pdf/">Organize PDF Pages</a></li>
       </ul>
     </section>
   </div>
@@ -157,7 +141,7 @@
 </footer>
 
 <script src="/assets/tools.js"></script>
-<script type="module" src="/assets/tools/pdf-to-images.js"></script>
+<script type="module" src="/assets/tools/resize-pdf-pages.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

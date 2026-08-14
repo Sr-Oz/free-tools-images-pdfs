@@ -893,6 +893,36 @@ img { max-width: 100%; }
 .faq-item[open] summary::after { content: "\2212"; }
 .faq-item p { margin: 0; padding: 0 18px 16px; color: var(--text-muted); text-align: left; }
 
+/* Compare PDFs: diff view */
+.diff-view {
+  font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: var(--bg-alt);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.diff-line { display: block; padding: 1px 6px; border-radius: 3px; }
+.diff-line.added { background: rgba(22, 163, 74, 0.16); color: var(--success); }
+.diff-line.removed { background: rgba(186, 26, 26, 0.14); color: var(--danger); text-decoration: line-through; text-decoration-thickness: 1px; }
+.diff-line.same { color: var(--text-muted); }
+
+.diff-summary {
+  display: flex;
+  gap: 20px;
+  margin: 16px 0;
+  font-size: 0.88rem;
+}
+
+.diff-summary .added-count { color: var(--success); font-weight: 700; }
+.diff-summary .removed-count { color: var(--danger); font-weight: 700; }
+
 .cta-box {
   display: flex;
   flex-wrap: wrap;

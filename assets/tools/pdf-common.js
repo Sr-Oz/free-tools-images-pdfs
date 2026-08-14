@@ -41,6 +41,23 @@ export async function renderPageToCanvasAtScale(pdfJsDoc, pageNumber, scale) {
   return canvas;
 }
 
+export async function extractPdfPageTexts(pdfJsDoc, onProgress) {
+  const pages = [];
+  for (let i = 1; i <= pdfJsDoc.numPages; i++) {
+    if (onProgress) onProgress(i, pdfJsDoc.numPages);
+    const page = await pdfJsDoc.getPage(i);
+    const content = await page.getTextContent();
+    let text = "";
+    for (const item of content.items) {
+      if (typeof item.str !== "string") continue;
+      text += item.str;
+      text += item.hasEOL ? "\n" : " ";
+    }
+    pages.push(text.trim());
+  }
+  return pages;
+}
+
 export function parsePageRanges(input, pageCount) {
   const result = new Set();
   const parts = input.split(",").map((p) => p.trim()).filter(Boolean);

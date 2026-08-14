@@ -31,10 +31,19 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Images to PDF | `/images-to-pdf/` | Combine JPG/PNG images into a single PDF |
 | PDF to Images | `/pdf-to-images/` | Export every page as a PNG or JPG |
 | Organize PDF Pages | `/organize-pdf/` | Rotate, delete and reorder pages |
+| Extract PDF Text | `/extract-pdf-text/` | Pull all text out of a PDF to copy or download as .txt |
+| Edit PDF Metadata | `/pdf-metadata/` | View and change title, author, subject and keywords |
+| Add Page Numbers | `/add-page-numbers/` | Stamp page numbers in any position and format |
+| Watermark PDF | `/watermark-pdf/` | Add a custom text watermark across every page |
+| Resize PDF Pages | `/resize-pdf-pages/` | Scale every page to A4, Letter or Legal size |
+| Crop PDF Pages | `/crop-pdf/` | Trim margins or unwanted edges from every page |
+| Compare PDFs | `/compare-pdfs/` | Diff the text of two PDF versions line by line |
+| Fill PDF Form | `/fill-pdf-form/` | Fill text fields, checkboxes and dropdowns on a PDF form |
+| Sign PDF | `/sign-pdf/` | Draw or type a signature and place it on any page |
 
 ### Coming soon (v2 backlog)
 - OCR (make scanned PDFs searchable)
-- E-signatures
+- Cryptographically verified e-signatures
 - PDF to Word / Word to PDF
 - Password protect / unlock PDF
 - PDF to Excel
