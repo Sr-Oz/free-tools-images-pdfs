@@ -125,6 +125,9 @@ img { max-width: 100%; }
 
 .logo:hover { text-decoration: none; }
 
+.logo-img { height: 28px; width: auto; display: block; }
+.footer-logo-img { height: 22px; width: auto; display: block; }
+
 .logo .mark {
   display: inline-flex;
   align-items: center;
@@ -246,6 +249,61 @@ img { max-width: 100%; }
   font-size: 0.9rem;
   color: var(--text);
 }
+
+.tagline-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(211, 50, 29, 0.1);
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Why FairGo pillars */
+.pillar-section { margin: 8px 0 48px; text-align: center; }
+.pillar-section h2 { font-size: 1.7rem; margin: 0 0 8px; }
+.pillar-section .pillar-lead { color: var(--text-muted); margin: 0 0 28px; }
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  text-align: left;
+}
+
+.pillar-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.pillar-card .glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-alt);
+  color: var(--brand);
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+
+.pillar-card h3 { margin: 0 0 8px; font-size: 1.05rem; color: var(--text); }
+.pillar-card p { margin: 0; color: var(--text-muted); font-size: 0.92rem; }
 
 /* Slogan quote */
 .slogan-quote {

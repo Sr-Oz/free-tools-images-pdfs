@@ -106,7 +106,7 @@ runBtn.addEventListener("click", async () => {
     const outBytes = await doc.save();
     const blob = new Blob([outBytes], { type: "application/pdf" });
     triggerDownload(blob, "images.pdf");
-    setStatus(statusEl, `Done — created a ${formatBytes(blob.size)} PDF with ${files.length} page${files.length > 1 ? "s" : ""}.`, "success");
+    setStatus(statusEl, `Sorted — created a ${formatBytes(blob.size)} PDF with ${files.length} page${files.length > 1 ? "s" : ""}.`, "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");

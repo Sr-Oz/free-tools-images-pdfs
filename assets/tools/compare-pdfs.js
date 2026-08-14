@@ -132,7 +132,7 @@ runBtn.addEventListener("click", async () => {
 
     renderDiff(ops);
     resultsEl.style.display = "block";
-    setStatus(statusEl, "Done.", "success");
+    setStatus(statusEl, "Sorted!", "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");

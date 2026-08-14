@@ -88,7 +88,7 @@ runBtn.addEventListener("click", async () => {
     const bytes = await doc.save();
     const blob = new Blob([bytes], { type: "application/pdf" });
     triggerDownload(blob, `${stripExtension(currentFile.name)}-watermarked.pdf`);
-    setStatus(statusEl, `Done — watermark added (${formatBytes(blob.size)}).`, "success");
+    setStatus(statusEl, `Sorted — watermark added (${formatBytes(blob.size)}).`, "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");

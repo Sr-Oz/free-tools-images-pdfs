@@ -122,7 +122,7 @@
       }
     }
 
-    setStatus(statusEl, `Done — ${successCount} of ${files.length} image${files.length > 1 ? "s" : ""} converted.`, "success");
+    setStatus(statusEl, `Sorted — ${successCount} of ${files.length} image${files.length > 1 ? "s" : ""} converted.`, "success");
     runBtn.disabled = false;
   });
 })();

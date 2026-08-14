@@ -1,7 +1,7 @@
-# Free Online Tools for Images and PDFs
+# FairGo PDF
 
-Free, no-signup, privacy-first browser tools for common image and PDF tasks — compress, convert,
-resize, merge, split, and more.
+No worries, PDF tools done right. Free, no-signup, privacy-first browser tools for common image and
+PDF tasks — compress, convert, resize, merge, split, and more.
 
 **Your files never leave your browser.** Every tool runs entirely as client-side JavaScript. There
 is no backend, no upload, and no server that ever sees your files — you could disconnect from the
@@ -30,7 +30,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Compress PDF | `/compress-pdf/` | Reduce PDF file size (quick clean or strong/rasterized) |
 | Images to PDF | `/images-to-pdf/` | Combine JPG/PNG images into a single PDF |
 | PDF to Images | `/pdf-to-images/` | Export every page as a PNG or JPG |
-| Organize PDF Pages | `/organize-pdf/` | Rotate, delete and reorder pages |
+| Organise PDF Pages | `/organize-pdf/` | Rotate, delete and reorder pages |
 | Extract PDF Text | `/extract-pdf-text/` | Pull all text out of a PDF to copy or download as .txt |
 | Edit PDF Metadata | `/pdf-metadata/` | View and change title, author, subject and keywords |
 | Add Page Numbers | `/add-page-numbers/` | Stamp page numbers in any position and format |

@@ -122,7 +122,7 @@ extractBtn.addEventListener("click", async () => {
     const bytes = await out.save();
     const blob = new Blob([bytes], { type: "application/pdf" });
     triggerDownload(blob, `${stripExtension(currentFile.name)}-pages.pdf`);
-    setStatus(statusEl, `Done — extracted ${pages.length} page${pages.length > 1 ? "s" : ""} (${formatBytes(blob.size)}).`, "success");
+    setStatus(statusEl, `Sorted — extracted ${pages.length} page${pages.length > 1 ? "s" : ""} (${formatBytes(blob.size)}).`, "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");
@@ -152,7 +152,7 @@ splitEachBtn.addEventListener("click", async () => {
       triggerDownload(blob, `${stripExtension(currentFile.name)}-page-${pages[i]}.pdf`);
       await new Promise((r) => setTimeout(r, 250));
     }
-    setStatus(statusEl, `Done — downloaded ${pages.length} separate PDF file(s).`, "success");
+    setStatus(statusEl, `Sorted — downloaded ${pages.length} separate PDF file(s).`, "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");

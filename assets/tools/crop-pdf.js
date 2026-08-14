@@ -153,7 +153,7 @@ runBtn.addEventListener("click", async () => {
     const bytes = await doc.save();
     const blob = new Blob([bytes], { type: "application/pdf" });
     triggerDownload(blob, `${stripExtension(currentFile.name)}-cropped.pdf`);
-    setStatus(statusEl, `Done — cropped ${doc.getPageCount()} page${doc.getPageCount() > 1 ? "s" : ""} (${formatBytes(blob.size)}).`, "success");
+    setStatus(statusEl, `Sorted — cropped ${doc.getPageCount()} page${doc.getPageCount() > 1 ? "s" : ""} (${formatBytes(blob.size)}).`, "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");

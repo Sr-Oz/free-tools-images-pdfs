@@ -169,7 +169,7 @@
       }
     }
 
-    setStatus(statusEl, `Done — ${successCount} of ${files.length} image${files.length > 1 ? "s" : ""} resized.`, "success");
+    setStatus(statusEl, `Sorted — ${successCount} of ${files.length} image${files.length > 1 ? "s" : ""} resized.`, "success");
     runBtn.disabled = false;
   });
 })();

@@ -88,7 +88,7 @@ renderBtn.addEventListener("click", async () => {
     }
 
     downloadAllRow.style.display = renderedBlobs.length ? "flex" : "none";
-    setStatus(statusEl, `Done — rendered ${pdfJsDoc.numPages} page${pdfJsDoc.numPages > 1 ? "s" : ""}.`, "success");
+    setStatus(statusEl, `Sorted — rendered ${pdfJsDoc.numPages} page${pdfJsDoc.numPages > 1 ? "s" : ""}.`, "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");

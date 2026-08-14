@@ -91,7 +91,7 @@ runBtn.addEventListener("click", async () => {
     const outBytes = await merged.save();
     const blob = new Blob([outBytes], { type: "application/pdf" });
     triggerDownload(blob, "merged.pdf");
-    setStatus(statusEl, `Done — merged ${files.length} PDFs into one file (${formatBytes(blob.size)}).`, "success");
+    setStatus(statusEl, `Sorted — merged ${files.length} PDFs into one file (${formatBytes(blob.size)}).`, "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "could not merge these PDFs."}`, "error");

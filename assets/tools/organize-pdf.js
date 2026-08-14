@@ -164,7 +164,7 @@ saveBtn.addEventListener("click", async () => {
     const bytes = await out.save();
     const blob = new Blob([bytes], { type: "application/pdf" });
     triggerDownload(blob, `${stripExtension(currentFile.name)}-organized.pdf`);
-    setStatus(statusEl, `Done — saved ${remaining.length} page(s) (${formatBytes(blob.size)}).`, "success");
+    setStatus(statusEl, `Sorted — saved ${remaining.length} page(s) (${formatBytes(blob.size)}).`, "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");

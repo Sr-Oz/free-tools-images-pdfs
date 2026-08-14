@@ -40,7 +40,7 @@ initDropzone(dropzone, fileInput, async (files) => {
     pagesText = await extractText(bytes);
     renderOutput();
     editor.style.display = "block";
-    setStatus(statusEl, `Done — extracted text from ${pagesText.length} page${pagesText.length > 1 ? "s" : ""}.`, "success");
+    setStatus(statusEl, `Sorted — extracted text from ${pagesText.length} page${pagesText.length > 1 ? "s" : ""}.`, "success");
     statusEl.classList.add("visible");
   } catch (err) {
     console.error(err);

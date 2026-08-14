@@ -132,7 +132,7 @@
       }
     }
 
-    setStatus(statusEl, `Done — ${successCount} of ${files.length} image${files.length > 1 ? "s" : ""} compressed.`, "success");
+    setStatus(statusEl, `Sorted — ${successCount} of ${files.length} image${files.length > 1 ? "s" : ""} compressed.`, "success");
     runBtn.disabled = false;
   });
 })();

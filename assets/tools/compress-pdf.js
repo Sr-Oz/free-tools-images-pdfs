@@ -114,7 +114,7 @@ runBtn.addEventListener("click", async () => {
     resultItem.appendChild(dlBtn);
     resultsEl.classList.add("visible");
 
-    setStatus(statusEl, savings > 0 ? `Done — reduced file size by ${savings}%.` : "Done — this PDF was already well optimized.", "success");
+    setStatus(statusEl, savings > 0 ? `Sorted — reduced file size by ${savings}%.` : "Sorted — this PDF was already well optimized.", "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");
