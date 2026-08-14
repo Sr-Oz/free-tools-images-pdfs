@@ -44,6 +44,7 @@ processing (format conversion beyond what browsers support natively) — they're
 v1 on purpose. If you want to tackle one, see [Contributing](CONTRIBUTING.md).
 
 ### Other pages
+- [Blog](/blog/) — how-to guides for the tools above
 - [FAQ](/faq/) — common questions about privacy, cost, file limits and browser support
 - [Privacy Policy](/privacy-policy/) — what data is (and isn't) collected
 
