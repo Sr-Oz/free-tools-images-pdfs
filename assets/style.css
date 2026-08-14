@@ -738,7 +738,7 @@ img { max-width: 100%; }
 
 .info-section p {
   text-align: justify;
-  text-align-last: justify;
+  text-align-last: left;
   hyphens: auto;
 }
 
