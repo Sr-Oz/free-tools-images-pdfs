@@ -1,41 +1,46 @@
 /* Free Online Tools for Images and PDFs — shared styles */
 
+/* Golden Wattle Modern: --brand is the Deep Eucalyptus Teal (#004D40),
+   matching the Southern Cross mark; --accent is the vibrant wattle gold
+   (#FFD700), reserved for badges, gradients and text on dark backgrounds
+   (it fails contrast as body text on the light --bg, so it's never used
+   for that here). */
 :root {
   --bg: #f9f9f7;
   --bg-alt: #f4f4f2;
   --text: #1c1b1b;
-  --text-muted: #6b5854;
-  --border: #e6d9d5;
-  --brand: #d3321d;
-  --brand-dark: #a6331d;
+  --text-muted: #5a6b64;
+  --border: #dde5e2;
+  --brand: #004D40;
+  --brand-dark: #00332B;
   --brand-contrast: #ffffff;
-  --accent: #ffcf67;
+  --accent: #FFD700;
   --success: #16a34a;
   --danger: #ba1a1a;
-  --card-shadow: 0 1px 2px rgba(80, 30, 20, 0.05), 0 8px 24px rgba(80, 30, 20, 0.08);
+  --card-shadow: 0 1px 2px rgba(0, 77, 64, 0.05), 0 8px 24px rgba(0, 77, 64, 0.08);
   --radius: 10px;
   --max-width: 1080px;
-  --footer-gradient: linear-gradient(90deg, #ffcf67 0%, #d3321d 100%);
-  --band-bg: #241f1e;
-  --band-bg-alt: #2c2422;
-  --band-text: #f3ece9;
-  --band-text-muted: #cbb3ac;
-  --band-border: #4a3934;
+  --footer-gradient: linear-gradient(90deg, #FFD700 0%, #004D40 100%);
+  --band-bg: #1B1C1C;
+  --band-bg-alt: #262727;
+  --band-text: #f2f2f2;
+  --band-text-muted: #b9bdbc;
+  --band-border: #3a3b3b;
 }
 
 /* Dark mode: opt-in only, via the toggle in the header (adds
    data-theme="dark" to <html> and remembers the choice in localStorage).
    The site does not follow the OS/browser preference automatically. */
 :root[data-theme="dark"] {
-  --bg: #241f1e;
-  --bg-alt: #2c2422;
-  --text: #f3ece9;
-  --text-muted: #cbb3ac;
-  --border: #4a3934;
-  --brand: #ffb4a6;
-  --brand-dark: #ffcf9e;
-  --brand-contrast: #3c0802;
-  --accent: #ffcf67;
+  --bg: #1B1C1C;
+  --bg-alt: #262727;
+  --text: #f2f2f2;
+  --text-muted: #b9bdbc;
+  --border: #3a3b3b;
+  --brand: #4ECDC4;
+  --brand-dark: #7EE8DA;
+  --brand-contrast: #052e26;
+  --accent: #FFD700;
   --success: #4ade80;
   --danger: #ffb4a6;
   --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -50,7 +55,7 @@ html, body {
 
 body {
   position: relative;
-  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
@@ -394,7 +399,7 @@ img { max-width: 100%; }
   margin-bottom: 18px;
   padding: 6px 16px;
   border-radius: 999px;
-  background: rgba(211, 50, 29, 0.1);
+  background: rgba(0, 77, 64, 0.1);
   color: var(--brand);
   font-weight: 700;
   font-size: 0.85rem;
@@ -525,7 +530,7 @@ img { max-width: 100%; }
 }
 
 .tool-card:hover {
-  box-shadow: 0 16px 32px -8px rgba(211, 50, 29, 0.22), 0 4px 12px rgba(211, 50, 29, 0.12);
+  box-shadow: 0 16px 32px -8px rgba(0, 77, 64, 0.22), 0 4px 12px rgba(0, 77, 64, 0.12);
   border-color: var(--brand);
   text-decoration: none;
   transform: translateY(-4px) scale(1.015);
@@ -636,7 +641,7 @@ img { max-width: 100%; }
 
 .blog-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px -8px rgba(211, 50, 29, 0.18), 0 4px 12px rgba(211, 50, 29, 0.1);
+  box-shadow: 0 16px 32px -8px rgba(0, 77, 64, 0.18), 0 4px 12px rgba(0, 77, 64, 0.1);
   border-color: var(--brand);
   text-decoration: none;
 }
@@ -668,12 +673,12 @@ img { max-width: 100%; }
   overflow: hidden;
 }
 
-.blog-grid .blog-card:nth-child(6n+1) .visual { background: linear-gradient(135deg, #d3321d, #a6331d); }
-.blog-grid .blog-card:nth-child(6n+2) .visual { background: linear-gradient(135deg, #ffcf67, #e6a93d); color: #5a3d00; }
-.blog-grid .blog-card:nth-child(6n+3) .visual { background: linear-gradient(135deg, #e67e22, #c2410c); }
-.blog-grid .blog-card:nth-child(6n+4) .visual { background: linear-gradient(135deg, #a6331d, #7f1d1d); }
-.blog-grid .blog-card:nth-child(6n+5) .visual { background: linear-gradient(135deg, #8b5e3c, #6b4226); }
-.blog-grid .blog-card:nth-child(6n+6) .visual { background: linear-gradient(135deg, #ca8a04, #854d0e); }
+.blog-grid .blog-card:nth-child(6n+1) .visual { background: linear-gradient(135deg, #004D40, #00332B); }
+.blog-grid .blog-card:nth-child(6n+2) .visual { background: linear-gradient(135deg, #FFD700, #FFCC00); color: #1B1C1C; }
+.blog-grid .blog-card:nth-child(6n+3) .visual { background: linear-gradient(135deg, #337066, #004D40); }
+.blog-grid .blog-card:nth-child(6n+4) .visual { background: linear-gradient(135deg, #3A3B3B, #1B1C1C); }
+.blog-grid .blog-card:nth-child(6n+5) .visual { background: linear-gradient(135deg, #FFCC00, #C9A200); color: #1B1C1C; }
+.blog-grid .blog-card:nth-child(6n+6) .visual { background: linear-gradient(135deg, #00332B, #1B1C1C); }
 
 .blog-meta {
   display: block;
@@ -711,12 +716,12 @@ img { max-width: 100%; }
 .tool-card:hover .icon { transform: scale(1.12) rotate(-4deg); }
 
 /* Cycle a warm accent per card so the grid doesn't read as monochrome. */
-.tool-grid .tool-card:nth-child(6n+1) .icon { background: rgba(211, 50, 29, 0.12); color: #d3321d; }
-.tool-grid .tool-card:nth-child(6n+2) .icon { background: rgba(255, 207, 103, 0.28); color: #8a5a00; }
-.tool-grid .tool-card:nth-child(6n+3) .icon { background: rgba(230, 126, 34, 0.16); color: #c2410c; }
-.tool-grid .tool-card:nth-child(6n+4) .icon { background: rgba(166, 51, 29, 0.14); color: #7f1d1d; }
-.tool-grid .tool-card:nth-child(6n+5) .icon { background: rgba(139, 94, 60, 0.16); color: #6b4226; }
-.tool-grid .tool-card:nth-child(6n+6) .icon { background: rgba(202, 138, 4, 0.16); color: #854d0e; }
+.tool-grid .tool-card:nth-child(6n+1) .icon { background: rgba(0, 77, 64, 0.12); color: #004D40; }
+.tool-grid .tool-card:nth-child(6n+2) .icon { background: rgba(255, 215, 0, 0.28); color: #8a6d00; }
+.tool-grid .tool-card:nth-child(6n+3) .icon { background: rgba(51, 112, 102, 0.18); color: #337066; }
+.tool-grid .tool-card:nth-child(6n+4) .icon { background: rgba(27, 28, 28, 0.1); color: #1B1C1C; }
+.tool-grid .tool-card:nth-child(6n+5) .icon { background: rgba(255, 204, 0, 0.22); color: #7a5f00; }
+.tool-grid .tool-card:nth-child(6n+6) .icon { background: rgba(0, 51, 43, 0.14); color: #00332B; }
 
 .tool-card h3 {
   margin: 0 0 6px;
@@ -962,7 +967,7 @@ img { max-width: 100%; }
   color: var(--brand-contrast);
   font-size: 0.95rem;
   font-weight: 700;
-  box-shadow: 0 20px 25px -5px rgba(211, 50, 29, 0.18), 0 8px 10px -6px rgba(211, 50, 29, 0.16);
+  box-shadow: 0 20px 25px -5px rgba(0, 77, 64, 0.18), 0 8px 10px -6px rgba(0, 77, 64, 0.16);
   cursor: pointer;
   transition: background 0.15s ease, opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -970,7 +975,7 @@ img { max-width: 100%; }
 .btn:hover {
   background: var(--brand-dark);
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 24px 32px -8px rgba(211, 50, 29, 0.32), 0 10px 14px -6px rgba(211, 50, 29, 0.22);
+  box-shadow: 0 24px 32px -8px rgba(0, 77, 64, 0.32), 0 10px 14px -6px rgba(0, 77, 64, 0.22);
 }
 .btn:active { transform: translateY(0) scale(0.98); }
 .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
