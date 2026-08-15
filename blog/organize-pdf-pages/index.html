@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 <title>How to Rotate, Delete and Reorder PDF Pages | FairGo PDF</title>
 <meta name="description" content="How to fix a sideways scan, drop a blank page, or reorder a PDF's pages without redoing the whole document — free and in your browser.">
 <link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/blog/organize-pdf-pages/">
@@ -27,19 +28,29 @@
 </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img"></a>
-    <nav class="nav-links">
-      <a href="/#image-tools">Image Tools</a>
-      <a href="/#pdf-tools">PDF Tools</a>
-      <a href="/blog/">Blog</a>
-    </nav>
+    <div class="header-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="/#image-tools">Image Tools</a>
+        <a href="/#pdf-tools">PDF Tools</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="main-content">
+<div class="scroll-progress" id="scrollProgress"></div>
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Organise PDF</span>
@@ -51,6 +62,10 @@
 
     <div class="tool-workspace" style="max-width: 720px;">
       <p class="byline">Published 14 August 2026 · 3 min read</p>
+      <button class="copy-link-btn" type="button">
+        <span class="material-symbols-outlined" aria-hidden="true">link</span>
+        <span class="copy-link-label">Copy link</span>
+      </button>
       <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
         <p>
           Every scanner app produces the occasional sideways page, blank cover sheet, or pages saved
@@ -141,6 +156,10 @@
   </div>
 </footer>
 
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+</button>
+
+<script src="/assets/site.js"></script>
 </body>
 </html>

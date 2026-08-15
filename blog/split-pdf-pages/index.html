@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 <title>How to Split a PDF Into Separate Pages | FairGo PDF</title>
 <meta name="description" content="How to extract specific pages from a PDF or break a whole document into individual page files, plus the page-range syntax and where the tool's limits are.">
 <link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/blog/split-pdf-pages/">
@@ -34,19 +35,29 @@
 </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img"></a>
-    <nav class="nav-links">
-      <a href="/#image-tools">Image Tools</a>
-      <a href="/#pdf-tools">PDF Tools</a>
-      <a href="/blog/">Blog</a>
-    </nav>
+    <div class="header-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="/#image-tools">Image Tools</a>
+        <a href="/#pdf-tools">PDF Tools</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="main-content">
+<div class="scroll-progress" id="scrollProgress"></div>
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Split PDF</span>
@@ -58,6 +69,10 @@
 
     <div class="tool-workspace" style="max-width: 720px;">
       <p class="byline">Published 14 August 2026 · 5 min read</p>
+      <button class="copy-link-btn" type="button">
+        <span class="material-symbols-outlined" aria-hidden="true">link</span>
+        <span class="copy-link-label">Copy link</span>
+      </button>
       <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
         <p>
           Sometimes you don't want a whole PDF — you want page 4 out of a 40-page contract, or you
@@ -208,6 +223,10 @@
   </div>
 </footer>
 
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+</button>
+
+<script src="/assets/site.js"></script>
 </body>
 </html>

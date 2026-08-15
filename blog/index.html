@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 <title>Blog | FairGo PDF</title>
 <meta name="description" content="Practical, honest guides for working with PDFs and images — how to merge, split, compress and organise files, all client-side in your browser.">
 <link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/blog/">
@@ -20,19 +21,28 @@
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img"></a>
-    <nav class="nav-links">
-      <a href="/#image-tools">Image Tools</a>
-      <a href="/#pdf-tools">PDF Tools</a>
-      <a href="/blog/">Blog</a>
-    </nav>
+    <div class="header-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="/#image-tools">Image Tools</a>
+        <a href="/#pdf-tools">PDF Tools</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="sep">/</span><span class="current">Blog</span>
@@ -192,6 +202,10 @@
   </div>
 </footer>
 
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+</button>
+
+<script src="/assets/site.js"></script>
 </body>
 </html>

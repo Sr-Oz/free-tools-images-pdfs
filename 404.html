@@ -3,22 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 <title>Page not found | FairGo PDF</title>
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img"></a>
+    <div class="header-right">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+    </div>
   </div>
 </header>
-<main>
+<main id="main-content">
   <div class="container" style="text-align:center; padding: 80px 20px;">
     <h1>404 — Page not found</h1>
     <p style="color:var(--text-muted); margin-bottom:24px;">That tool or page doesn't exist.</p>
     <a class="btn" href="/">Back to all tools</a>
   </div>
 </main>
+<script src="/assets/site.js"></script>
 </body>
 </html>
