@@ -385,7 +385,6 @@ img { max-width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 20px;
   padding: 8px 16px;
   border-radius: 999px;
   background: var(--bg-alt);
@@ -396,7 +395,6 @@ img { max-width: 100%; }
 
 .tagline-badge {
   display: inline-block;
-  margin-bottom: 18px;
   padding: 6px 16px;
   border-radius: 999px;
   background: rgba(0, 77, 64, 0.1);
@@ -412,6 +410,15 @@ img { max-width: 100%; }
   justify-content: center;
   gap: 12px;
   margin-top: 24px;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 /* Why FairGo pillars */
@@ -448,21 +455,6 @@ img { max-width: 100%; }
 
 .pillar-card h3 { margin: 0 0 8px; font-size: 1.05rem; color: var(--text); }
 .pillar-card p { margin: 0; color: var(--text-muted); font-size: 0.92rem; }
-
-/* Slogan quote */
-.slogan-quote {
-  max-width: 640px;
-  margin: 0 auto 32px;
-  padding: 20px 24px;
-  text-align: center;
-  border-left: 3px solid var(--brand);
-  background: var(--bg-alt);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  font-style: italic;
-  color: var(--text);
-  font-size: 1.02rem;
-  line-height: 1.5;
-}
 
 /* Trust signals */
 .trust-signals {
