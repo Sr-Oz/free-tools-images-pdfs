@@ -381,20 +381,9 @@ img { max-width: 100%; }
   margin: 0 auto;
 }
 
-.privacy-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  font-size: 0.9rem;
-  color: var(--text);
-}
-
 .tagline-badge {
   display: inline-block;
+  margin-top: 20px;
   padding: 6px 16px;
   border-radius: 999px;
   background: rgba(0, 77, 64, 0.1);
@@ -410,15 +399,6 @@ img { max-width: 100%; }
   justify-content: center;
   gap: 12px;
   margin-top: 24px;
-}
-
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 20px;
 }
 
 /* Why FairGo pillars */
@@ -1396,7 +1376,7 @@ img { max-width: 100%; }
 @media print {
   .site-header, .site-footer, .back-to-top, .skip-link, .scroll-progress,
   .dropzone, .actions-row, .btn, .copy-link-btn, .status-box,
-  .privacy-badge, .hero-ctas, .terminal-box {
+  .hero-ctas, .terminal-box {
     display: none !important;
   }
 
