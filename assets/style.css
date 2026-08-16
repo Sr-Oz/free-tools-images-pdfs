@@ -133,6 +133,14 @@ img { max-width: 100%; }
 .logo-img { height: 28px; width: auto; display: block; }
 .footer-logo-img { height: 22px; width: auto; display: block; }
 
+/* Header sits on var(--bg), which flips dark in dark mode — the logo SVG
+   is a static image (no CSS var inheritance), so swap the whole asset
+   instead of trying to recolor it. Footer's background never changes
+   with the theme, so it doesn't need this. */
+.logo-img-dark { display: none; }
+:root[data-theme="dark"] .logo-img-light { display: none; }
+:root[data-theme="dark"] .logo-img-dark { display: block; }
+
 .logo .mark {
   display: inline-flex;
   align-items: center;
