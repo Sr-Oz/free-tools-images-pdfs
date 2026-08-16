@@ -18,9 +18,14 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Tool | URL | What it does |
 |---|---|---|
 | Compress Image | `/compress-image/` | Reduce JPEG/PNG/WebP file size with a quality slider |
-| Convert Image Format | `/convert-image/` | Convert between PNG, JPG and WebP |
+| Convert Image Format | `/convert-image/` | Convert between PNG, JPG, WebP, GIF, BMP and SVG |
 | Resize Image | `/resize-image/` | Resize by exact pixel dimensions or by percentage |
 | Crop & Rotate Image | `/crop-rotate-image/` | Rotate, flip, and drag-to-crop |
+| Add Border to Image | `/add-border-to-image/` | Add a solid colour frame around one or more images |
+| Image Color Filters | `/image-color-filters/` | Grayscale, sepia, brightness, contrast and saturation |
+| Round Corners / Circle Crop | `/round-corners-image/` | Round an image's corners or crop it to a circle |
+| Watermark Image | `/watermark-image/` | Stamp custom text across one or more images |
+| Social Media Cropper | `/social-media-cropper/` | Crop to exact Instagram/X/YouTube/LinkedIn/Facebook sizes |
 
 ### PDF tools
 | Tool | URL | What it does |

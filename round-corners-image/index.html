@@ -5,18 +5,18 @@
 <meta name="author" content="The Dato Family Labs">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
-<title>Edit PDF Metadata Online Free — Title, Author &amp; More | FairGo PDF</title>
-<meta name="description" content="View and edit a PDF's title, author, subject and keywords, free and in your browser. No upload, no signup.">
-<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/pdf-metadata/">
+<title>Round Image Corners / Circle Crop Online Free | FairGo PDF</title>
+<meta name="description" content="Round the corners of an image or crop it to a circle for free, right in your browser. No upload, no signup.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/round-corners-image/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FairGo PDF">
-<meta property="og:title" content="Edit PDF Metadata Online Free — Title, Author & More">
-<meta property="og:description" content="View and edit a PDF's title, author, subject and keywords, free and in your browser.">
-<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/pdf-metadata/">
+<meta property="og:title" content="Round Image Corners / Circle Crop Online Free">
+<meta property="og:description" content="Round the corners of an image or crop it to a circle for free, right in your browser. No upload, no signup.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/round-corners-image/">
 <meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Edit PDF Metadata Online Free — Title, Author & More">
-<meta name="twitter:description" content="View and edit a PDF's title, author, subject and keywords, free and in your browser.">
+<meta name="twitter:title" content="Round Image Corners / Circle Crop Online Free">
+<meta name="twitter:description" content="Round the corners of an image or crop it to a circle for free, right in your browser. No upload, no signup.">
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
@@ -46,48 +46,47 @@
 <main id="main-content">
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">Edit PDF Metadata</span>
+      <a href="/">Home</a><span class="sep">/</span><a href="/#image-tools">Image Tools</a><span class="sep">/</span><span class="current">Round Corners / Circle Crop</span>
     </nav>
-
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
+      {"@type":"ListItem","position":2,"name":"Image Tools","item":"https://sr-oz.github.io/free-tools-images-pdfs/#image-tools"},
+      {"@type":"ListItem","position":3,"name":"Round Corners / Circle Crop","item":"https://sr-oz.github.io/free-tools-images-pdfs/round-corners-image/"}
+    ]}
+    </script>
     <div class="tool-page-header">
-      <h1>Edit PDF Metadata</h1>
-      <p>View and edit a PDF's title, author, subject and keywords. Processed locally — nothing is uploaded.</p>
+      <h1>Round Corners / Circle Crop</h1>
+      <p>Round an image's corners or crop it to a perfect circle. Downloads as PNG to keep the transparent edges. Processed locally.</p>
     </div>
 
     <div class="tool-workspace">
-      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a PDF file or drag and drop">
-        <div class="dz-icon"><span class="material-symbols-outlined">info</span></div>
-        <div class="dz-title">Drop your PDF here, easy as.</div>
-        <div class="dz-sub">One PDF file</div>
-        <input type="file" id="fileInput" accept="application/pdf">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose an image or drag and drop">
+        <div class="dz-icon"><span class="material-symbols-outlined">rounded_corner</span></div>
+        <div class="dz-title">Drop your image here, easy as.</div>
+        <div class="dz-sub">JPEG, PNG or WebP · one image at a time</div>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
       </div>
 
       <div id="editor" style="display:none;">
-        <div class="controls-row" style="flex-direction:column; align-items:stretch;">
+        <div class="preview-stage" id="previewStage">
+          <canvas id="displayCanvas"></canvas>
+        </div>
+
+        <div class="radio-group" style="margin:16px 0;">
+          <label><input type="radio" name="shape" value="rounded" checked> Rounded corners</label>
+          <label><input type="radio" name="shape" value="circle"> Circle crop</label>
+        </div>
+
+        <div class="controls-row" id="radiusField">
           <div class="field">
-            <label for="metaTitle">Title</label>
-            <input type="text" id="metaTitle" style="width:100%;">
-          </div>
-          <div class="field">
-            <label for="metaAuthor">Author</label>
-            <input type="text" id="metaAuthor" style="width:100%;">
-          </div>
-          <div class="field">
-            <label for="metaSubject">Subject</label>
-            <input type="text" id="metaSubject" style="width:100%;">
-          </div>
-          <div class="field">
-            <label for="metaKeywords">Keywords (comma-separated)</label>
-            <input type="text" id="metaKeywords" style="width:100%;">
-          </div>
-          <div class="field">
-            <label for="metaCreator">Creator application</label>
-            <input type="text" id="metaCreator" style="width:100%;">
+            <label for="radius">Corner radius (<span id="radiusVal">40</span>px)</label>
+            <input type="range" id="radius" min="0" max="300" value="40">
           </div>
         </div>
-        <p class="help-text">"Producer" isn't shown here because pdf-lib always overwrites it on save with its own signature — editing it wouldn't stick.</p>
+
         <div class="actions-row">
-          <button class="btn" id="saveBtn">Save PDF</button>
+          <button class="btn" id="runBtn">Apply &amp; Download PNG</button>
           <button class="btn secondary" id="clearBtn">Start over</button>
         </div>
       </div>
@@ -98,14 +97,15 @@
     <section class="info-section">
       <h2>How it works</h2>
       <ol>
-        <li>Add a PDF file — its current metadata loads into the fields below.</li>
-        <li>Edit any field you want to change (leave others as-is).</li>
-        <li>Click "Save PDF" to download the updated file.</li>
+        <li>Add a JPEG, PNG or WebP image.</li>
+        <li>Choose rounded corners (and a radius) or a circle crop.</li>
+        <li>Click "Apply &amp; Download PNG" — the area outside the shape is transparent.</li>
       </ol>
       <h2>Related tools</h2>
       <ul>
-        <li><a href="/extract-pdf-text/">Extract PDF Text</a></li>
-        <li><a href="/watermark-pdf/">Watermark PDF</a></li>
+        <li><a href="/crop-rotate-image/">Crop &amp; Rotate Image</a></li>
+        <li><a href="/social-media-cropper/">Social Media Cropper</a></li>
+        <li><a href="/add-border-to-image/">Add Border to Image</a></li>
       </ul>
     </section>
   </div>
@@ -167,7 +167,7 @@
 </button>
 
 <script src="/assets/tools.js"></script>
-<script type="module" src="/assets/tools/pdf-metadata.js"></script>
+<script src="/assets/tools/round-corners-image.js"></script>
 <script src="/assets/site.js"></script>
 </body>
 </html>

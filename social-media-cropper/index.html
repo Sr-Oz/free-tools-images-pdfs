@@ -5,18 +5,18 @@
 <meta name="author" content="The Dato Family Labs">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
-<title>Edit PDF Metadata Online Free — Title, Author &amp; More | FairGo PDF</title>
-<meta name="description" content="View and edit a PDF's title, author, subject and keywords, free and in your browser. No upload, no signup.">
-<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/pdf-metadata/">
+<title>Social Media Image Cropper Online Free | FairGo PDF</title>
+<meta name="description" content="Crop images to Instagram, Facebook, X/Twitter, YouTube and LinkedIn sizes for free, right in your browser. No upload, no signup.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/social-media-cropper/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FairGo PDF">
-<meta property="og:title" content="Edit PDF Metadata Online Free — Title, Author & More">
-<meta property="og:description" content="View and edit a PDF's title, author, subject and keywords, free and in your browser.">
-<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/pdf-metadata/">
+<meta property="og:title" content="Social Media Image Cropper Online Free">
+<meta property="og:description" content="Crop images to Instagram, Facebook, X/Twitter, YouTube and LinkedIn sizes for free, right in your browser. No upload, no signup.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/social-media-cropper/">
 <meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Edit PDF Metadata Online Free — Title, Author & More">
-<meta name="twitter:description" content="View and edit a PDF's title, author, subject and keywords, free and in your browser.">
+<meta name="twitter:title" content="Social Media Image Cropper Online Free">
+<meta name="twitter:description" content="Crop images to Instagram, Facebook, X/Twitter, YouTube and LinkedIn sizes for free, right in your browser. No upload, no signup.">
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
@@ -46,48 +46,71 @@
 <main id="main-content">
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">Edit PDF Metadata</span>
+      <a href="/">Home</a><span class="sep">/</span><a href="/#image-tools">Image Tools</a><span class="sep">/</span><span class="current">Social Media Cropper</span>
     </nav>
-
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
+      {"@type":"ListItem","position":2,"name":"Image Tools","item":"https://sr-oz.github.io/free-tools-images-pdfs/#image-tools"},
+      {"@type":"ListItem","position":3,"name":"Social Media Cropper","item":"https://sr-oz.github.io/free-tools-images-pdfs/social-media-cropper/"}
+    ]}
+    </script>
     <div class="tool-page-header">
-      <h1>Edit PDF Metadata</h1>
-      <p>View and edit a PDF's title, author, subject and keywords. Processed locally — nothing is uploaded.</p>
+      <h1>Social Media Cropper</h1>
+      <p>Drag to crop, locked to the exact size each platform wants. Processed locally — nothing is uploaded.</p>
     </div>
 
     <div class="tool-workspace">
-      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a PDF file or drag and drop">
-        <div class="dz-icon"><span class="material-symbols-outlined">info</span></div>
-        <div class="dz-title">Drop your PDF here, easy as.</div>
-        <div class="dz-sub">One PDF file</div>
-        <input type="file" id="fileInput" accept="application/pdf">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose an image or drag and drop">
+        <div class="dz-icon"><span class="material-symbols-outlined">photo_size_select_large</span></div>
+        <div class="dz-title">Drop your image here, easy as.</div>
+        <div class="dz-sub">JPEG, PNG or WebP · one image at a time</div>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
       </div>
 
       <div id="editor" style="display:none;">
-        <div class="controls-row" style="flex-direction:column; align-items:stretch;">
-          <div class="field">
-            <label for="metaTitle">Title</label>
-            <input type="text" id="metaTitle" style="width:100%;">
-          </div>
-          <div class="field">
-            <label for="metaAuthor">Author</label>
-            <input type="text" id="metaAuthor" style="width:100%;">
-          </div>
-          <div class="field">
-            <label for="metaSubject">Subject</label>
-            <input type="text" id="metaSubject" style="width:100%;">
-          </div>
-          <div class="field">
-            <label for="metaKeywords">Keywords (comma-separated)</label>
-            <input type="text" id="metaKeywords" style="width:100%;">
-          </div>
-          <div class="field">
-            <label for="metaCreator">Creator application</label>
-            <input type="text" id="metaCreator" style="width:100%;">
+        <div class="controls-row">
+          <div class="field" style="flex:2; min-width:240px;">
+            <label for="preset">Crop for</label>
+            <select id="preset">
+              <option value="free">Free (custom, any ratio)</option>
+              <option value="ig-square" selected>Instagram Post — 1080×1080 (1:1)</option>
+              <option value="ig-portrait">Instagram Portrait — 1080×1350 (4:5)</option>
+              <option value="ig-story">Instagram Story / Reel — 1080×1920 (9:16)</option>
+              <option value="fb-cover">Facebook Cover — 820×312</option>
+              <option value="x-post">X / Twitter Post — 1200×675 (16:9)</option>
+              <option value="yt-thumb">YouTube Thumbnail — 1280×720 (16:9)</option>
+              <option value="li-banner">LinkedIn Banner — 1584×396 (4:1)</option>
+            </select>
           </div>
         </div>
-        <p class="help-text">"Producer" isn't shown here because pdf-lib always overwrites it on save with its own signature — editing it wouldn't stick.</p>
+
+        <div class="crop-stage" id="cropStage">
+          <canvas id="displayCanvas"></canvas>
+          <div class="crop-box" id="cropBox">
+            <div class="crop-handle nw" data-handle="nw"></div>
+            <div class="crop-handle ne" data-handle="ne"></div>
+            <div class="crop-handle sw" data-handle="sw"></div>
+            <div class="crop-handle se" data-handle="se"></div>
+          </div>
+        </div>
+
+        <p class="help-text" id="dimsReadout"></p>
+
+        <div class="controls-row">
+          <div class="field">
+            <label for="format">Output format</label>
+            <select id="format">
+              <option value="keep">Keep original format</option>
+              <option value="image/jpeg">JPEG</option>
+              <option value="image/png">PNG</option>
+              <option value="image/webp">WebP</option>
+            </select>
+          </div>
+        </div>
+
         <div class="actions-row">
-          <button class="btn" id="saveBtn">Save PDF</button>
+          <button class="btn" id="runBtn">Crop &amp; Download</button>
           <button class="btn secondary" id="clearBtn">Start over</button>
         </div>
       </div>
@@ -98,14 +121,15 @@
     <section class="info-section">
       <h2>How it works</h2>
       <ol>
-        <li>Add a PDF file — its current metadata loads into the fields below.</li>
-        <li>Edit any field you want to change (leave others as-is).</li>
-        <li>Click "Save PDF" to download the updated file.</li>
+        <li>Add an image.</li>
+        <li>Pick a platform preset (or Free for any ratio) — the crop box locks to that shape.</li>
+        <li>Drag the box, then click "Crop &amp; Download". Preset crops export at the platform's exact pixel size.</li>
       </ol>
       <h2>Related tools</h2>
       <ul>
-        <li><a href="/extract-pdf-text/">Extract PDF Text</a></li>
-        <li><a href="/watermark-pdf/">Watermark PDF</a></li>
+        <li><a href="/crop-rotate-image/">Crop &amp; Rotate Image</a></li>
+        <li><a href="/round-corners-image/">Round Corners / Circle Crop</a></li>
+        <li><a href="/resize-image/">Resize Image</a></li>
       </ul>
     </section>
   </div>
@@ -167,7 +191,7 @@
 </button>
 
 <script src="/assets/tools.js"></script>
-<script type="module" src="/assets/tools/pdf-metadata.js"></script>
+<script src="/assets/tools/social-media-cropper.js"></script>
 <script src="/assets/site.js"></script>
 </body>
 </html>

@@ -1344,6 +1344,22 @@ img { max-width: 100%; }
 
 .crop-stage canvas { display: block; width: 100%; height: auto; }
 
+.preview-stage {
+  position: relative;
+  max-width: 100%;
+  margin: 20px 0;
+  background:
+    linear-gradient(45deg, #80808022 25%, transparent 25%, transparent 75%, #80808022 75%),
+    linear-gradient(45deg, #80808022 25%, transparent 25%, transparent 75%, #80808022 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.preview-stage canvas { display: block; width: 100%; height: auto; }
+
 .crop-box {
   position: absolute;
   border: 2px solid var(--brand);
