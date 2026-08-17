@@ -1284,6 +1284,21 @@ img { max-width: 100%; }
   max-width: 30ch;
 }
 
+.footer-support-cta {
+  margin-top: 12px !important;
+  max-width: 34ch !important;
+  opacity: 1 !important;
+}
+
+.footer-support-cta a {
+  color: #fff9f2;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-support-cta a:hover { color: var(--accent, #FFD700); }
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 249, 242, 0.25);
   padding-top: 20px;

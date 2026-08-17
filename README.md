@@ -60,6 +60,10 @@ v1 on purpose. If you want to tackle one, see [Contributing](CONTRIBUTING.md).
 ### Other pages
 - [Blog](/blog/) — how-to guides for the tools above
 - [FAQ](/faq/) — common questions about privacy, cost, file limits and browser support
+- [Support](/support/) — optional one-off or recurring support via Stripe. **The Stripe Payment Link
+  URLs on this page are placeholders (`href="#"`)** — create real ones in your Stripe Dashboard
+  (Payment Links → New, no backend required) and swap them into `support/index.html` before this
+  page goes live.
 - [Privacy Policy](/privacy-policy/) — what data is (and isn't) collected
 
 ## Tech stack
