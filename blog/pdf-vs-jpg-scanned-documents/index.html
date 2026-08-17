@@ -31,9 +31,9 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"Does converting a scanned image to PDF make it searchable?","acceptedAnswer":{"@type":"Answer","text":"No. Wrapping an image in a PDF just gives it page structure — it doesn't add a text layer. Making a scan searchable requires OCR (optical character recognition), which is a separate, heavier process this site doesn't currently offer."}},
+  {"@type":"Question","name":"Does converting a scanned image to PDF make it searchable?","acceptedAnswer":{"@type":"Answer","text":"No. Wrapping an image in a PDF just gives it page structure, it doesn't add a text layer. Making a scan searchable requires OCR (optical character recognition), which is a separate, heavier process this site doesn't currently offer."}},
   {"@type":"Question","name":"Which format produces a smaller file?","acceptedAnswer":{"@type":"Answer","text":"For a single page, a JPG is usually a bit smaller than a PDF wrapping the same image, because a PDF carries some container overhead. For multiple pages, a single PDF is far more efficient and manageable than several separate JPGs."}},
-  {"@type":"Question","name":"Can I combine multiple JPGs into one PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes — that's exactly what the Images to PDF tool does: add your JPG or PNG files, put them in order, and it produces a single multi-page PDF."}}
+  {"@type":"Question","name":"Can I combine multiple JPGs into one PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes, that's exactly what the Images to PDF tool does: add your JPG or PNG files, put them in order, and it produces a single multi-page PDF."}}
 ]}
 </script>
 </head>
@@ -78,27 +78,27 @@
       </button>
       <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
         <p>
-          You've just scanned a document with your phone — a contract, an ID, a receipt — and the app
+          You've just scanned a document with your phone, a contract, an ID, a receipt, and the app
           asks whether to save it as a PDF or a JPG. It's a small decision that's easy to get wrong,
           because the two formats aren't really competing for the same job.
         </p>
 
         <h2>What each format is actually for</h2>
         <p>
-          A <strong>JPG</strong> is a single image. It has no concept of "pages" — if you scan a
+          A <strong>JPG</strong> is a single image. It has no concept of "pages", if you scan a
           three-page document as JPGs, you end up with three separate image files with no structure
           tying them together.
         </p>
         <p>
           A <strong>PDF</strong> is a document container. It can hold one page or a hundred, and while
-          it's often used to wrap scanned images, it isn't inherently an image format at all — it can
+          it's often used to wrap scanned images, it isn't inherently an image format at all, it can
           also hold real, selectable text, vector graphics, and metadata like a title or author.
         </p>
 
         <h2>When JPG makes sense</h2>
         <p>
           Stick with JPG when you're scanning a single page and the destination specifically wants an
-          image — a website upload field that asks for a "photo of your ID," for instance, or when the
+          image, a website upload field that asks for a "photo of your ID," for instance, or when the
           scan is going straight into another image-editing workflow. JPG is also marginally smaller
           than a PDF wrapping the same single image, since a PDF carries a small amount of container
           overhead.
@@ -107,7 +107,7 @@
         <h2>When PDF makes sense</h2>
         <p>
           Reach for PDF as soon as more than one page is involved, or when the document needs to look
-          "official" — application forms, contracts, and anything you might print later tend to expect
+          "official", application forms, contracts, and anything you might print later tend to expect
           a PDF. It also prints far more predictably than an image: a PDF page has a defined size,
           while an image's print size depends on the resolution it was scanned at and how the printer
           driver interprets it.
@@ -117,7 +117,7 @@
         <p>
           PNG rarely comes up in this comparison, but it's worth a mention: it's lossless, so a scan
           saved as PNG keeps every pixel exactly as scanned, with none of JPG's compression artifacts
-          around sharp text or barcode lines. The cost is file size — a PNG scan is typically several
+          around sharp text or barcode lines. The cost is file size, a PNG scan is typically several
           times larger than an equivalent JPG. For a receipt with a barcode you might need to scan
           again later, or a document where crisp text really matters, PNG can be worth the extra size.
           For the everyday case of "I need to send this document somewhere," JPG's smaller size
@@ -127,7 +127,7 @@
         <h2>A mistake worth avoiding: re-saving a JPG repeatedly</h2>
         <p>
           JPG compression is lossy, and that loss compounds. If you scan to JPG, open it, make a small
-          edit, and save as JPG again — and repeat that a few times — each save throws away a little
+          edit, and save as JPG again, and repeat that a few times, each save throws away a little
           more detail, and the artifacts visibly build up around text and edges. A PDF that embeds a
           JPG once and is then only merged, split, or reorganized (without re-rendering the image)
           doesn't have this problem, which is one more reason multi-step document workflows tend to
@@ -139,9 +139,9 @@
           Going from images to a PDF or back is quick either way:
         </p>
         <ul>
-          <li><a href="/images-to-pdf/">Images to PDF</a> — add one or more JPG/PNG files, reorder
+          <li><a href="/images-to-pdf/">Images to PDF</a>, add one or more JPG/PNG files, reorder
             them, and get a single PDF.</li>
-          <li><a href="/pdf-to-images/">PDF to Images</a> — turn each page of a PDF back into its own
+          <li><a href="/pdf-to-images/">PDF to Images</a>, turn each page of a PDF back into its own
             PNG or JPG at a resolution you choose.</li>
         </ul>
 
@@ -153,7 +153,7 @@
         <h2>Frequently asked questions</h2>
         <details class="faq-item" open>
           <summary>Does converting a scanned image to PDF make it searchable?</summary>
-          <p>No. Wrapping an image in a PDF just gives it page structure — it doesn't add a text
+          <p>No. Wrapping an image in a PDF just gives it page structure, it doesn't add a text
             layer. Making a scan searchable requires OCR (optical character recognition), which is a
             separate, heavier process this site doesn't currently offer.</p>
         </details>
@@ -165,7 +165,7 @@
         </details>
         <details class="faq-item">
           <summary>Can I combine multiple JPGs into one PDF?</summary>
-          <p>Yes — that's exactly what the Images to PDF tool does: add your JPG or PNG files, put
+          <p>Yes, that's exactly what the Images to PDF tool does: add your JPG or PNG files, put
             them in order, and it produces a single multi-page PDF.</p>
         </details>
 
@@ -184,8 +184,8 @@
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
-        <p>Proudly built for straightforward document management — 100% client-side, nothing is ever uploaded.</p>
-        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a> — no pressure, just appreciated.</p>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a>, no pressure, just appreciated.</p>
       </div>
       <div class="footer-col">
         <h5>Image Tools</h5>

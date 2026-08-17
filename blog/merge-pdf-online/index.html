@@ -32,8 +32,8 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"Can I merge password-protected PDFs?","acceptedAnswer":{"@type":"Answer","text":"Not currently with this tool. An encrypted PDF can't be read without its password first, and password removal isn't something this tool does yet. You'd need to remove the password with another tool before merging."}},
-  {"@type":"Question","name":"Is there a limit to how many files I can merge?","acceptedAnswer":{"@type":"Answer","text":"No artificial limit. Since everything runs on your device rather than a server, the practical ceiling is your browser's available memory — for a handful of typical documents that's not something you'll run into."}},
-  {"@type":"Question","name":"Will merging reduce the quality of my PDFs?","acceptedAnswer":{"@type":"Answer","text":"No. Pages are copied into the new file exactly as they were — nothing is re-rendered or re-compressed in the process."}}
+  {"@type":"Question","name":"Is there a limit to how many files I can merge?","acceptedAnswer":{"@type":"Answer","text":"No artificial limit. Since everything runs on your device rather than a server, the practical ceiling is your browser's available memory, for a handful of typical documents that's not something you'll run into."}},
+  {"@type":"Question","name":"Will merging reduce the quality of my PDFs?","acceptedAnswer":{"@type":"Answer","text":"No. Pages are copied into the new file exactly as they were, nothing is re-rendered or re-compressed in the process."}}
 ]}
 </script>
 </head>
@@ -79,7 +79,7 @@
       <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
         <p>
           Combining scanned receipts into one file for an expense report, attaching a cover letter to
-          a resume, stitching several chapters of a report together before sending it — merging PDFs
+          a resume, stitching several chapters of a report together before sending it, merging PDFs
           is one of those small tasks that comes up constantly. It's also one people often solve badly,
           by emailing five separate attachments and letting the recipient sort them out. Here's how to
           do it properly, and what actually happens to your files when you do.
@@ -88,7 +88,7 @@
         <h2>Why merge instead of sending files separately</h2>
         <p>
           A single combined file is easier for the person on the other end: one thing to download, one
-          thing to print, one thing to file away. It also guarantees the reading order — five separate
+          thing to print, one thing to file away. It also guarantees the reading order, five separate
           attachments can get opened, printed, or reviewed in any order, while a merged PDF reads top
           to bottom exactly as you arranged it.
         </p>
@@ -104,7 +104,7 @@
 
         <h2>What actually happens to the content</h2>
         <p>
-          Merging doesn't re-render or re-compress anything — each page is copied into the new file
+          Merging doesn't re-render or re-compress anything, each page is copied into the new file
           exactly as it existed in the source PDF, using the open-source
           <a href="https://pdf-lib.js.org/" target="_blank" rel="noopener">pdf-lib</a> library. Text
           stays selectable if it was selectable before, images stay at their original resolution, and
@@ -114,7 +114,7 @@
         <p>
           One thing that doesn't carry over: if any of your source PDFs have a bookmarks panel or
           table-of-contents outline (the clickable sidebar some PDF readers show for jumping between
-          sections), that navigation structure isn't preserved in the merged file — only the page
+          sections), that navigation structure isn't preserved in the merged file, only the page
           content itself is. For most everyday documents that's not something you'll notice, but it's
           worth knowing if you're merging something like a long reference manual that relies on its
           bookmarks.
@@ -126,20 +126,19 @@
           phone's scanner app, plus a cover sheet you typed up separately. Add all four to the tool,
           drag the cover sheet to the top of the list with the ↑ button, check that the receipts are
           in a sensible order underneath it, and merge. You get one file to attach to the email instead
-          of four — and the person reading it doesn't have to guess which receipt is which by opening
+          of four, and the person reading it doesn't have to guess which receipt is which by opening
           each attachment individually.
         </p>
 
         <h2>Where this hits limits</h2>
         <ul>
           <li><strong>Password-protected PDFs can't be merged directly.</strong> The tool needs to
-            read each page to copy it, and an encrypted file can't be read without the password first
-            — that's a limitation worth knowing about rather than discovering mid-task.</li>
+            read each page to copy it, and an encrypted file can't be read without the password first, that's a limitation worth knowing about rather than discovering mid-task.</li>
           <li><strong>Order doesn't fix itself.</strong> Files merge in exactly the order shown in the
-            list. There's no automatic sort by filename or date — check the order before you click
+            list. There's no automatic sort by filename or date, check the order before you click
             merge.</li>
           <li><strong>A large combined file stays large.</strong> If the result feels too big to email,
-            that's a separate problem — run it through
+            that's a separate problem, run it through
             <a href="/compress-pdf/">Compress PDF</a> afterward rather than expecting merging to shrink
             anything.</li>
         </ul>
@@ -159,12 +158,12 @@
         <details class="faq-item">
           <summary>Is there a limit to how many files I can merge?</summary>
           <p>No artificial limit. Since everything runs on your device rather than a server, the
-            practical ceiling is your browser's available memory — for a handful of typical documents
+            practical ceiling is your browser's available memory, for a handful of typical documents
             that's not something you'll run into.</p>
         </details>
         <details class="faq-item">
           <summary>Will merging reduce the quality of my PDFs?</summary>
-          <p>No. Pages are copied into the new file exactly as they were — nothing is re-rendered or
+          <p>No. Pages are copied into the new file exactly as they were, nothing is re-rendered or
             re-compressed in the process.</p>
         </details>
 
@@ -183,8 +182,8 @@
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
-        <p>Proudly built for straightforward document management — 100% client-side, nothing is ever uploaded.</p>
-        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a> — no pressure, just appreciated.</p>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a>, no pressure, just appreciated.</p>
       </div>
       <div class="footer-col">
         <h5>Image Tools</h5>

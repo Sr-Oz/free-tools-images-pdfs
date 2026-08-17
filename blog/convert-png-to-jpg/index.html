@@ -33,7 +33,7 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"Will converting PNG to JPG reduce quality?","acceptedAnswer":{"@type":"Answer","text":"Yes, some quality loss is inherent since JPG is a lossy format. For photographic content at a high quality setting it's usually not visible to the eye; for graphics, text, or sharp edges, it's more noticeable."}},
   {"@type":"Question","name":"What happens to transparent areas when converting to JPG?","acceptedAnswer":{"@type":"Answer","text":"They get filled with a solid colour, usually white, because JPG has no alpha (transparency) channel at all. This tool does that automatically."}},
-  {"@type":"Question","name":"Can I convert a JPG back to PNG afterward?","acceptedAnswer":{"@type":"Answer","text":"Technically yes, but you won't recover any detail lost during the JPG compression — the loss only goes one direction. Converting back to PNG just locks in whatever quality the JPG already has."}}
+  {"@type":"Question","name":"Can I convert a JPG back to PNG afterward?","acceptedAnswer":{"@type":"Answer","text":"Technically yes, but you won't recover any detail lost during the JPG compression, the loss only goes one direction. Converting back to PNG just locks in whatever quality the JPG already has."}}
 ]}
 </script>
 </head>
@@ -85,13 +85,13 @@
 
         <h2>The core difference</h2>
         <p>
-          <strong>PNG</strong> is lossless — every pixel is stored exactly, with no quality
+          <strong>PNG</strong> is lossless, every pixel is stored exactly, with no quality
           degradation, and it supports transparency. That makes it the right choice for screenshots,
           logos, diagrams, and anything with sharp text or hard edges. The tradeoff is file size: PNG
           compresses well for flat-colour graphics but poorly for photographic detail.
         </p>
         <p>
-          <strong>JPG</strong> is lossy — it throws away some information to achieve much smaller file
+          <strong>JPG</strong> is lossy, it throws away some information to achieve much smaller file
           sizes, using compression tuned for photographic content (smooth gradients, lots of colour
           variation). It has no transparency support at all.
         </p>
@@ -99,11 +99,11 @@
         <h2>When converting PNG to JPG makes sense</h2>
         <ul>
           <li><strong>A photo got saved as PNG by mistake.</strong> This is common and usually
-            harmless to fix — a photographic image gains little from PNG's lossless storage but pays a
+            harmless to fix, a photographic image gains little from PNG's lossless storage but pays a
             real size penalty for it.</li>
           <li><strong>You need a smaller file for web or email</strong> and the image doesn't need
             transparency.</li>
-          <li><strong>The destination requires JPG specifically</strong> — some upload forms and
+          <li><strong>The destination requires JPG specifically</strong>, some upload forms and
             systems only accept it.</li>
         </ul>
 
@@ -114,12 +114,12 @@
             icon meant to sit on different backgrounds.</li>
           <li><strong>It's a screenshot, diagram, or anything with text or sharp edges.</strong> JPG's
             lossy compression tends to create visible fuzziness or "ringing" artifacts around hard
-            edges and small text — exactly the content PNG handles best.</li>
+            edges and small text, exactly the content PNG handles best.</li>
         </ul>
 
         <h2>How to tell which one you already have</h2>
         <p>
-          If the file extension isn't visible, the quickest check is the file properties — most
+          If the file extension isn't visible, the quickest check is the file properties, most
           operating systems show the format there. As a rule of thumb, PNGs are more common for
           anything created digitally (screenshots, exported graphics, images with transparency), while
           JPG is the default for photos straight from a camera or phone. If a "photo" is unusually
@@ -128,18 +128,18 @@
 
         <h2>Converting more than one at a time</h2>
         <p>
-          If you have a batch of PNGs to convert, you don't need to do them one by one — the tool
+          If you have a batch of PNGs to convert, you don't need to do them one by one, the tool
           accepts multiple files at once, applies the same format and quality setting to all of them,
           and gives you a download link for each result.
         </p>
 
-        <h2>What about going the other way — JPG to PNG?</h2>
+        <h2>What about going the other way, JPG to PNG?</h2>
         <p>
           This is less common, but worth addressing: converting a JPG to PNG doesn't undo any quality
           loss the JPG already has. PNG will store whatever pixels the JPG currently has losslessly
           from that point forward, but it can't reconstruct detail that JPG's compression already threw
           away. The only reason to do this conversion is if a specific tool or workflow downstream
-          requires a PNG file extension — not to "restore" quality.
+          requires a PNG file extension, not to "restore" quality.
         </p>
 
         <h2>How to convert</h2>
@@ -170,7 +170,7 @@
         </details>
         <details class="faq-item">
           <summary>Can I convert a JPG back to PNG afterward?</summary>
-          <p>Technically yes, but you won't recover any detail lost during the JPG compression — the
+          <p>Technically yes, but you won't recover any detail lost during the JPG compression, the
             loss only goes one direction. Converting back to PNG just locks in whatever quality the JPG
             already has.</p>
         </details>
@@ -190,8 +190,8 @@
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
-        <p>Proudly built for straightforward document management — 100% client-side, nothing is ever uploaded.</p>
-        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a> — no pressure, just appreciated.</p>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a>, no pressure, just appreciated.</p>
       </div>
       <div class="footer-col">
         <h5>Image Tools</h5>

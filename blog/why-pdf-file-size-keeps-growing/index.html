@@ -32,8 +32,8 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"Does deleting content from a PDF automatically shrink the file?","acceptedAnswer":{"@type":"Answer","text":"Not always. Some editors mark content as deleted without immediately rewriting the file, leaving the old data in place. A clean re-save (or running it through a tool like Quick clean) is often needed to actually reclaim the space."}},
-  {"@type":"Question","name":"Why did my file get bigger after I merged several PDFs?","acceptedAnswer":{"@type":"Answer","text":"Because merging concatenates the source files' content, including whatever overhead each one already carried. If the sources were inefficient, that carries straight over into the merged file — running a compression pass afterward can clean it up."}},
-  {"@type":"Question","name":"Can I see which page is taking up the most space in a PDF?","acceptedAnswer":{"@type":"Answer","text":"Not with this site's tools currently — there's no page-by-page size breakdown. As a rough heuristic, image-heavy or scanned pages are almost always the biggest contributors, far more than text-only pages."}}
+  {"@type":"Question","name":"Why did my file get bigger after I merged several PDFs?","acceptedAnswer":{"@type":"Answer","text":"Because merging concatenates the source files' content, including whatever overhead each one already carried. If the sources were inefficient, that carries straight over into the merged file, running a compression pass afterward can clean it up."}},
+  {"@type":"Question","name":"Can I see which page is taking up the most space in a PDF?","acceptedAnswer":{"@type":"Answer","text":"Not with this site's tools currently, there's no page-by-page size breakdown. As a rough heuristic, image-heavy or scanned pages are almost always the biggest contributors, far more than text-only pages."}}
 ]}
 </script>
 </head>
@@ -79,7 +79,7 @@
       <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
         <p>
           A PDF starts out reasonably sized, and then every time it gets edited, signed, or re-saved,
-          it somehow gets a little bigger — even when nothing about it looks different. This isn't
+          it somehow gets a little bigger, even when nothing about it looks different. This isn't
           your imagination, and it isn't random. There are a small number of concrete, well-understood
           causes.
         </p>
@@ -87,7 +87,7 @@
         <h2>The usual suspects</h2>
         <ul>
           <li><strong>Incremental updates that never get cleaned up.</strong> The PDF format supports
-            appending changes to the end of a file rather than rewriting the whole thing — many editors
+            appending changes to the end of a file rather than rewriting the whole thing, many editors
             do this by default because it's faster to save. The catch is that old, superseded versions
             of the content can be left sitting inside the file, invisible to you but still taking up
             space, until something does a full rewrite.</li>
@@ -98,7 +98,7 @@
             (say, several merged PDFs, or pages added at different times), and each one embeds its own
             copy of the same font rather than sharing one, that adds up.</li>
           <li><strong>Merging without cleaning up afterward.</strong> Combining several PDFs
-            concatenates their content, overhead included — a merged file inherits every inefficiency
+            concatenates their content, overhead included, a merged file inherits every inefficiency
             of every source file.</li>
         </ul>
 
@@ -106,7 +106,7 @@
         <p>
           The frustrating part is that none of these causes are visible from looking at the document.
           A PDF that looks identical to the version from three edits ago can be noticeably larger,
-          because the size increase is happening in data that never gets displayed — old revisions,
+          because the size increase is happening in data that never gets displayed, old revisions,
           redundant font copies, full-resolution image data hiding behind a smaller on-page display
           size. Two PDFs that look the same on screen can differ in size by an order of magnitude
           depending entirely on how they were produced and how many times they've been re-saved.
@@ -117,7 +117,7 @@
           Without a dedicated inspector, the most reliable heuristic is simple: compare page count to
           file size. A 50-page contract that's mostly typed text should be a few hundred kilobytes to
           a couple of megabytes at most. If a similarly-sized document is instead tens of megabytes,
-          scanned or embedded images are almost certainly the reason — text alone rarely accounts for
+          scanned or embedded images are almost certainly the reason, text alone rarely accounts for
           that kind of size.
         </p>
 
@@ -129,11 +129,11 @@
         <ul>
           <li>If the bloat is from repeated editing and leftover incremental-update data,
             <strong>Quick clean</strong> re-saves the file's internal structure more efficiently
-            without touching any content — text stays selectable.</li>
+            without touching any content, text stays selectable.</li>
           <li>If the bloat is from large embedded images or scans, <strong>Strong compression</strong>
             re-renders each page at a resolution and quality you choose, which is where the real size
             reduction happens for image-heavy files.</li>
-          <li>If you're not sure which cause applies, try Quick clean first — it's the lower-risk
+          <li>If you're not sure which cause applies, try Quick clean first, it's the lower-risk
             option, and if the file is still much larger than it should be afterward, that's a good
             sign the real cause is embedded images rather than leftover edit history.</li>
         </ul>
@@ -154,11 +154,11 @@
           <summary>Why did my file get bigger after I merged several PDFs?</summary>
           <p>Because merging concatenates the source files' content, including whatever overhead each
             one already carried. If the sources were inefficient, that carries straight over into the
-            merged file — running a compression pass afterward can clean it up.</p>
+            merged file, running a compression pass afterward can clean it up.</p>
         </details>
         <details class="faq-item">
           <summary>Can I see which page is taking up the most space in a PDF?</summary>
-          <p>Not with this site's tools currently — there's no page-by-page size breakdown. As a rough
+          <p>Not with this site's tools currently, there's no page-by-page size breakdown. As a rough
             heuristic, image-heavy or scanned pages are almost always the biggest contributors, far
             more than text-only pages.</p>
         </details>
@@ -178,8 +178,8 @@
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
-        <p>Proudly built for straightforward document management — 100% client-side, nothing is ever uploaded.</p>
-        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a> — no pressure, just appreciated.</p>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a>, no pressure, just appreciated.</p>
       </div>
       <div class="footer-col">
         <h5>Image Tools</h5>

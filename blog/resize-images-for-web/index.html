@@ -31,9 +31,9 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"Should I resize or compress an image first?","acceptedAnswer":{"@type":"Answer","text":"Resize first, then compress. Resizing reduces the total pixel count, which is the bigger lever for file size — compression then fine-tunes the size at that resolution."}},
-  {"@type":"Question","name":"What's the best percentage to shrink an image by?","acceptedAnswer":{"@type":"Answer","text":"There isn't a universal number — it depends entirely on the source size versus how large the image will actually display. Match the target dimensions to the real display size rather than picking an arbitrary percentage like 50%."}},
-  {"@type":"Question","name":"Will resizing fix a blurry photo?","acceptedAnswer":{"@type":"Answer","text":"No. Shrinking a soft image can make it look marginally sharper relatively, but enlarging an image will never add detail that wasn't captured in the original — it can only stretch existing pixels, which looks blurry or blocky."}}
+  {"@type":"Question","name":"Should I resize or compress an image first?","acceptedAnswer":{"@type":"Answer","text":"Resize first, then compress. Resizing reduces the total pixel count, which is the bigger lever for file size, compression then fine-tunes the size at that resolution."}},
+  {"@type":"Question","name":"What's the best percentage to shrink an image by?","acceptedAnswer":{"@type":"Answer","text":"There isn't a universal number, it depends entirely on the source size versus how large the image will actually display. Match the target dimensions to the real display size rather than picking an arbitrary percentage like 50%."}},
+  {"@type":"Question","name":"Will resizing fix a blurry photo?","acceptedAnswer":{"@type":"Answer","text":"No. Shrinking a soft image can make it look marginally sharper relatively, but enlarging an image will never add detail that wasn't captured in the original, it can only stretch existing pixels, which looks blurry or blocky."}}
 ]}
 </script>
 </head>
@@ -79,15 +79,15 @@
       <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
         <p>
           Uploading a 4000×3000 camera photo to a page that displays it at 800px wide wastes bandwidth
-          and slows the page down for no visible benefit. But resizing carelessly — or in the wrong
-          direction — can leave you with something blurry instead. Here's how to actually get it
+          and slows the page down for no visible benefit. But resizing carelessly, or in the wrong
+          direction, can leave you with something blurry instead. Here's how to actually get it
           right.
         </p>
 
         <h2>Resizing and compressing are two different levers</h2>
         <p>
           It's easy to conflate these, but they affect different things. <strong>Resizing</strong>
-          changes the pixel dimensions of the image — how many pixels wide and tall it is.
+          changes the pixel dimensions of the image, how many pixels wide and tall it is.
           <strong>Compression</strong> changes how efficiently those pixels are stored, at whatever
           dimensions they already are. Doing only one leaves savings on the table: a huge image
           compressed hard is still a huge image, and a correctly-sized image at default quality still
@@ -98,7 +98,7 @@
         <p>
           Match the image's dimensions to roughly how large it will actually be displayed, not to how
           large the source happens to be. A reasonable rule of thumb is 1.5–2× the largest size it'll
-          ever be shown at — that headroom keeps it looking sharp on high-density ("retina") screens
+          ever be shown at, that headroom keeps it looking sharp on high-density ("retina") screens
           without being wastefully large. A hero banner displayed at 1200px wide, for example, doesn't
           need a 4000px source; something in the 1800–2400px range is already more than enough.
         </p>
@@ -116,7 +116,7 @@
         <p>
           Shrinking an image (downsizing) preserves quality well, because you're discarding detail the
           image already has more of than it needs. Enlarging an image (upsizing) works the opposite
-          way — there's no missing detail to invent, so the software can only stretch and interpolate
+          way, there's no missing detail to invent, so the software can only stretch and interpolate
           the pixels that already exist, which is what produces that soft, blocky look on an enlarged
           photo. If an image is too small for where you need it, the fix is a higher-resolution source,
           not a bigger resize.
@@ -125,7 +125,7 @@
         <h2>Why locking the aspect ratio matters</h2>
         <p>
           If you type an exact width and height that don't match the image's original proportions, the
-          result gets stretched or squashed — circles become ovals, faces get subtly distorted, and
+          result gets stretched or squashed, circles become ovals, faces get subtly distorted, and
           it's often not obvious at a glance that anything's wrong. Locking the aspect ratio means
           changing one dimension automatically recalculates the other to keep the original proportions
           intact, which is what you want the overwhelming majority of the time. Only unlock it if you
@@ -152,18 +152,18 @@
         <details class="faq-item" open>
           <summary>Should I resize or compress an image first?</summary>
           <p>Resize first, then compress. Resizing reduces the total pixel count, which is the bigger
-            lever for file size — compression then fine-tunes the size at that resolution.</p>
+            lever for file size, compression then fine-tunes the size at that resolution.</p>
         </details>
         <details class="faq-item">
           <summary>What's the best percentage to shrink an image by?</summary>
-          <p>There isn't a universal number — it depends entirely on the source size versus how large
+          <p>There isn't a universal number, it depends entirely on the source size versus how large
             the image will actually display. Match the target dimensions to the real display size
             rather than picking an arbitrary percentage like 50%.</p>
         </details>
         <details class="faq-item">
           <summary>Will resizing fix a blurry photo?</summary>
           <p>No. Shrinking a soft image can make it look marginally sharper relatively, but enlarging
-            an image will never add detail that wasn't captured in the original — it can only stretch
+            an image will never add detail that wasn't captured in the original, it can only stretch
             existing pixels, which looks blurry or blocky.</p>
         </details>
 
@@ -182,8 +182,8 @@
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
-        <p>Proudly built for straightforward document management — 100% client-side, nothing is ever uploaded.</p>
-        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a> — no pressure, just appreciated.</p>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a>, no pressure, just appreciated.</p>
       </div>
       <div class="footer-col">
         <h5>Image Tools</h5>

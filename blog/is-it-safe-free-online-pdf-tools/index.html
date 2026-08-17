@@ -31,9 +31,9 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"Can I trust a tool just because it says it doesn't store my files?","acceptedAnswer":{"@type":"Answer","text":"Be a little skeptical of that phrase specifically. \"We don't store your files\" can still mean the file was uploaded, processed on a server, and then deleted — which still involved a transmission over the network. Client-side processing, where the file never leaves your device, is a stronger and more verifiable guarantee."}},
+  {"@type":"Question","name":"Can I trust a tool just because it says it doesn't store my files?","acceptedAnswer":{"@type":"Answer","text":"Be a little skeptical of that phrase specifically. \"We don't store your files\" can still mean the file was uploaded, processed on a server, and then deleted, which still involved a transmission over the network. Client-side processing, where the file never leaves your device, is a stronger and more verifiable guarantee."}},
   {"@type":"Question","name":"Does this mean cloud-based PDF tools are always unsafe?","acceptedAnswer":{"@type":"Answer","text":"No. Reputable services with clear security practices, and enterprise contracts with real accountability, can be perfectly reasonable for everyday documents. The calculus changes for genuinely sensitive material, where avoiding the upload entirely removes a whole category of risk."}},
-  {"@type":"Question","name":"How can I tell if a tool is really processing files client-side?","acceptedAnswer":{"@type":"Answer","text":"Open your browser's developer tools (F12), go to the Network tab, and use the tool while watching for any request that sends your file's data out. Or simpler: load the page, then disconnect from the internet and try using the tool — if it still works, nothing is being uploaded."}}
+  {"@type":"Question","name":"How can I tell if a tool is really processing files client-side?","acceptedAnswer":{"@type":"Answer","text":"Open your browser's developer tools (F12), go to the Network tab, and use the tool while watching for any request that sends your file's data out. Or simpler: load the page, then disconnect from the internet and try using the tool, if it still works, nothing is being uploaded."}}
 ]}
 </script>
 </head>
@@ -88,7 +88,7 @@
         <p>
           For most PDF and image tools, "online" means your file is uploaded to the provider's server,
           processed there, and the result is sent back for you to download. That means the file
-          physically leaves your device and transits the network, and it sits — even briefly — on
+          physically leaves your device and transits the network, and it sits, even briefly, on
           infrastructure you don't control. You're trusting that provider's retention policy, its
           security practices, and often its business model: a "free" service still costs something to
           run, and it's worth asking how it actually makes money.
@@ -96,12 +96,12 @@
 
         <h2>When it actually matters</h2>
         <p>
-          Not every file needs this level of caution — a public flyer or a screenshot for a forum post
+          Not every file needs this level of caution, a public flyer or a screenshot for a forum post
           isn't sensitive, and using any reasonably reputable online tool for it is fine. The calculus
           changes for anything that identifies you or exposes financial, medical, or legal
           information: tax documents, signed contracts, ID scans, medical records, anything with a
           signature or an account number on it. For those, the question isn't really "is this
-          particular provider trustworthy" — it's "why take on any upload risk at all when a
+          particular provider trustworthy", it's "why take on any upload risk at all when a
           client-side tool removes the question entirely."
         </p>
 
@@ -109,13 +109,13 @@
         <p>
           Client-side processing is a different architecture. JavaScript running in the browser tab
           you're already looking at reads the file using your device's own CPU and memory, and never
-          sends the file's contents anywhere over the network. This isn't a euphemism — it's a
+          sends the file's contents anywhere over the network. This isn't a euphemism, it's a
           verifiable technical claim, which is the important part.
         </p>
 
         <h2>How to verify a tool's claims yourself</h2>
         <p>
-          Don't just take a privacy claim on faith — most modern browsers make it easy to check:
+          Don't just take a privacy claim on faith, most modern browsers make it easy to check:
         </p>
         <ol>
           <li>Open developer tools (F12 in most browsers) and switch to the Network tab.</li>
@@ -123,8 +123,7 @@
             out that's roughly the size of your file, it's being uploaded somewhere, whatever the
             marketing copy says.</li>
           <li>Alternatively, load the tool's page fully, then disconnect from Wi-Fi or mobile data and
-            try using it. If it still works with no connection, nothing is being sent to a server —
-            it can't be, there's no connection to send it over.</li>
+            try using it. If it still works with no connection, nothing is being sent to a server, it can't be, there's no connection to send it over.</li>
         </ol>
 
         <h2>Where this site stands</h2>
@@ -135,7 +134,7 @@
           libraries, which are hosted on this site rather than fetched from a third party at runtime.
           There's no server for these tools to upload to in the first place. What data is (and isn't)
           collected beyond that is laid out plainly in the
-          <a href="/privacy-policy/">Privacy Policy</a> — as of this writing, that's nothing: no
+          <a href="/privacy-policy/">Privacy Policy</a>, as of this writing, that's nothing: no
           analytics, no accounts, no cookies.
         </p>
 
@@ -148,7 +147,7 @@
         <details class="faq-item" open>
           <summary>Can I trust a tool just because it says it doesn't store my files?</summary>
           <p>Be a little skeptical of that phrase specifically. "We don't store your files" can still
-            mean the file was uploaded, processed on a server, and then deleted — which still involved
+            mean the file was uploaded, processed on a server, and then deleted, which still involved
             a transmission over the network. Client-side processing, where the file never leaves your
             device, is a stronger and more verifiable guarantee.</p>
         </details>
@@ -163,7 +162,7 @@
           <summary>How can I tell if a tool is really processing files client-side?</summary>
           <p>Open your browser's developer tools (F12), go to the Network tab, and use the tool while
             watching for any request that sends your file's data out. Or simpler: load the page, then
-            disconnect from the internet and try using the tool — if it still works, nothing is being
+            disconnect from the internet and try using the tool, if it still works, nothing is being
             uploaded.</p>
         </details>
 
@@ -182,8 +181,8 @@
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
-        <p>Proudly built for straightforward document management — 100% client-side, nothing is ever uploaded.</p>
-        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a> — no pressure, just appreciated.</p>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <p class="footer-support-cta">Like what we're building? <a href="/support/">Shout us a coffee</a>, no pressure, just appreciated.</p>
       </div>
       <div class="footer-col">
         <h5>Image Tools</h5>
