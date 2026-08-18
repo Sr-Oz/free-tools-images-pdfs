@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="The Dato Family Labs">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>Color Picker &amp; Converter, Free and Private | FairGo PDF</title>
+<meta name="description" content="Pick a color and convert between HEX, RGB and HSL live, free and right in your browser. Nothing is stored or sent anywhere.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/color-picker/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FairGo PDF">
+<meta property="og:title" content="Color Picker & Converter, Free and Private">
+<meta property="og:description" content="Pick a color and convert between HEX, RGB and HSL live, free and right in your browser. Nothing is stored or sent anywhere.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/color-picker/">
+<meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Color Picker & Converter, Free and Private">
+<meta name="twitter:description" content="Pick a color and convert between HEX, RGB and HSL live, free and right in your browser. Nothing is stored or sent anywhere.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img logo-img-light"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="logo-img logo-img-dark"></a>
+    <div class="header-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="/#pdf-tools">PDF Tools</a>
+        <a href="/#image-tools">Image Tools</a>
+        <a href="/#utilities">Utilities</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <a href="/support/" class="header-support-btn" aria-label="Shout us a coffee, support this project">
+        <span class="material-symbols-outlined" aria-hidden="true">coffee</span>
+        <span class="header-support-btn-label">Shout a Coffee</span>
+      </a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/#utilities">Utilities</a><span class="sep">/</span><span class="current">Color Picker</span>
+    </nav>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
+      {"@type":"ListItem","position":2,"name":"Utilities","item":"https://sr-oz.github.io/free-tools-images-pdfs/#utilities"},
+      {"@type":"ListItem","position":3,"name":"Color Picker","item":"https://sr-oz.github.io/free-tools-images-pdfs/color-picker/"}
+    ]}
+    </script>
+    <div class="tool-page-header">
+      <h1>Color Picker &amp; Converter</h1>
+      <p>Pick a color and convert between HEX, RGB and HSL live. Nothing is stored or sent anywhere.</p>
+    </div>
+
+    <div class="tool-workspace">
+      <div class="controls-row" style="align-items:center;">
+        <div id="swatch" style="width:110px; height:110px; border-radius:var(--radius); border:1px solid var(--border); flex-shrink:0;"></div>
+        <div class="field" style="flex:1; min-width:180px;">
+          <label for="colorPicker">Pick a color</label>
+          <input type="color" id="colorPicker" value="#004d40" style="width:100%; height:46px; padding:2px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); cursor:pointer;">
+        </div>
+        <div class="field" id="eyedropperField" style="display:none; align-self:flex-end;">
+          <button class="btn secondary" id="eyedropperBtn" type="button">
+            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.1rem; vertical-align:-3px;">colorize</span>
+            Pick from screen
+          </button>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:16px;">
+        <label for="hexInput">HEX</label>
+        <div class="actions-row" style="margin-top:4px;">
+          <input type="text" id="hexInput" value="#004D40" style="flex:1; min-width:0; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-family:monospace; font-size:0.95rem;">
+          <button class="btn secondary small copy-btn" data-target="hexInput" type="button">Copy</button>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <div class="field" style="flex:1; min-width:220px;">
+          <label for="rInput">Red (<span id="rVal">0</span>)</label>
+          <input type="range" id="rInput" min="0" max="255" value="0">
+        </div>
+        <div class="field" style="flex:1; min-width:220px;">
+          <label for="gInput">Green (<span id="gVal">77</span>)</label>
+          <input type="range" id="gInput" min="0" max="255" value="77">
+        </div>
+        <div class="field" style="flex:1; min-width:220px;">
+          <label for="bInput">Blue (<span id="bVal">64</span>)</label>
+          <input type="range" id="bInput" min="0" max="255" value="64">
+        </div>
+      </div>
+      <div class="actions-row">
+        <input type="text" id="rgbOut" readonly style="flex:1; min-width:0; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-family:monospace; font-size:0.9rem;">
+        <button class="btn secondary small copy-btn" data-target="rgbOut" type="button">Copy</button>
+      </div>
+
+      <div class="controls-row" style="margin-top:16px;">
+        <div class="field" style="flex:1; min-width:220px;">
+          <label for="hInput">Hue (<span id="hVal">0</span>&deg;)</label>
+          <input type="range" id="hInput" min="0" max="360" value="0">
+        </div>
+        <div class="field" style="flex:1; min-width:220px;">
+          <label for="sInput">Saturation (<span id="sVal">0</span>%)</label>
+          <input type="range" id="sInput" min="0" max="100" value="0">
+        </div>
+        <div class="field" style="flex:1; min-width:220px;">
+          <label for="lInput">Lightness (<span id="lVal">0</span>%)</label>
+          <input type="range" id="lInput" min="0" max="100" value="0">
+        </div>
+      </div>
+      <div class="actions-row">
+        <input type="text" id="hslOut" readonly style="flex:1; min-width:0; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-family:monospace; font-size:0.9rem;">
+        <button class="btn secondary small copy-btn" data-target="hslOut" type="button">Copy</button>
+      </div>
+
+      <div class="status-box" id="status"></div>
+    </div>
+
+    <section class="info-section">
+      <h2>How it works</h2>
+      <ol>
+        <li>Pick a color, type a HEX code, or drag the RGB/HSL sliders, they all stay in sync.</li>
+        <li>Chrome and Edge also offer "Pick from screen", to sample any pixel on your screen.</li>
+        <li>Copy whichever format you need.</li>
+      </ol>
+      <p class="help-text">Everything runs locally, no color you pick is ever transmitted anywhere.</p>
+      <h2>Related tools</h2>
+      <div class="tool-grid related-tools-grid">
+        <a class="tool-card related-tool-card" href="/image-color-filters/">
+          <span class="icon"><span class="material-symbols-outlined">palette</span></span>
+          <h3>Image Color Filters</h3>
+        </a>
+        <a class="tool-card related-tool-card" href="/pdf-color-filters/">
+          <span class="icon"><span class="material-symbols-outlined">tonality</span></span>
+          <h3>PDF Color Filters</h3>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <div class="footer-support-cta">
+          <p>Like what we're building? No pressure, just appreciated.</p>
+          <a href="/support/" class="btn small">Shout a Coffee</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>PDF Tools</h5>
+        <a href="/merge-pdf/">Merge PDF</a>
+        <a href="/split-pdf/">Split PDF</a>
+        <a href="/compress-pdf/">Compress PDF</a>
+        <a href="/images-to-pdf/">Images to PDF</a>
+        <a href="/pdf-to-images/">PDF to Images</a>
+        <a href="/#pdf-tools" class="footer-view-all">View all PDF Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Image Tools</h5>
+        <a href="/compress-image/">Compress Image</a>
+        <a href="/convert-image/">Convert Image Format</a>
+        <a href="/resize-image/">Resize Image</a>
+        <a href="/crop-rotate-image/">Crop &amp; Rotate Image</a>
+        <a href="/add-border-to-image/">Add Border to Image</a>
+        <a href="/#image-tools" class="footer-view-all">View all Image Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Utilities</h5>
+        <a href="/convert-to-markdown/">Convert to Markdown</a>
+        <a href="/ai-writing-checker/">AI Writing Checker</a>
+        <a href="/password-generator/">Password Generator</a>
+        <a href="/qr-code-generator/">QR Code Generator</a>
+        <a href="/uuid-generator/">UUID Generator</a>
+        <a href="/#utilities" class="footer-view-all">View all Utilities &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="/blog/">Blog</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/support/">Support Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> FairGo PDF. A project built with passion and empathy by
+      <span class="attribution">The Dato Family Labs</span> in Perth, WA, Australia.
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+</button>
+
+<script src="/assets/tools.js"></script>
+<script src="/assets/tools/color-picker.js"></script>
+<script src="/assets/site.js"></script>
+</body>
+</html>

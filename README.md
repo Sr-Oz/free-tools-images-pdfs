@@ -61,6 +61,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Hash / Checksum Generator | `/hash-generator/` | Generate SHA-1/256/384/512 hashes of text or a file |
 | JSON Formatter | `/json-formatter/` | Pretty-print, minify and validate JSON |
 | Case Converter | `/case-converter/` | Convert text between UPPERCASE, lowercase, camelCase and more |
+| Color Picker & Converter | `/color-picker/` | Pick a color and convert between HEX, RGB and HSL live |
 
 ### Coming soon (v2 backlog)
 - OCR (make scanned PDFs searchable)
