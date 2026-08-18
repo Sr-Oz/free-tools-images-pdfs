@@ -56,6 +56,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Convert to Markdown | `/convert-to-markdown/` | Convert a PDF, Word (.docx) or HTML file to Markdown |
 | AI Writing Checker | `/ai-writing-checker/` | Flag AI-sounding words, filler phrases and cliché patterns in any text |
 | Password Generator | `/password-generator/` | Generate a strong random password, cryptographically secure, nothing stored or sent |
+| QR Code Generator | `/qr-code-generator/` | Turn any text or URL into a QR code, download as PNG or SVG |
 
 ### Coming soon (v2 backlog)
 - OCR (make scanned PDFs searchable)
@@ -89,6 +90,7 @@ ever down):
 - [`pdf.js`](https://mozilla.github.io/pdf.js/) — rendering PDF pages to canvas (thumbnails, PDF→images)
 - [`mammoth.js`](https://github.com/mwilliamson/mammoth.js) — converting Word (.docx) to HTML (Convert to Markdown)
 - [`turndown`](https://github.com/mixmark-io/turndown) — converting HTML to Markdown (Convert to Markdown)
+- [`qrcode-generator`](https://github.com/kazuhikoarase/qrcode-generator) — QR code encoding (QR Code Generator)
 - Native Canvas API — all image compression/conversion/resize/crop/rotate
 
 This keeps the site trivially deployable to any static host, with nothing to compile and no
