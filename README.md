@@ -49,6 +49,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Text to PDF | `/text-to-pdf/` | Turn plain text into a paginated PDF |
 | Flatten PDF | `/flatten-pdf/` | Turn fillable form fields into static, non-editable content |
 | N-Up PDF | `/n-up-pdf/` | Combine 2, 4, 6 or 9 pages onto a single sheet |
+| Alternate & Mix Pages | `/alternate-mix-pages/` | Interleave two PDFs page by page, for double-sided scan workflows |
 
 ### Utilities
 | Tool | URL | What it does |

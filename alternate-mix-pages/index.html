@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="The Dato Family Labs">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>Alternate &amp; Mix PDF Pages Online Free | FairGo PDF</title>
+<meta name="description" content="Interleave two PDFs page by page, perfect for merging single-sided scans of a double-sided document, free and right in your browser. No upload, no signup.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/alternate-mix-pages/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FairGo PDF">
+<meta property="og:title" content="Alternate & Mix PDF Pages Online Free">
+<meta property="og:description" content="Interleave two PDFs page by page, perfect for merging single-sided scans of a double-sided document, free and right in your browser. No upload, no signup.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/alternate-mix-pages/">
+<meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alternate & Mix PDF Pages Online Free">
+<meta name="twitter:description" content="Interleave two PDFs page by page, perfect for merging single-sided scans of a double-sided document, free and right in your browser. No upload, no signup.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img logo-img-light"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="logo-img logo-img-dark"></a>
+    <div class="header-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="/#pdf-tools">PDF Tools</a>
+        <a href="/#image-tools">Image Tools</a>
+        <a href="/#utilities">Utilities</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <a href="/support/" class="header-support-btn" aria-label="Shout us a coffee, support this project">
+        <span class="material-symbols-outlined" aria-hidden="true">coffee</span>
+        <span class="header-support-btn-label">Shout a Coffee</span>
+      </a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">Alternate &amp; Mix Pages</span>
+    </nav>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
+      {"@type":"ListItem","position":2,"name":"PDF Tools","item":"https://sr-oz.github.io/free-tools-images-pdfs/#pdf-tools"},
+      {"@type":"ListItem","position":3,"name":"Alternate & Mix Pages","item":"https://sr-oz.github.io/free-tools-images-pdfs/alternate-mix-pages/"}
+    ]}
+    </script>
+    <div class="tool-page-header">
+      <h1>Alternate &amp; Mix PDF Pages</h1>
+      <p>Interleave two PDFs page by page, the classic fix for a double-sided document scanned as two single-sided passes. Processed locally, nothing is uploaded.</p>
+    </div>
+
+    <div class="tool-workspace">
+      <div class="controls-row">
+        <div class="field" style="flex:1; min-width:260px;">
+          <label>File A (odd / front pages)</label>
+          <div class="dropzone" id="dropzoneA" tabindex="0" role="button" aria-label="Choose the first PDF file or drag and drop" style="margin-top:6px;">
+            <div class="dz-icon"><span class="material-symbols-outlined">shuffle</span></div>
+            <div class="dz-title" id="dzTitleA">Drop File A here, easy as.</div>
+            <div class="dz-sub" id="dzSubA">One PDF file</div>
+            <input type="file" id="fileInputA" accept="application/pdf">
+          </div>
+        </div>
+        <div class="field" style="flex:1; min-width:260px;">
+          <label>File B (even / back pages)</label>
+          <div class="dropzone" id="dropzoneB" tabindex="0" role="button" aria-label="Choose the second PDF file or drag and drop" style="margin-top:6px;">
+            <div class="dz-icon"><span class="material-symbols-outlined">shuffle</span></div>
+            <div class="dz-title" id="dzTitleB">Drop File B here, easy as.</div>
+            <div class="dz-sub" id="dzSubB">One PDF file</div>
+            <input type="file" id="fileInputB" accept="application/pdf">
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <div class="field">
+          <label><input type="checkbox" id="reverseB"> Reverse File B's page order</label>
+        </div>
+      </div>
+      <p class="help-text">Turn this on if File B was scanned back-to-front, common when you flip the whole stack over for the second pass instead of feeding it page by page.</p>
+
+      <div class="actions-row">
+        <button class="btn" id="runBtn">Interleave &amp; Download</button>
+        <button class="btn secondary" id="clearBtn">Start over</button>
+      </div>
+
+      <div class="status-box" id="status"></div>
+    </div>
+
+    <section class="info-section">
+      <h2>How it works</h2>
+      <ol>
+        <li>Add File A (the fronts) and File B (the backs).</li>
+        <li>Turn on "Reverse File B" if the second pass came out back-to-front.</li>
+        <li>Click "Interleave &amp; Download", pages come out as A1, B1, A2, B2, and so on.</li>
+      </ol>
+      <p class="help-text">If the two files have different page counts, the extra pages from the longer one are simply added at the end.</p>
+      <h2>Related tools</h2>
+      <div class="tool-grid related-tools-grid">
+        <a class="tool-card related-tool-card" href="/merge-pdf/">
+          <span class="icon"><span class="material-symbols-outlined">call_merge</span></span>
+          <h3>Merge PDF</h3>
+        </a>
+        <a class="tool-card related-tool-card" href="/organize-pdf/">
+          <span class="icon"><span class="material-symbols-outlined">reorder</span></span>
+          <h3>Organise PDF Pages</h3>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <div class="footer-support-cta">
+          <p>Like what we're building? No pressure, just appreciated.</p>
+          <a href="/support/" class="btn small">Shout a Coffee</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>PDF Tools</h5>
+        <a href="/merge-pdf/">Merge PDF</a>
+        <a href="/split-pdf/">Split PDF</a>
+        <a href="/compress-pdf/">Compress PDF</a>
+        <a href="/images-to-pdf/">Images to PDF</a>
+        <a href="/pdf-to-images/">PDF to Images</a>
+        <a href="/#pdf-tools" class="footer-view-all">View all PDF Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Image Tools</h5>
+        <a href="/compress-image/">Compress Image</a>
+        <a href="/convert-image/">Convert Image Format</a>
+        <a href="/resize-image/">Resize Image</a>
+        <a href="/crop-rotate-image/">Crop &amp; Rotate Image</a>
+        <a href="/add-border-to-image/">Add Border to Image</a>
+        <a href="/#image-tools" class="footer-view-all">View all Image Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Utilities</h5>
+        <a href="/convert-to-markdown/">Convert to Markdown</a>
+        <a href="/ai-writing-checker/">AI Writing Checker</a>
+        <a href="/password-generator/">Password Generator</a>
+        <a href="/qr-code-generator/">QR Code Generator</a>
+        <a href="/uuid-generator/">UUID Generator</a>
+        <a href="/#utilities" class="footer-view-all">View all Utilities &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="/blog/">Blog</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/support/">Support Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> FairGo PDF. A project built with passion and empathy by
+      <span class="attribution">The Dato Family Labs</span> in Perth, WA, Australia.
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+</button>
+
+<script src="/assets/tools.js"></script>
+<script type="module" src="/assets/tools/alternate-mix-pages.js"></script>
+<script src="/assets/site.js"></script>
+</body>
+</html>
