@@ -62,6 +62,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | JSON Formatter | `/json-formatter/` | Pretty-print, minify and validate JSON |
 | Case Converter | `/case-converter/` | Convert text between UPPERCASE, lowercase, camelCase and more |
 | Color Picker & Converter | `/color-picker/` | Pick a color and convert between HEX, RGB and HSL live |
+| Word & Character Counter | `/word-counter/` | Count words, characters, sentences and paragraphs, with reading time |
 
 ### Coming soon (v2 backlog)
 - OCR (make scanned PDFs searchable)
