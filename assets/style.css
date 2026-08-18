@@ -1372,6 +1372,11 @@ img { max-width: 100%; }
   font-size: 0.88rem;
 }
 
+.footer-col a.footer-view-all {
+  font-weight: 700;
+  opacity: 0.95;
+}
+
 .footer-brand .footer-logo {
   display: flex;
   align-items: center;
