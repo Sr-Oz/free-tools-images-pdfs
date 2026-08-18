@@ -1111,6 +1111,42 @@ img { max-width: 100%; }
   color: var(--text-muted);
 }
 
+.ai-flag {
+  background: rgba(255, 215, 0, 0.35);
+  border-radius: 3px;
+  padding: 0 2px;
+  cursor: help;
+}
+
+.finding-group {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.finding-group h4 {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+}
+
+.finding-group .hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.finding-chip {
+  display: inline-block;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.8rem;
+  margin: 0 6px 6px 0;
+}
+
 .note-box {
   margin: 20px 0;
   padding: 14px 16px;

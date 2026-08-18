@@ -5,18 +5,18 @@
 <meta name="author" content="The Dato Family Labs">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
-<title>Crop PDF Pages Online Free, Trim Margins | FairGo PDF</title>
-<meta name="description" content="Trim the margins of a PDF by dragging a crop box over the first page, applied to every page. Free and in your browser.">
-<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/crop-pdf/">
+<title>AI Writing Checker, Spot AI-Sounding Text Free | FairGo PDF</title>
+<meta name="description" content="Paste any text and flag AI-sounding words, filler phrases and cliché patterns, free and right in your browser. No upload, no signup, no AI model involved.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/ai-writing-checker/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FairGo PDF">
-<meta property="og:title" content="Crop PDF Pages Online Free, Trim Margins">
-<meta property="og:description" content="Trim the margins of a PDF by dragging a crop box over the first page, applied to every page.">
-<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/crop-pdf/">
+<meta property="og:title" content="AI Writing Checker, Spot AI-Sounding Text Free">
+<meta property="og:description" content="Paste any text and flag AI-sounding words, filler phrases and cliché patterns, free and right in your browser. No upload, no signup, no AI model involved.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/ai-writing-checker/">
 <meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Crop PDF Pages Online Free, Trim Margins">
-<meta name="twitter:description" content="Trim the margins of a PDF by dragging a crop box over the first page, applied to every page.">
+<meta name="twitter:title" content="AI Writing Checker, Spot AI-Sounding Text Free">
+<meta name="twitter:description" content="Paste any text and flag AI-sounding words, filler phrases and cliché patterns, free and right in your browser. No upload, no signup, no AI model involved.">
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
@@ -50,60 +50,61 @@
 <main id="main-content">
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">Crop PDF Pages</span>
+      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">AI Writing Checker</span>
     </nav>
-
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
+      {"@type":"ListItem","position":2,"name":"PDF Tools","item":"https://sr-oz.github.io/free-tools-images-pdfs/#pdf-tools"},
+      {"@type":"ListItem","position":3,"name":"AI Writing Checker","item":"https://sr-oz.github.io/free-tools-images-pdfs/ai-writing-checker/"}
+    ]}
+    </script>
     <div class="tool-page-header">
-      <h1>Crop PDF Pages</h1>
-      <p>Drag the corners to select a crop area on the first page, it's applied proportionally to every page. Processed locally.</p>
+      <h1>AI Writing Checker</h1>
+      <p>Paste any text and flag the words and phrases that make writing sound like AI wrote it. Processed locally, nothing is uploaded, and no AI model is involved.</p>
     </div>
 
     <div class="tool-workspace">
-      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a PDF file or drag and drop">
-        <div class="dz-icon"><span class="material-symbols-outlined">crop</span></div>
-        <div class="dz-title">Drop your PDF here, easy as.</div>
-        <div class="dz-sub">One PDF file</div>
-        <input type="file" id="fileInput" accept="application/pdf">
+      <div class="field">
+        <label for="inputText">Your text</label>
+        <textarea id="inputText" rows="12" placeholder="Paste a draft, an email, a blog post, anything you want checked…" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-size:0.95rem; resize:vertical;"></textarea>
       </div>
-
-      <div id="editor" style="display:none;">
-        <div class="crop-stage" id="cropStage">
-          <canvas id="displayCanvas"></canvas>
-          <div class="crop-box" id="cropBox">
-            <div class="crop-handle nw" data-handle="nw"></div>
-            <div class="crop-handle ne" data-handle="ne"></div>
-            <div class="crop-handle sw" data-handle="sw"></div>
-            <div class="crop-handle se" data-handle="se"></div>
-          </div>
-        </div>
-        <p class="help-text" id="dimsReadout"></p>
-        <p class="note-box">This crop is applied as the same proportion of each page, if your PDF's pages are different sizes, the crop area on each page will scale to match. Rows and columns of margin trimmed from the first page are trimmed the same way from every page.</p>
-        <div class="actions-row">
-          <button class="btn" id="runBtn">Crop PDF</button>
-          <button class="btn secondary" id="resetBtn">Reset crop</button>
-          <button class="btn secondary" id="clearBtn">Start over</button>
-        </div>
+      <div class="actions-row">
+        <button class="btn" id="checkBtn">Check My Writing</button>
+        <button class="btn secondary" id="clearBtn">Clear</button>
       </div>
 
       <div class="status-box" id="status"></div>
+
+      <div id="results" style="display:none;">
+        <div class="note-box" id="summaryBox" style="margin-top:0;"></div>
+
+        <div class="field">
+          <label>Highlighted text</label>
+          <div id="highlightedOutput" style="padding:14px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-size:0.95rem; line-height:1.6; white-space:pre-wrap;"></div>
+        </div>
+
+        <div id="findingsList"></div>
+      </div>
     </div>
 
     <section class="info-section">
       <h2>How it works</h2>
       <ol>
-        <li>Add a PDF file, its first page renders as a preview.</li>
-        <li>Drag the corner handles to select the area you want to keep.</li>
-        <li>Click "Crop PDF" to download the result.</li>
+        <li>Paste any piece of writing into the box above.</li>
+        <li>Click "Check My Writing" and every match is flagged right there in your browser.</li>
+        <li>Scroll down for a breakdown of what was found and why it's flagged.</li>
       </ol>
+      <p class="help-text">This checks for wordlists and phrase patterns only, there's no AI model, no server call and no data leaves your browser. It flags the mechanical stuff (banned words, filler phrases, overused em dashes, cliché structures like "it's not X, it's Y"), it can't judge tone, rhythm or whether a metaphor lands, that still needs a human read. Rules adapted from the open-source <a href="https://github.com/petergyang/no-ai-slop" target="_blank" rel="noopener">no-ai-slop</a> project by Peter Yang (MIT licensed).</p>
       <h2>Related tools</h2>
       <div class="tool-grid related-tools-grid">
-        <a class="tool-card related-tool-card" href="/resize-pdf-pages/">
-          <span class="icon"><span class="material-symbols-outlined">straighten</span></span>
-          <h3>Resize PDF Page Size</h3>
+        <a class="tool-card related-tool-card" href="/convert-to-markdown/">
+          <span class="icon"><span class="material-symbols-outlined">article</span></span>
+          <h3>Convert to Markdown</h3>
         </a>
-        <a class="tool-card related-tool-card" href="/organize-pdf/">
-          <span class="icon"><span class="material-symbols-outlined">reorder</span></span>
-          <h3>Organise PDF Pages</h3>
+        <a class="tool-card related-tool-card" href="/extract-pdf-text/">
+          <span class="icon"><span class="material-symbols-outlined">text_fields</span></span>
+          <h3>Extract PDF Text</h3>
         </a>
       </div>
     </section>
@@ -173,7 +174,7 @@
 </button>
 
 <script src="/assets/tools.js"></script>
-<script type="module" src="/assets/tools/crop-pdf.js"></script>
+<script src="/assets/tools/ai-writing-checker.js"></script>
 <script src="/assets/site.js"></script>
 </body>
 </html>
