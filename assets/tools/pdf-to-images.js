@@ -20,7 +20,7 @@ let currentBytes = null;
 let renderedBlobs = [];
 
 function updateFormatUI() {
-  qualityField.style.display = formatSelect.value === "image/jpeg" ? "flex" : "none";
+  qualityField.style.display = formatSelect.value === "image/png" ? "none" : "flex";
 }
 formatSelect.addEventListener("change", updateFormatUI);
 qualityInput.addEventListener("input", () => { qualityVal.textContent = qualityInput.value; });
@@ -65,13 +65,14 @@ renderBtn.addEventListener("click", async () => {
     const scale = Number(dpiSelect.value) / 72;
     const targetType = formatSelect.value;
     const quality = Number(qualityInput.value) / 100;
-    const ext = targetType === "image/png" ? "png" : "jpg";
+    const ext = targetType === "image/png" ? "png" : targetType === "image/webp" ? "webp" : "jpg";
 
     for (let i = 1; i <= pdfJsDoc.numPages; i++) {
       setStatus(statusEl, `Rendering page ${i} of ${pdfJsDoc.numPages}…`, "");
       const canvas = await renderPageToCanvasAtScale(pdfJsDoc, i, scale);
       const blob = await canvasToBlob(canvas, targetType, quality);
-      renderedBlobs.push({ blob, name: `${stripExtension(currentFile.name)}-page-${i}.${ext}` });
+      const name = `${stripExtension(currentFile.name)}-page-${i}.${ext}`;
+      renderedBlobs.push({ blob, name });
 
       const thumb = document.createElement("div");
       thumb.className = "page-thumb";
@@ -81,7 +82,7 @@ renderBtn.addEventListener("click", async () => {
       actions.className = "thumb-actions";
       const dlBtn = document.createElement("button");
       dlBtn.textContent = "⬇ Download";
-      dlBtn.addEventListener("click", () => triggerDownload(blob, renderedBlobs[renderedBlobs.length - 1].name));
+      dlBtn.addEventListener("click", () => triggerDownload(blob, name));
       actions.appendChild(dlBtn);
       thumb.appendChild(actions);
       pageGrid.appendChild(thumb);

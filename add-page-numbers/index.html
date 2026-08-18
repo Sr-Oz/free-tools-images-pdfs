@@ -89,11 +89,15 @@
             <input type="number" id="startNum" value="1" min="0" style="width:80px;">
           </div>
           <div class="field">
+            <label for="digits">Pad to digits</label>
+            <input type="number" id="digits" value="1" min="1" max="10" style="width:80px;">
+          </div>
+          <div class="field">
             <label for="fontSize">Font size</label>
             <input type="number" id="fontSize" value="10" min="6" max="24" style="width:80px;">
           </div>
         </div>
-        <p class="help-text">Use <code>{n}</code> for the page number and <code>{total}</code> for the total page count, e.g. "Page {n} of {total}" or just "{n}".</p>
+        <p class="help-text">Use <code>{n}</code> for the page number and <code>{total}</code> for the total page count, e.g. "Page {n} of {total}" or just "{n}". Add your own prefix or suffix text around the tokens, e.g. "DOC-{n}", and set "Pad to digits" for zero-padded Bates-style numbering like "DOC-000001".</p>
         <div class="actions-row">
           <button class="btn" id="runBtn">Add Page Numbers</button>
           <button class="btn secondary" id="clearBtn">Start over</button>
@@ -165,6 +169,10 @@
         <a href="/compare-pdfs/">Compare PDFs</a>
         <a href="/fill-pdf-form/">Fill PDF Form</a>
         <a href="/sign-pdf/">Sign PDF</a>
+        <a href="/pdf-color-filters/">PDF Color Filters</a>
+        <a href="/text-to-pdf/">Text to PDF</a>
+        <a href="/flatten-pdf/">Flatten PDF</a>
+        <a href="/n-up-pdf/">N-Up PDF</a>
       </div>
       <div class="footer-col">
         <h5>Utilities</h5>

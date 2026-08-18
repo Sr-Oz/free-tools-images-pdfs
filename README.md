@@ -34,17 +34,21 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Split PDF | `/split-pdf/` | Extract selected pages or a page range |
 | Compress PDF | `/compress-pdf/` | Reduce PDF file size (quick clean or strong/rasterized) |
 | Images to PDF | `/images-to-pdf/` | Combine JPG/PNG images into a single PDF |
-| PDF to Images | `/pdf-to-images/` | Export every page as a PNG or JPG |
-| Organise PDF Pages | `/organize-pdf/` | Rotate, delete and reorder pages |
+| PDF to Images | `/pdf-to-images/` | Export every page as a PNG, JPG or WebP |
+| Organise PDF Pages | `/organize-pdf/` | Rotate, delete, reorder, add blank pages, or reverse order |
 | Extract PDF Text | `/extract-pdf-text/` | Pull all text out of a PDF to copy or download as .txt |
-| Edit PDF Metadata | `/pdf-metadata/` | View and change title, author, subject and keywords |
-| Add Page Numbers | `/add-page-numbers/` | Stamp page numbers in any position and format |
+| Edit PDF Metadata | `/pdf-metadata/` | View, change, or clear title, author, subject and keywords |
+| Add Page Numbers | `/add-page-numbers/` | Stamp page numbers in any position/format, with zero-padding for Bates-style numbering |
 | Watermark PDF | `/watermark-pdf/` | Add a custom text watermark across every page |
 | Resize PDF Pages | `/resize-pdf-pages/` | Scale every page to A4, Letter or Legal size |
 | Crop PDF Pages | `/crop-pdf/` | Trim margins or unwanted edges from every page |
 | Compare PDFs | `/compare-pdfs/` | Diff the text of two PDF versions line by line |
 | Fill PDF Form | `/fill-pdf-form/` | Fill text fields, checkboxes and dropdowns on a PDF form |
 | Sign PDF | `/sign-pdf/` | Draw or type a signature and place it on any page |
+| PDF Color Filters | `/pdf-color-filters/` | Grayscale, invert, or adjust brightness/contrast/saturation across every page |
+| Text to PDF | `/text-to-pdf/` | Turn plain text into a paginated PDF |
+| Flatten PDF | `/flatten-pdf/` | Turn fillable form fields into static, non-editable content |
+| N-Up PDF | `/n-up-pdf/` | Combine 2, 4, 6 or 9 pages onto a single sheet |
 
 ### Utilities
 | Tool | URL | What it does |

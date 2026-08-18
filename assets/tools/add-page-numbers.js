@@ -6,6 +6,7 @@ const editor = document.getElementById("editor");
 const positionSelect = document.getElementById("position");
 const formatInput = document.getElementById("format");
 const startNumInput = document.getElementById("startNum");
+const digitsInput = document.getElementById("digits");
 const fontSizeInput = document.getElementById("fontSize");
 const runBtn = document.getElementById("runBtn");
 const clearBtn = document.getElementById("clearBtn");
@@ -49,13 +50,14 @@ runBtn.addEventListener("click", async () => {
     const pages = doc.getPages();
     const total = pages.length;
     const start = Number(startNumInput.value) || 1;
+    const digits = Math.max(1, Number(digitsInput.value) || 1);
     const fontSize = Number(fontSizeInput.value) || 10;
     const position = positionSelect.value;
     const template = formatInput.value || "{n}";
 
     pages.forEach((page, i) => {
-      const n = start + i;
-      const text = template.replace(/\{n\}/g, String(n)).replace(/\{total\}/g, String(total));
+      const n = String(start + i).padStart(digits, "0");
+      const text = template.replace(/\{n\}/g, n).replace(/\{total\}/g, String(total));
       const textWidth = font.widthOfTextAtSize(text, fontSize);
       const { width, height } = page.getSize();
 

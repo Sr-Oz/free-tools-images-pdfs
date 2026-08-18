@@ -4,13 +4,28 @@ const dropzone = document.getElementById("dropzone");
 const fileInput = document.getElementById("fileInput");
 const editor = document.getElementById("editor");
 const pageGrid = document.getElementById("pageGrid");
+const addBlankBtn = document.getElementById("addBlankBtn");
+const reverseBtn = document.getElementById("reverseBtn");
 const saveBtn = document.getElementById("saveBtn");
 const clearBtn = document.getElementById("clearBtn");
 const statusEl = document.getElementById("status");
 
 let currentFile = null;
 let currentBytes = null;
-let pages = []; // { origIndex, rotationDelta, deleted, canvas }
+let pages = []; // { origIndex, rotationDelta, deleted, canvas, isBlank }
+
+function blankThumbCanvas() {
+  const ref = pages.find((p) => !p.isBlank) || pages[0];
+  const canvas = document.createElement("canvas");
+  canvas.width = ref ? ref.canvas.width : 155;
+  canvas.height = ref ? ref.canvas.height : 200;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.strokeStyle = "#cccccc";
+  ctx.strokeRect(0.5, 0.5, canvas.width - 1, canvas.height - 1);
+  return canvas;
+}
 
 function renderGrid() {
   pageGrid.innerHTML = "";
@@ -36,25 +51,30 @@ function renderGrid() {
     const actions = document.createElement("div");
     actions.className = "thumb-actions";
 
-    const rotLeft = document.createElement("button");
-    rotLeft.textContent = "⟲";
-    rotLeft.title = "Rotate left";
-    rotLeft.setAttribute("aria-label", `Rotate page ${idx + 1} left`);
-    rotLeft.addEventListener("click", (e) => {
-      e.stopPropagation();
-      p.rotationDelta = (p.rotationDelta + 270) % 360;
-      renderGrid();
-    });
+    if (!p.isBlank) {
+      const rotLeft = document.createElement("button");
+      rotLeft.textContent = "⟲";
+      rotLeft.title = "Rotate left";
+      rotLeft.setAttribute("aria-label", `Rotate page ${idx + 1} left`);
+      rotLeft.addEventListener("click", (e) => {
+        e.stopPropagation();
+        p.rotationDelta = (p.rotationDelta + 270) % 360;
+        renderGrid();
+      });
 
-    const rotRight = document.createElement("button");
-    rotRight.textContent = "⟳";
-    rotRight.title = "Rotate right";
-    rotRight.setAttribute("aria-label", `Rotate page ${idx + 1} right`);
-    rotRight.addEventListener("click", (e) => {
-      e.stopPropagation();
-      p.rotationDelta = (p.rotationDelta + 90) % 360;
-      renderGrid();
-    });
+      const rotRight = document.createElement("button");
+      rotRight.textContent = "⟳";
+      rotRight.title = "Rotate right";
+      rotRight.setAttribute("aria-label", `Rotate page ${idx + 1} right`);
+      rotRight.addEventListener("click", (e) => {
+        e.stopPropagation();
+        p.rotationDelta = (p.rotationDelta + 90) % 360;
+        renderGrid();
+      });
+
+      actions.appendChild(rotLeft);
+      actions.appendChild(rotRight);
+    }
 
     const delBtn = document.createElement("button");
     delBtn.textContent = p.deleted ? "↺" : "✕";
@@ -66,8 +86,6 @@ function renderGrid() {
       renderGrid();
     });
 
-    actions.appendChild(rotLeft);
-    actions.appendChild(rotRight);
     actions.appendChild(delBtn);
     thumb.appendChild(actions);
 
@@ -106,7 +124,7 @@ async function loadFile(file) {
   pages = [];
   for (let i = 1; i <= pdfJsDoc.numPages; i++) {
     const canvas = await renderPageThumbCanvas(pdfJsDoc, i, 200);
-    pages.push({ origIndex: i - 1, rotationDelta: 0, deleted: false, canvas });
+    pages.push({ origIndex: i - 1, rotationDelta: 0, deleted: false, canvas, isBlank: false });
   }
   renderGrid();
   clearStatus(statusEl);
@@ -126,6 +144,17 @@ initDropzone(dropzone, fileInput, async (files) => {
     setStatus(statusEl, `Could not read that PDF: ${err.message || "unknown error"}`, "error");
     statusEl.classList.add("visible");
   }
+});
+
+addBlankBtn.addEventListener("click", () => {
+  if (!currentFile) return;
+  pages.push({ origIndex: -1, rotationDelta: 0, deleted: false, canvas: blankThumbCanvas(), isBlank: true });
+  renderGrid();
+});
+
+reverseBtn.addEventListener("click", () => {
+  pages.reverse();
+  renderGrid();
 });
 
 clearBtn.addEventListener("click", () => {
@@ -152,15 +181,20 @@ saveBtn.addEventListener("click", async () => {
   try {
     const src = await PDFLib.PDFDocument.load(currentBytes.slice());
     const out = await PDFLib.PDFDocument.create();
-    const copied = await out.copyPages(src, remaining.map((p) => p.origIndex));
-    copied.forEach((page, i) => {
-      const delta = remaining[i].rotationDelta;
-      if (delta) {
-        const current = page.getRotation().angle;
-        page.setRotation(PDFLib.degrees((current + delta) % 360));
+    const blankSize = src.getPage(0).getSize();
+
+    for (const p of remaining) {
+      if (p.isBlank) {
+        out.addPage([blankSize.width, blankSize.height]);
+        continue;
       }
-      out.addPage(page);
-    });
+      const [copied] = await out.copyPages(src, [p.origIndex]);
+      if (p.rotationDelta) {
+        const current = copied.getRotation().angle;
+        copied.setRotation(PDFLib.degrees((current + p.rotationDelta) % 360));
+      }
+      out.addPage(copied);
+    }
     const bytes = await out.save();
     const blob = new Blob([bytes], { type: "application/pdf" });
     triggerDownload(blob, `${stripExtension(currentFile.name)}-organized.pdf`);

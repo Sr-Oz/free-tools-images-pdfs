@@ -3,18 +3,14 @@ import { PDFLib } from "/assets/tools/pdf-common.js";
 const dropzone = document.getElementById("dropzone");
 const fileInput = document.getElementById("fileInput");
 const editor = document.getElementById("editor");
-const titleInput = document.getElementById("metaTitle");
-const authorInput = document.getElementById("metaAuthor");
-const subjectInput = document.getElementById("metaSubject");
-const keywordsInput = document.getElementById("metaKeywords");
-const creatorInput = document.getElementById("metaCreator");
-const saveBtn = document.getElementById("saveBtn");
-const clearAllBtn = document.getElementById("clearAllBtn");
+const fieldSummary = document.getElementById("fieldSummary");
+const runBtn = document.getElementById("runBtn");
 const clearBtn = document.getElementById("clearBtn");
 const statusEl = document.getElementById("status");
 
 let currentFile = null;
 let currentBytes = null;
+let fieldCount = 0;
 
 initDropzone(dropzone, fileInput, async (files) => {
   const pdf = files.find((f) => f.type === "application/pdf" || f.name.toLowerCase().endsWith(".pdf"));
@@ -27,11 +23,10 @@ initDropzone(dropzone, fileInput, async (files) => {
   try {
     currentBytes = new Uint8Array(await pdf.arrayBuffer());
     const doc = await PDFLib.PDFDocument.load(currentBytes.slice());
-    titleInput.value = doc.getTitle() || "";
-    authorInput.value = doc.getAuthor() || "";
-    subjectInput.value = doc.getSubject() || "";
-    keywordsInput.value = doc.getKeywords() || "";
-    creatorInput.value = doc.getCreator() || "";
+    fieldCount = doc.getForm().getFields().length;
+    fieldSummary.textContent = fieldCount > 0
+      ? `Found ${fieldCount} form field${fieldCount > 1 ? "s" : ""} in this PDF.`
+      : "No form fields found in this PDF, there's nothing to flatten.";
     editor.style.display = "block";
     clearStatus(statusEl);
   } catch (err) {
@@ -41,44 +36,37 @@ initDropzone(dropzone, fileInput, async (files) => {
   }
 });
 
-clearAllBtn.addEventListener("click", () => {
-  titleInput.value = "";
-  authorInput.value = "";
-  subjectInput.value = "";
-  keywordsInput.value = "";
-  creatorInput.value = "";
-});
-
 clearBtn.addEventListener("click", () => {
   currentFile = null;
   currentBytes = null;
+  fieldCount = 0;
   editor.style.display = "none";
   fileInput.value = "";
   clearStatus(statusEl);
 });
 
-saveBtn.addEventListener("click", async () => {
+runBtn.addEventListener("click", async () => {
   if (!currentFile) return;
-  saveBtn.disabled = true;
-  setStatus(statusEl, "Saving…", "");
+  if (fieldCount === 0) {
+    setStatus(statusEl, "Nothing to flatten, this PDF has no form fields.", "error");
+    statusEl.classList.add("visible");
+    return;
+  }
+  runBtn.disabled = true;
+  setStatus(statusEl, "Flattening…", "");
   statusEl.classList.add("visible");
+
   try {
     const doc = await PDFLib.PDFDocument.load(currentBytes.slice());
-    doc.setTitle(titleInput.value);
-    doc.setAuthor(authorInput.value);
-    doc.setSubject(subjectInput.value);
-    const keywords = keywordsInput.value.split(",").map((k) => k.trim()).filter(Boolean);
-    doc.setKeywords(keywords);
-    doc.setCreator(creatorInput.value);
-    doc.setModificationDate(new Date());
+    doc.getForm().flatten();
     const bytes = await doc.save();
     const blob = new Blob([bytes], { type: "application/pdf" });
-    triggerDownload(blob, `${stripExtension(currentFile.name)}-metadata.pdf`);
-    setStatus(statusEl, `Sorted — saved (${formatBytes(blob.size)}).`, "success");
+    triggerDownload(blob, `${stripExtension(currentFile.name)}-flattened.pdf`);
+    setStatus(statusEl, `Sorted — flattened ${fieldCount} field${fieldCount > 1 ? "s" : ""} (${formatBytes(blob.size)}).`, "success");
   } catch (err) {
     console.error(err);
     setStatus(statusEl, `Something went wrong: ${err.message || "unknown error"}`, "error");
   } finally {
-    saveBtn.disabled = false;
+    runBtn.disabled = false;
   }
 });
