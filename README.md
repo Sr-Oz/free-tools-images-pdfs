@@ -37,8 +37,6 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | PDF to Images | `/pdf-to-images/` | Export every page as a PNG or JPG |
 | Organise PDF Pages | `/organize-pdf/` | Rotate, delete and reorder pages |
 | Extract PDF Text | `/extract-pdf-text/` | Pull all text out of a PDF to copy or download as .txt |
-| Convert to Markdown | `/convert-to-markdown/` | Convert a PDF, Word (.docx) or HTML file to Markdown |
-| AI Writing Checker | `/ai-writing-checker/` | Flag AI-sounding words, filler phrases and cliché patterns in any text |
 | Edit PDF Metadata | `/pdf-metadata/` | View and change title, author, subject and keywords |
 | Add Page Numbers | `/add-page-numbers/` | Stamp page numbers in any position and format |
 | Watermark PDF | `/watermark-pdf/` | Add a custom text watermark across every page |
@@ -47,6 +45,13 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Compare PDFs | `/compare-pdfs/` | Diff the text of two PDF versions line by line |
 | Fill PDF Form | `/fill-pdf-form/` | Fill text fields, checkboxes and dropdowns on a PDF form |
 | Sign PDF | `/sign-pdf/` | Draw or type a signature and place it on any page |
+
+### Utilities
+| Tool | URL | What it does |
+|---|---|---|
+| Convert to Markdown | `/convert-to-markdown/` | Convert a PDF, Word (.docx) or HTML file to Markdown |
+| AI Writing Checker | `/ai-writing-checker/` | Flag AI-sounding words, filler phrases and cliché patterns in any text |
+| Password Generator | `/password-generator/` | Generate a strong random password, cryptographically secure, nothing stored or sent |
 
 ### Coming soon (v2 backlog)
 - OCR (make scanned PDFs searchable)
