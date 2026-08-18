@@ -1075,6 +1075,11 @@ img { max-width: 100%; }
   margin-top: 8px;
 }
 
+[contenteditable][data-placeholder]:empty:before {
+  content: attr(data-placeholder);
+  color: var(--text-muted);
+}
+
 .note-box {
   margin: 20px 0;
   padding: 14px 16px;
