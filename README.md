@@ -57,6 +57,10 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | AI Writing Checker | `/ai-writing-checker/` | Flag AI-sounding words, filler phrases and cliché patterns in any text |
 | Password Generator | `/password-generator/` | Generate a strong random password, cryptographically secure, nothing stored or sent |
 | QR Code Generator | `/qr-code-generator/` | Turn any text or URL into a QR code, download as PNG or SVG |
+| UUID Generator | `/uuid-generator/` | Generate random v4 UUIDs, one or in bulk |
+| Hash / Checksum Generator | `/hash-generator/` | Generate SHA-1/256/384/512 hashes of text or a file |
+| JSON Formatter | `/json-formatter/` | Pretty-print, minify and validate JSON |
+| Case Converter | `/case-converter/` | Convert text between UPPERCASE, lowercase, camelCase and more |
 
 ### Coming soon (v2 backlog)
 - OCR (make scanned PDFs searchable)

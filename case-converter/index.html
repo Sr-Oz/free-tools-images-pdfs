@@ -5,18 +5,18 @@
 <meta name="author" content="The Dato Family Labs">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
-<title>Compress Image Online Free, JPEG, PNG, WebP | FairGo PDF</title>
-<meta name="description" content="Compress JPEG, PNG or WebP images online for free. Adjustable quality, no upload, everything runs in your browser.">
-<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/compress-image/">
+<title>Case Converter, Free and Private | FairGo PDF</title>
+<meta name="description" content="Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case and more, free and right in your browser.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/case-converter/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FairGo PDF">
-<meta property="og:title" content="Compress Image Online Free, JPEG, PNG, WebP">
-<meta property="og:description" content="Compress JPEG, PNG or WebP images online for free. Adjustable quality, no upload, everything runs in your browser.">
-<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/compress-image/">
+<meta property="og:title" content="Case Converter, Free and Private">
+<meta property="og:description" content="Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case and more, free and right in your browser.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/case-converter/">
 <meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Compress Image Online Free, JPEG, PNG, WebP">
-<meta name="twitter:description" content="Compress JPEG, PNG or WebP images online for free. Adjustable quality, no upload, everything runs in your browser.">
+<meta name="twitter:title" content="Case Converter, Free and Private">
+<meta name="twitter:description" content="Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case and more, free and right in your browser.">
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
@@ -51,80 +51,61 @@
 <main id="main-content">
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="sep">/</span><a href="/#image-tools">Image Tools</a><span class="sep">/</span><span class="current">Compress Image</span>
+      <a href="/">Home</a><span class="sep">/</span><a href="/#utilities">Utilities</a><span class="sep">/</span><span class="current">Case Converter</span>
     </nav>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
       {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
-      {"@type":"ListItem","position":2,"name":"Image Tools","item":"https://sr-oz.github.io/free-tools-images-pdfs/#image-tools"},
-      {"@type":"ListItem","position":3,"name":"Compress Image","item":"https://sr-oz.github.io/free-tools-images-pdfs/compress-image/"}
+      {"@type":"ListItem","position":2,"name":"Utilities","item":"https://sr-oz.github.io/free-tools-images-pdfs/#utilities"},
+      {"@type":"ListItem","position":3,"name":"Case Converter","item":"https://sr-oz.github.io/free-tools-images-pdfs/case-converter/"}
     ]}
     </script>
     <div class="tool-page-header">
-      <h1>Compress Image</h1>
-      <p>Reduce the file size of JPEG, PNG or WebP images with an adjustable quality slider. Processed entirely on your device, nothing is uploaded.</p>
+      <h1>Case Converter</h1>
+      <p>Convert text between UPPERCASE, lowercase, Title Case, camelCase and more. Nothing is stored or sent anywhere.</p>
     </div>
 
     <div class="tool-workspace">
-      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose images or drag and drop">
-        <div class="dz-icon"><span class="material-symbols-outlined">compress</span></div>
-        <div class="dz-title">Drop your images here, easy as.</div>
-        <div class="dz-sub">JPEG, PNG or WebP · multiple files supported</div>
-        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple>
+      <div class="field">
+        <label for="caseText">Text</label>
+        <textarea id="caseText" rows="8" placeholder="Type or paste text here…" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-size:0.95rem; resize:vertical;"></textarea>
       </div>
 
-      <ul class="file-list" id="fileList"></ul>
-
-      <div class="controls-row" id="controls" style="display:none;">
-        <div class="field">
-          <label for="quality">Quality (<span id="qualityVal">80</span>%)</label>
-          <input type="range" id="quality" min="10" max="100" value="80">
-        </div>
-        <div class="field">
-          <label for="format">Output format</label>
-          <select id="format">
-            <option value="keep">Keep original format</option>
-            <option value="image/jpeg">JPEG</option>
-            <option value="image/webp">WebP</option>
-            <option value="image/png">PNG (lossless)</option>
-          </select>
-        </div>
+      <div class="actions-row">
+        <button class="btn secondary case-btn" data-case="upper" type="button">UPPERCASE</button>
+        <button class="btn secondary case-btn" data-case="lower" type="button">lowercase</button>
+        <button class="btn secondary case-btn" data-case="title" type="button">Title Case</button>
+        <button class="btn secondary case-btn" data-case="sentence" type="button">Sentence case</button>
+        <button class="btn secondary case-btn" data-case="camel" type="button">camelCase</button>
+        <button class="btn secondary case-btn" data-case="pascal" type="button">PascalCase</button>
+        <button class="btn secondary case-btn" data-case="snake" type="button">snake_case</button>
+        <button class="btn secondary case-btn" data-case="kebab" type="button">kebab-case</button>
       </div>
-
-      <div class="actions-row" id="actionsRow" style="display:none;">
-        <button class="btn" id="runBtn">Compress Images</button>
-        <button class="btn secondary" id="clearBtn">Clear</button>
+      <div class="actions-row">
+        <button class="btn" id="copyBtn" type="button">Copy</button>
+        <button class="btn secondary" id="clearBtn" type="button">Clear</button>
       </div>
-
-      <p class="help-text" id="pngNote" style="display:none;">PNG is a lossless format, so the quality slider won't shrink it much. For a bigger reduction, switch the output format to WebP or JPEG.</p>
 
       <div class="status-box" id="status"></div>
-
-      <div class="results" id="results">
-        <div id="resultItems"></div>
-      </div>
     </div>
 
     <section class="info-section">
       <h2>How it works</h2>
       <ol>
-        <li>Add one or more JPEG, PNG or WebP images.</li>
-        <li>Pick a quality level and, optionally, a different output format.</li>
-        <li>Click "Compress Images" and download each result individually.</li>
+        <li>Type or paste any text.</li>
+        <li>Click a case style, the text updates in place.</li>
+        <li>Copy the result.</li>
       </ol>
+      <p class="help-text">Works out spaces from existing separators (spaces, hyphens, underscores) and from camelCase/PascalCase boundaries in your input, so you can convert between any of these styles, not just from plain text.</p>
       <h2>Related tools</h2>
       <div class="tool-grid related-tools-grid">
-        <a class="tool-card related-tool-card" href="/convert-image/">
-          <span class="icon"><span class="material-symbols-outlined">sync_alt</span></span>
-          <h3>Convert Image Format</h3>
+        <a class="tool-card related-tool-card" href="/json-formatter/">
+          <span class="icon"><span class="material-symbols-outlined">data_object</span></span>
+          <h3>JSON Formatter</h3>
         </a>
-        <a class="tool-card related-tool-card" href="/resize-image/">
-          <span class="icon"><span class="material-symbols-outlined">aspect_ratio</span></span>
-          <h3>Resize Image</h3>
-        </a>
-        <a class="tool-card related-tool-card" href="/images-to-pdf/">
-          <span class="icon"><span class="material-symbols-outlined">picture_as_pdf</span></span>
-          <h3>Images to PDF</h3>
+        <a class="tool-card related-tool-card" href="/ai-writing-checker/">
+          <span class="icon"><span class="material-symbols-outlined">spellcheck</span></span>
+          <h3>AI Writing Checker</h3>
         </a>
       </div>
     </section>
@@ -189,7 +170,7 @@
 </button>
 
 <script src="/assets/tools.js"></script>
-<script src="/assets/tools/compress-image.js"></script>
+<script src="/assets/tools/case-converter.js"></script>
 <script src="/assets/site.js"></script>
 </body>
 </html>
