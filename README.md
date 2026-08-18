@@ -50,6 +50,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Flatten PDF | `/flatten-pdf/` | Turn fillable form fields into static, non-editable content |
 | N-Up PDF | `/n-up-pdf/` | Combine 2, 4, 6 or 9 pages onto a single sheet |
 | Alternate & Mix Pages | `/alternate-mix-pages/` | Interleave two PDFs page by page, for double-sided scan workflows |
+| PDF Booklet Maker | `/pdf-booklet/` | Reorder pages into booklet (saddle-stitch) order for print, fold and staple |
 
 ### Utilities
 | Tool | URL | What it does |
