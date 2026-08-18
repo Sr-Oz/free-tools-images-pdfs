@@ -62,11 +62,18 @@
     </script>
     <div class="tool-page-header">
       <h1>Word &amp; Character Counter</h1>
-      <p>Count words, characters, sentences and paragraphs as you type. Nothing is stored or sent anywhere.</p>
+      <p>Count words, characters, sentences and paragraphs, type directly or drop in a PDF, Word doc or .txt file. Nothing is stored or sent anywhere.</p>
     </div>
 
     <div class="tool-workspace">
-      <div class="field">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a PDF, Word or text file or drag and drop">
+        <div class="dz-icon"><span class="material-symbols-outlined">upload_file</span></div>
+        <div class="dz-title">Drop a PDF, Word doc or .txt file here, easy as.</div>
+        <div class="dz-sub">or paste text below</div>
+        <input type="file" id="fileInput" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain">
+      </div>
+
+      <div class="field" style="margin-top:16px;">
         <label for="counterText">Text</label>
         <textarea id="counterText" rows="12" placeholder="Type or paste text here…" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-size:0.95rem; resize:vertical;"></textarea>
       </div>
@@ -108,11 +115,11 @@
     <section class="info-section">
       <h2>How it works</h2>
       <ol>
-        <li>Type or paste any text.</li>
-        <li>Every count updates live as you type.</li>
+        <li>Type or paste any text, or drop in a PDF, Word (.docx) or .txt file.</li>
+        <li>Every count updates live.</li>
         <li>Reading time is estimated at 200 words per minute.</li>
       </ol>
-      <p class="help-text">Everything runs locally, nothing you type is ever transmitted anywhere.</p>
+      <p class="help-text">Everything runs locally, nothing you type or upload is ever transmitted anywhere. PDF text extraction is best-effort, it won't pull text from a scanned image without OCR.</p>
       <h2>Related tools</h2>
       <div class="tool-grid related-tools-grid">
         <a class="tool-card related-tool-card" href="/case-converter/">
@@ -185,8 +192,9 @@
   <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
 </button>
 
+<script src="/assets/vendor/mammoth.browser.min.js"></script>
 <script src="/assets/tools.js"></script>
-<script src="/assets/tools/word-counter.js"></script>
+<script type="module" src="/assets/tools/word-counter.js"></script>
 <script src="/assets/site.js"></script>
 </body>
 </html>
