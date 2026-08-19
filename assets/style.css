@@ -444,18 +444,6 @@ img { max-width: 100%; }
   margin-top: 24px;
 }
 
-/* Why FairGo pillars */
-.pillar-section { margin: 8px 0 48px; text-align: center; }
-.pillar-section h2 { font-size: 1.7rem; margin: 0 0 8px; }
-.pillar-section .pillar-lead { color: var(--text-muted); margin: 0 0 28px; }
-
-.pillar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-  text-align: left;
-}
-
 .pillar-card {
   padding: 24px;
   border: 1px solid var(--border);
