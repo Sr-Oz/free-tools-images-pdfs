@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="The Dato Family Labs">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>How to Actually Redact a PDF (Not Just Draw a Black Box) | FairGo PDF</title>
+<meta name="description" content="Why drawing a black rectangle over text in a PDF doesn't remove it, and how to redact a PDF properly so the underlying content is genuinely gone, free and in your browser.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/blog/how-to-redact-a-pdf/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="FairGo PDF">
+<meta property="og:title" content="How to Actually Redact a PDF (Not Just Draw a Black Box)">
+<meta property="og:description" content="Why drawing a black rectangle over text in a PDF doesn't remove it, and how to redact a PDF properly so the underlying content is genuinely gone.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/blog/how-to-redact-a-pdf/">
+<meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Actually Redact a PDF (Not Just Draw a Black Box)">
+<meta name="twitter:description" content="Why drawing a black rectangle over text in a PDF doesn't remove it, and how to redact a PDF properly so the underlying content is genuinely gone.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+"author":{"@type":"Organization","name":"The Dato Family Labs"},
+"publisher":{"@type":"Organization","name":"The Dato Family Labs"},
+"headline":"How to Actually Redact a PDF (Not Just Draw a Black Box)",
+"datePublished":"2026-08-20","dateModified":"2026-08-20",
+"description":"Why drawing a black rectangle over text in a PDF doesn't remove it, and how to redact a PDF properly so the underlying content is genuinely gone.",
+"mainEntityOfPage":"https://sr-oz.github.io/free-tools-images-pdfs/blog/how-to-redact-a-pdf/"}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img logo-img-light"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="logo-img logo-img-dark"></a>
+    <div class="header-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="/#pdf-tools">PDF Tools</a>
+        <a href="/#image-tools">Image Tools</a>
+        <a href="/#utilities">Utilities</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <a href="/support/" class="header-support-btn" aria-label="Shout us a coffee, support this project">
+        <span class="material-symbols-outlined" aria-hidden="true">coffee</span>
+        <span class="header-support-btn-label">Shout a Coffee</span>
+      </a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+<div class="scroll-progress" id="scrollProgress"></div>
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Redact PDF</span>
+    </nav>
+
+    <div class="tool-page-header">
+      <h1>How to Actually Redact a PDF (Not Just Draw a Black Box)</h1>
+    </div>
+
+    <div class="tool-workspace" style="max-width: 720px;">
+      <p class="byline">Published 20 August 2026 · 5 min read</p>
+      <button class="copy-link-btn" type="button">
+        <span class="material-symbols-outlined" aria-hidden="true">link</span>
+        <span class="copy-link-label">Copy link</span>
+      </button>
+      <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
+        <p>
+          Every so often a redacted document makes the news for the wrong reason: someone highlights
+          the black box, hits copy, and pastes the "hidden" text straight into a chat window. It keeps
+          happening because most tools that call themselves redaction tools do something much simpler
+          than redacting, they draw a black rectangle on top of the page. Visually, the text is gone.
+          Underneath, in the file itself, it's exactly where it always was, selectable, searchable, and
+          extractable by anyone who knows to try.
+        </p>
+
+        <h2>Why the black-box approach fails</h2>
+        <p>
+          A PDF page isn't a photograph, it's a set of instructions: draw this text at this position,
+          in this font. Drawing a black rectangle just adds one more instruction on top, it doesn't
+          delete the instructions underneath. Open the file in a text editor, run it through any PDF
+          text-extraction tool, or in some viewers just select-and-copy the "covered" area, and the
+          original text comes right back out. The visual cover and the underlying data are two
+          completely separate things, and covering one does nothing to the other.
+        </p>
+
+        <h2>What actually works</h2>
+        <p>
+          The reliable fix is to stop thinking of the page as text-plus-a-box and turn the whole page
+          into a picture instead, with the box already painted into it. A flattened image has no text
+          layer to extract in the first place, there's nothing to select or search because it's just
+          pixels. That's the approach <a href="/redact-pdf/">Redact PDF</a> takes: any page you mark
+          gets rasterised, box included, before being placed back into the PDF. Pages you don't touch
+          are left completely alone, so you're not paying the file-size or searchability cost on parts
+          of the document that don't need it.
+        </p>
+
+        <h2>Step by step</h2>
+        <ol>
+          <li>Open <a href="/redact-pdf/">Redact PDF</a> and add your file.</li>
+          <li>Pick a page from the thumbnails.</li>
+          <li>Click and drag on the preview to draw a box over anything sensitive, a name, an account
+            number, a photo, whatever needs to go. Draw as many boxes as you need.</li>
+          <li>Repeat on any other pages, a small red dot marks pages that have at least one box.</li>
+          <li>Click "Redact &amp; Download."</li>
+        </ol>
+
+        <h2>A few practical tips</h2>
+        <ul>
+          <li><strong>Draw boxes a little larger than the text itself.</strong> A tight box that just
+            clips the top or bottom of a character can leave enough of a shape for someone to guess at,
+            err on the side of extra margin.</li>
+          <li><strong>Redacted pages lose their text layer, on purpose.</strong> That page becomes an
+            image, so its text won't be selectable or searchable afterward, that's the trade-off for
+            the content actually being gone. Pages with no boxes drawn keep their original text intact.</li>
+          <li><strong>Check the result before you send it.</strong> Open the downloaded PDF and try to
+            select text where you redacted, nothing should highlight. That's the whole point.</li>
+          <li><strong>This handles the file itself, not how you share it.</strong> If you're emailing
+            the redacted PDF, that's a separate consideration, this tool guarantees the content is gone
+            from the file you download.</li>
+        </ul>
+
+        <div class="cta-box">
+          <p>Ready to redact your PDF properly?</p>
+          <a class="btn" href="/redact-pdf/">Open Redact PDF</a>
+        </div>
+
+        <h2>Related guides</h2>
+        <ul>
+          <li><a href="/blog/add-watermark-to-pdf/">How to Add a Watermark to a PDF</a></li>
+          <li><a href="/blog/is-it-safe-free-online-pdf-tools/">Is It Safe to Use Free Online PDF Tools?</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <div class="footer-support-cta">
+          <p>Like what we're building? No pressure, just appreciated.</p>
+          <a href="/support/" class="btn small">Shout a Coffee</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>PDF Tools</h5>
+        <a href="/merge-pdf/">Merge PDF</a>
+        <a href="/split-pdf/">Split PDF</a>
+        <a href="/compress-pdf/">Compress PDF</a>
+        <a href="/images-to-pdf/">Images to PDF</a>
+        <a href="/pdf-to-images/">PDF to Images</a>
+        <a href="/#pdf-tools" class="footer-view-all">View all PDF Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Image Tools</h5>
+        <a href="/compress-image/">Compress Image</a>
+        <a href="/convert-image/">Convert Image Format</a>
+        <a href="/resize-image/">Resize Image</a>
+        <a href="/crop-rotate-image/">Crop &amp; Rotate Image</a>
+        <a href="/add-border-to-image/">Add Border to Image</a>
+        <a href="/#image-tools" class="footer-view-all">View all Image Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Utilities</h5>
+        <a href="/convert-to-markdown/">Convert to Markdown</a>
+        <a href="/ai-writing-checker/">AI Writing Checker</a>
+        <a href="/password-generator/">Password Generator</a>
+        <a href="/qr-code-generator/">QR Code Generator</a>
+        <a href="/uuid-generator/">UUID Generator</a>
+        <a href="/#utilities" class="footer-view-all">View all Utilities &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="/blog/">Blog</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/support/">Support Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> FairGo PDF. A project built with passion and empathy by
+      <span class="attribution">The Dato Family Labs</span> in Perth, WA, Australia.
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+</button>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
