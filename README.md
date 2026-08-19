@@ -72,6 +72,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Word & Character Counter | `/word-counter/` | Count words, characters, sentences and paragraphs, with reading time |
 | Read Aloud | `/read-aloud/` | Have a PDF, Word doc, .txt file or pasted text read aloud, with live word highlighting |
 | Handwriting Worksheets | `/handwriting-worksheets/` | Printable cursive or print handwriting practice sheets with traceable letters |
+| Calendar Generator | `/calendar-generator/` | Printable 12-month calendar PDF for any year, mark birthdays and custom dates |
 
 ### Coming soon (v2 backlog)
 - OCR (make scanned PDFs searchable)

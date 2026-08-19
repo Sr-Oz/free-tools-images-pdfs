@@ -54,6 +54,7 @@ window.SEARCH_INDEX = [
   { title: "Word & Character Counter", url: "/word-counter/", desc: "Count words, characters, sentences and paragraphs, reading time", category: "Utility" },
   { title: "Read Aloud", url: "/read-aloud/", desc: "Have a PDF, Word doc or pasted text read aloud, word by word", category: "Utility" },
   { title: "Handwriting Worksheets", url: "/handwriting-worksheets/", desc: "Printable cursive or print handwriting practice sheets", category: "Utility" },
+  { title: "Calendar Generator", url: "/calendar-generator/", desc: "Printable 12-month calendar PDF for any year, mark birthdays and custom dates", category: "Utility" },
 
   // Blog
   { title: "How to Actually Redact a PDF (Not Just Draw a Black Box)", url: "/blog/how-to-redact-a-pdf/", desc: "Why covering text with a black rectangle doesn't remove it, and what does", category: "Blog" },

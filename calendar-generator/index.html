@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="The Dato Family Labs">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>Printable Calendar Generator, Free PDF | FairGo PDF</title>
+<meta name="description" content="Generate a printable 12-month calendar PDF for any year, mark birthdays and custom dates, choose your week start day, free and right in your browser.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/calendar-generator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FairGo PDF">
+<meta property="og:title" content="Printable Calendar Generator, Free PDF">
+<meta property="og:description" content="Generate a printable 12-month calendar PDF for any year, mark birthdays and custom dates, choose your week start day.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/calendar-generator/">
+<meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Printable Calendar Generator, Free PDF">
+<meta name="twitter:description" content="Generate a printable 12-month calendar PDF for any year, mark birthdays and custom dates, choose your week start day.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img logo-img-light"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="logo-img logo-img-dark"></a>
+    <div class="header-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="/#pdf-tools">PDF Tools</a>
+        <a href="/#image-tools">Image Tools</a>
+        <a href="/#utilities">Utilities</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <a href="/support/" class="header-support-btn" aria-label="Shout us a coffee, support this project">
+        <span class="material-symbols-outlined" aria-hidden="true">coffee</span>
+        <span class="header-support-btn-label">Shout a Coffee</span>
+      </a>
+      <button class="icon-btn" id="searchToggle" type="button" aria-label="Search the site">
+        <span class="material-symbols-outlined" aria-hidden="true">search</span>
+      </button>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/#utilities">Utilities</a><span class="sep">/</span><span class="current">Calendar Generator</span>
+    </nav>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
+      {"@type":"ListItem","position":2,"name":"Utilities","item":"https://sr-oz.github.io/free-tools-images-pdfs/#utilities"},
+      {"@type":"ListItem","position":3,"name":"Calendar Generator","item":"https://sr-oz.github.io/free-tools-images-pdfs/calendar-generator/"}
+    ]}
+    </script>
+    <div class="tool-page-header">
+      <h1>Printable Calendar Generator</h1>
+      <p>A 12-month calendar PDF, one page per month, with room to write. Mark birthdays, holidays or anything else. Processed locally.</p>
+    </div>
+
+    <div class="tool-workspace">
+      <div class="controls-row">
+        <div class="field">
+          <label for="calYear">Year</label>
+          <input type="number" id="calYear" min="1900" max="2200" style="width:100px;">
+        </div>
+        <div class="field">
+          <label for="weekStart">Week starts on</label>
+          <select id="weekStart">
+            <option value="monday" selected>Monday</option>
+            <option value="sunday">Sunday</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pageSize">Page size</label>
+          <select id="pageSize">
+            <option value="a4" selected>A4</option>
+            <option value="letter">Letter</option>
+          </select>
+        </div>
+        <div class="field">
+          <label><input type="checkbox" id="highlightWeekends" checked> Shade weekend columns</label>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:16px;">
+        <label for="customDates">Mark dates (optional)</label>
+        <textarea id="customDates" rows="5" placeholder="2026-12-25 Christmas&#10;07-04 Independence Day&#10;03-15 Mum's birthday" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-size:0.9rem; resize:vertical; font-family:monospace;"></textarea>
+        <p class="help-text">One per line: <code>YYYY-MM-DD Label</code> for a specific year, or
+          <code>MM-DD Label</code> to repeat every year, birthdays and anniversaries usually don't need
+          a year.</p>
+      </div>
+
+      <div class="actions-row">
+        <button class="btn" id="runBtn">Create Calendar PDF</button>
+        <button class="btn secondary" id="clearBtn">Start over</button>
+      </div>
+
+      <div class="status-box" id="status"></div>
+    </div>
+
+    <section class="info-section">
+      <h2>How it works</h2>
+      <ol>
+        <li>Set the year, which day the week starts on, and page size.</li>
+        <li>Optionally list dates to mark, one per line, with or without a year.</li>
+        <li>Click "Create Calendar PDF", you get one page per month, 12 pages in total.</li>
+      </ol>
+      <p class="help-text">Each day gets enough empty space to jot something down, print it, or open it
+        in any PDF annotator, on a tablet, on a reMarkable, wherever you plan. Weekend columns are
+        shaded lightly by default so the working week stands out, turn that off if you'd rather every
+        day look the same.</p>
+      <h2>Related tools</h2>
+      <div class="tool-grid related-tools-grid">
+        <a class="tool-card related-tool-card" href="/handwriting-worksheets/">
+          <span class="icon"><span class="material-symbols-outlined">edit_note</span></span>
+          <h3>Handwriting Worksheets</h3>
+        </a>
+        <a class="tool-card related-tool-card" href="/pdf-booklet/">
+          <span class="icon"><span class="material-symbols-outlined">auto_stories</span></span>
+          <h3>PDF Booklet Maker</h3>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <div class="footer-support-cta">
+          <p>Like what we're building? No pressure, just appreciated.</p>
+          <a href="/support/" class="btn small">Shout a Coffee</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>PDF Tools</h5>
+        <a href="/merge-pdf/">Merge PDF</a>
+        <a href="/split-pdf/">Split PDF</a>
+        <a href="/compress-pdf/">Compress PDF</a>
+        <a href="/images-to-pdf/">Images to PDF</a>
+        <a href="/pdf-to-images/">PDF to Images</a>
+        <a href="/#pdf-tools" class="footer-view-all">View all PDF Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Image Tools</h5>
+        <a href="/compress-image/">Compress Image</a>
+        <a href="/convert-image/">Convert Image Format</a>
+        <a href="/resize-image/">Resize Image</a>
+        <a href="/crop-rotate-image/">Crop &amp; Rotate Image</a>
+        <a href="/add-border-to-image/">Add Border to Image</a>
+        <a href="/#image-tools" class="footer-view-all">View all Image Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Utilities</h5>
+        <a href="/convert-to-markdown/">Convert to Markdown</a>
+        <a href="/ai-writing-checker/">AI Writing Checker</a>
+        <a href="/password-generator/">Password Generator</a>
+        <a href="/qr-code-generator/">QR Code Generator</a>
+        <a href="/uuid-generator/">UUID Generator</a>
+        <a href="/#utilities" class="footer-view-all">View all Utilities &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="/blog/">Blog</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/support/">Support Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> FairGo PDF. A project built with passion and empathy by
+      <span class="attribution">The Dato Family Labs</span> in Perth, WA, Australia.
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+</button>
+
+<script src="/assets/tools.js"></script>
+<script src="/assets/search-data.js"></script>
+<script src="/assets/search.js"></script>
+<script type="module" src="/assets/tools/calendar-generator.js"></script>
+<script src="/assets/site.js"></script>
+</body>
+</html>
