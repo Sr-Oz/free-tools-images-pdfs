@@ -52,6 +52,8 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Alternate & Mix Pages | `/alternate-mix-pages/` | Interleave two PDFs page by page, for double-sided scan workflows |
 | PDF Booklet Maker | `/pdf-booklet/` | Reorder pages into booklet (saddle-stitch) order for print, fold and staple |
 | Add Stamps | `/add-stamps/` | Place a logo or image stamp on one page, a range, or every page |
+| Repair PDF | `/repair-pdf/` | Attempt to fix a PDF that won't open by leniently re-parsing and rebuilding a clean copy |
+| Extract Images | `/extract-pdf-images/` | Pull every embedded image out of a PDF and download as a ZIP |
 
 ### Utilities
 | Tool | URL | What it does |
@@ -102,6 +104,7 @@ ever down):
 - [`mammoth.js`](https://github.com/mwilliamson/mammoth.js) — converting Word (.docx) to HTML (Convert to Markdown)
 - [`turndown`](https://github.com/mixmark-io/turndown) — converting HTML to Markdown (Convert to Markdown)
 - [`qrcode-generator`](https://github.com/kazuhikoarase/qrcode-generator) — QR code encoding (QR Code Generator)
+- [`fflate`](https://github.com/101arrowz/fflate) — ZIP packing and FlateDecode decompression (Extract Images from PDF)
 - Native Canvas API — all image compression/conversion/resize/crop/rotate
 
 This keeps the site trivially deployable to any static host, with nothing to compile and no
