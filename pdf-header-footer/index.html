@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="The Dato Family Labs">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>Add a Header and Footer to a PDF Online Free | FairGo PDF</title>
+<meta name="description" content="Add up to six independent header and footer text zones to a PDF, left, centre and right, with page number and date tokens, free and in your browser.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/pdf-header-footer/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FairGo PDF">
+<meta property="og:title" content="Add a Header and Footer to a PDF Online Free">
+<meta property="og:description" content="Add up to six independent header and footer text zones to a PDF, left, centre and right, with page number and date tokens.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/pdf-header-footer/">
+<meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add a Header and Footer to a PDF Online Free">
+<meta name="twitter:description" content="Add up to six independent header and footer text zones to a PDF, left, centre and right, with page number and date tokens.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .hf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .hf-grid .field label { font-size: 0.8rem; opacity: 0.8; }
+  .hf-grid input[type="text"] { width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-alt); color: var(--text); font-size: 0.9rem; }
+  @media (max-width: 640px) { .hf-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img logo-img-light"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="logo-img logo-img-dark"></a>
+    <div class="header-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="/#pdf-tools">PDF Tools</a>
+        <a href="/#image-tools">Image Tools</a>
+        <a href="/#utilities">Utilities</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <a href="/support/" class="header-support-btn" aria-label="Shout us a coffee, support this project">
+        <span class="material-symbols-outlined" aria-hidden="true">coffee</span>
+        <span class="header-support-btn-label">Shout a Coffee</span>
+      </a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/#pdf-tools">PDF Tools</a><span class="sep">/</span><span class="current">Header &amp; Footer</span>
+    </nav>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://sr-oz.github.io/free-tools-images-pdfs/"},
+      {"@type":"ListItem","position":2,"name":"PDF Tools","item":"https://sr-oz.github.io/free-tools-images-pdfs/#pdf-tools"},
+      {"@type":"ListItem","position":3,"name":"Header & Footer","item":"https://sr-oz.github.io/free-tools-images-pdfs/pdf-header-footer/"}
+    ]}
+    </script>
+    <div class="tool-page-header">
+      <h1>Add a Header and Footer to a PDF</h1>
+      <p>Up to six independent text zones, left, centre and right, in both the header and footer. Processed locally, nothing is uploaded.</p>
+    </div>
+
+    <div class="tool-workspace">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a PDF file or drag and drop">
+        <div class="dz-icon"><span class="material-symbols-outlined">splitscreen</span></div>
+        <div class="dz-title">Drop your PDF here, easy as.</div>
+        <div class="dz-sub">One PDF file</div>
+        <input type="file" id="fileInput" accept="application/pdf">
+      </div>
+
+      <div id="editor" style="display:none;">
+        <h3 style="margin-top:20px;">Header</h3>
+        <div class="hf-grid">
+          <div class="field"><label for="hLeft">Left</label><input type="text" id="hLeft" placeholder="e.g. Company Name"></div>
+          <div class="field"><label for="hCenter">Centre</label><input type="text" id="hCenter" placeholder="e.g. Report Title"></div>
+          <div class="field"><label for="hRight">Right</label><input type="text" id="hRight" placeholder="e.g. {date}"></div>
+        </div>
+
+        <h3 style="margin-top:20px;">Footer</h3>
+        <div class="hf-grid">
+          <div class="field"><label for="fLeft">Left</label><input type="text" id="fLeft" placeholder="e.g. Confidential"></div>
+          <div class="field"><label for="fCenter">Centre</label><input type="text" id="fCenter" placeholder="e.g. Page {n} of {total}"></div>
+          <div class="field"><label for="fRight">Right</label><input type="text" id="fRight" placeholder="e.g. {date}"></div>
+        </div>
+
+        <p class="help-text">Use <code>{n}</code> for the page number, <code>{total}</code> for the total
+          page count, and <code>{date}</code> for today's date. Any zone left blank is skipped.</p>
+
+        <div class="controls-row" style="margin-top:16px;">
+          <div class="field">
+            <label for="fontSize">Font size</label>
+            <input type="number" id="fontSize" value="9" min="6" max="18" style="width:80px;">
+          </div>
+          <div class="field">
+            <label for="margin">Margin (pt)</label>
+            <input type="number" id="margin" value="28" min="10" max="80" style="width:80px;">
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <button class="btn" id="runBtn">Add Header &amp; Footer</button>
+          <button class="btn secondary" id="clearBtn">Start over</button>
+        </div>
+      </div>
+
+      <div class="status-box" id="status"></div>
+    </div>
+
+    <section class="info-section">
+      <h2>How it works</h2>
+      <ol>
+        <li>Add a PDF file.</li>
+        <li>Fill in any of the six zones you need, left, centre and right, for the header and footer.</li>
+        <li>Click "Add Header &amp; Footer" to download the result.</li>
+      </ol>
+      <p class="help-text">Every zone is applied to every page. This is different from
+        <a href="/add-page-numbers/">Add Page Numbers</a>, which places a single number in one spot, and
+        from <a href="/watermark-pdf/">Watermark PDF</a>, which stamps one centred watermark, this tool
+        is built for running titles, document IDs, confidentiality notices and page numbers all at once.</p>
+      <h2>Related tools</h2>
+      <div class="tool-grid related-tools-grid">
+        <a class="tool-card related-tool-card" href="/add-page-numbers/">
+          <span class="icon"><span class="material-symbols-outlined">123</span></span>
+          <h3>Add Page Numbers</h3>
+        </a>
+        <a class="tool-card related-tool-card" href="/watermark-pdf/">
+          <span class="icon"><span class="material-symbols-outlined">water_drop</span></span>
+          <h3>Watermark PDF</h3>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <div class="footer-support-cta">
+          <p>Like what we're building? No pressure, just appreciated.</p>
+          <a href="/support/" class="btn small">Shout a Coffee</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>PDF Tools</h5>
+        <a href="/merge-pdf/">Merge PDF</a>
+        <a href="/split-pdf/">Split PDF</a>
+        <a href="/compress-pdf/">Compress PDF</a>
+        <a href="/images-to-pdf/">Images to PDF</a>
+        <a href="/pdf-to-images/">PDF to Images</a>
+        <a href="/#pdf-tools" class="footer-view-all">View all PDF Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Image Tools</h5>
+        <a href="/compress-image/">Compress Image</a>
+        <a href="/convert-image/">Convert Image Format</a>
+        <a href="/resize-image/">Resize Image</a>
+        <a href="/crop-rotate-image/">Crop &amp; Rotate Image</a>
+        <a href="/add-border-to-image/">Add Border to Image</a>
+        <a href="/#image-tools" class="footer-view-all">View all Image Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Utilities</h5>
+        <a href="/convert-to-markdown/">Convert to Markdown</a>
+        <a href="/ai-writing-checker/">AI Writing Checker</a>
+        <a href="/password-generator/">Password Generator</a>
+        <a href="/qr-code-generator/">QR Code Generator</a>
+        <a href="/uuid-generator/">UUID Generator</a>
+        <a href="/#utilities" class="footer-view-all">View all Utilities &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="/blog/">Blog</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/support/">Support Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> FairGo PDF. A project built with passion and empathy by
+      <span class="attribution">The Dato Family Labs</span> in Perth, WA, Australia.
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+</button>
+
+<script src="/assets/tools.js"></script>
+<script type="module" src="/assets/tools/pdf-header-footer.js"></script>
+<script src="/assets/site.js"></script>
+</body>
+</html>

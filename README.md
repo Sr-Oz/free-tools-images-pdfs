@@ -54,6 +54,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Add Stamps | `/add-stamps/` | Place a logo or image stamp on one page, a range, or every page |
 | Repair PDF | `/repair-pdf/` | Attempt to fix a PDF that won't open by leniently re-parsing and rebuilding a clean copy |
 | Extract Images | `/extract-pdf-images/` | Pull every embedded image out of a PDF and download as a ZIP |
+| Header & Footer | `/pdf-header-footer/` | Add up to six independent left/centre/right text zones to every page's header and footer |
 
 ### Utilities
 | Tool | URL | What it does |
