@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="The Dato Family Labs">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>How to Generate a Strong, Secure Password | FairGo PDF</title>
+<meta name="description" content="What actually makes a password strong, why crypto.getRandomValues() beats Math.random(), and how to pick length and character settings, free and in your browser.">
+<link rel="canonical" href="https://sr-oz.github.io/free-tools-images-pdfs/blog/strong-password-generator/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="FairGo PDF">
+<meta property="og:title" content="How to Generate a Strong, Secure Password">
+<meta property="og:description" content="What actually makes a password strong, why crypto.getRandomValues() beats Math.random(), and how to pick length and character settings.">
+<meta property="og:url" content="https://sr-oz.github.io/free-tools-images-pdfs/blog/strong-password-generator/">
+<meta property="og:image" content="https://sr-oz.github.io/free-tools-images-pdfs/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Generate a Strong, Secure Password">
+<meta name="twitter:description" content="What actually makes a password strong, why crypto.getRandomValues() beats Math.random(), and how to pick length and character settings.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+"author":{"@type":"Organization","name":"The Dato Family Labs"},
+"publisher":{"@type":"Organization","name":"The Dato Family Labs"},
+"headline":"How to Generate a Strong, Secure Password",
+"datePublished":"2026-08-20","dateModified":"2026-08-20",
+"description":"What actually makes a password strong, why crypto.getRandomValues() beats Math.random(), and how to pick length and character settings.",
+"mainEntityOfPage":"https://sr-oz.github.io/free-tools-images-pdfs/blog/strong-password-generator/"}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo"><img src="/assets/img/logo-light.svg" alt="FairGo PDF Logo" class="logo-img logo-img-light"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="logo-img logo-img-dark"></a>
+    <div class="header-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="/#pdf-tools">PDF Tools</a>
+        <a href="/#image-tools">Image Tools</a>
+        <a href="/#utilities">Utilities</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <a href="/support/" class="header-support-btn" aria-label="Shout us a coffee, support this project">
+        <span class="material-symbols-outlined" aria-hidden="true">coffee</span>
+        <span class="header-support-btn-label">Shout a Coffee</span>
+      </a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+<div class="scroll-progress" id="scrollProgress"></div>
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span><span class="current">Password Generator</span>
+    </nav>
+
+    <div class="tool-page-header">
+      <h1>How to Generate a Strong, Secure Password</h1>
+    </div>
+
+    <div class="tool-workspace" style="max-width: 720px;">
+      <p class="byline">Published 20 August 2026 · 5 min read</p>
+      <button class="copy-link-btn" type="button">
+        <span class="material-symbols-outlined" aria-hidden="true">link</span>
+        <span class="copy-link-label">Copy link</span>
+      </button>
+      <section class="info-section" style="margin-top:0; border-top:none; padding-top:0;">
+        <p>
+          Most password breaches don't come from someone cracking a strong password, they come from a
+          weak, reused one leaking in an unrelated site's breach, then getting tried everywhere else. A
+          long, random, unique password for each account is still the single biggest thing you control.
+        </p>
+
+        <h2>Step by step</h2>
+        <ol>
+          <li>Open <a href="/password-generator/">Password Generator</a>, a password is generated
+            instantly.</li>
+          <li>Adjust the length, longer is stronger, aim for at least 16 characters where the site
+            allows it.</li>
+          <li>Toggle which character types to include, uppercase, lowercase, numbers, symbols.</li>
+          <li>Copy it, or click "Generate" again for a fresh one.</li>
+        </ol>
+
+        <h2>A few practical tips</h2>
+        <ul>
+          <li><strong>Length matters more than complexity tricks.</strong> A random 16-character
+            password with all four character types is dramatically harder to guess than an 8-character
+            one, even a "clever" 8-character one with symbols swapped in.</li>
+          <li><strong>Random, browser-generated randomness is what makes this secure.</strong> This tool
+            uses <code>crypto.getRandomValues()</code>, the same cryptographically secure random source
+            used for encryption keys, not <code>Math.random()</code>, which isn't designed to be
+            unpredictable enough for security purposes.</li>
+          <li><strong>Exclude ambiguous characters (0, O, 1, l, I) if you'll be typing it by hand,</strong>
+            from a printed copy or reading it off a screen to another device.</li>
+          <li><strong>A generator alone doesn't solve reuse.</strong> Pair it with a password manager so
+            you actually get a different strong password per account instead of one strong one reused
+            everywhere.</li>
+        </ul>
+
+        <div class="cta-box">
+          <p>Ready to generate a password?</p>
+          <a class="btn" href="/password-generator/">Open Password Generator</a>
+        </div>
+
+        <h2>Related guides</h2>
+        <ul>
+          <li><a href="/blog/free-qr-code-generator/">How to Make a Free QR Code (No App, No Sign-Up)</a></li>
+          <li><a href="/blog/is-it-safe-free-online-pdf-tools/">Is It Safe to Use Free Online PDF Tools?</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><img src="/assets/img/logo-dark.svg" alt="FairGo PDF Logo" class="footer-logo-img"></div>
+        <p>Proudly built for straightforward document management, 100% client-side, nothing is ever uploaded.</p>
+        <div class="footer-support-cta">
+          <p>Like what we're building? No pressure, just appreciated.</p>
+          <a href="/support/" class="btn small">Shout a Coffee</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>PDF Tools</h5>
+        <a href="/merge-pdf/">Merge PDF</a>
+        <a href="/split-pdf/">Split PDF</a>
+        <a href="/compress-pdf/">Compress PDF</a>
+        <a href="/images-to-pdf/">Images to PDF</a>
+        <a href="/pdf-to-images/">PDF to Images</a>
+        <a href="/#pdf-tools" class="footer-view-all">View all PDF Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Image Tools</h5>
+        <a href="/compress-image/">Compress Image</a>
+        <a href="/convert-image/">Convert Image Format</a>
+        <a href="/resize-image/">Resize Image</a>
+        <a href="/crop-rotate-image/">Crop &amp; Rotate Image</a>
+        <a href="/add-border-to-image/">Add Border to Image</a>
+        <a href="/#image-tools" class="footer-view-all">View all Image Tools &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Utilities</h5>
+        <a href="/convert-to-markdown/">Convert to Markdown</a>
+        <a href="/ai-writing-checker/">AI Writing Checker</a>
+        <a href="/password-generator/">Password Generator</a>
+        <a href="/qr-code-generator/">QR Code Generator</a>
+        <a href="/uuid-generator/">UUID Generator</a>
+        <a href="/#utilities" class="footer-view-all">View all Utilities &rarr;</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="/blog/">Blog</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/support/">Support Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> FairGo PDF. A project built with passion and empathy by
+      <span class="attribution">The Dato Family Labs</span> in Perth, WA, Australia.
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+</button>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
