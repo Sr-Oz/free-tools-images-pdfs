@@ -66,6 +66,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Case Converter | `/case-converter/` | Convert text between UPPERCASE, lowercase, camelCase and more |
 | Color Picker & Converter | `/color-picker/` | Pick a color and convert between HEX, RGB and HSL live |
 | Word & Character Counter | `/word-counter/` | Count words, characters, sentences and paragraphs, with reading time |
+| Read Aloud | `/read-aloud/` | Have a PDF, Word doc, .txt file or pasted text read aloud, with live word highlighting |
 
 ### Coming soon (v2 backlog)
 - OCR (make scanned PDFs searchable)
