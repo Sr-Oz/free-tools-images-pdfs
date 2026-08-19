@@ -67,6 +67,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Color Picker & Converter | `/color-picker/` | Pick a color and convert between HEX, RGB and HSL live |
 | Word & Character Counter | `/word-counter/` | Count words, characters, sentences and paragraphs, with reading time |
 | Read Aloud | `/read-aloud/` | Have a PDF, Word doc, .txt file or pasted text read aloud, with live word highlighting |
+| Handwriting Worksheets | `/handwriting-worksheets/` | Printable cursive or print handwriting practice sheets with traceable letters |
 
 ### Coming soon (v2 backlog)
 - OCR (make scanned PDFs searchable)
