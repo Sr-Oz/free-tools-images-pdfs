@@ -76,6 +76,8 @@ window.SEARCH_INDEX = [
   { title: "How to Convert a PNG to JPG (and When You Should)", url: "/blog/convert-png-to-jpg/", desc: "When converting helps, and when it wrecks transparency or text", category: "Blog" },
   { title: "The Right Way to Resize Images for Web Without Losing Quality", url: "/blog/resize-images-for-web/", desc: "Picking target dimensions, and why downsizing beats upsizing", category: "Blog" },
 
+  { title: "How to make a free printable calendar PDF", url: "/blog/printable-calendar-generator/", desc: "How to generate a 12-month printable calendar PDF, with birthdays and custom dates marked", category: "Blog" },
+
   // Other pages
   { title: "FAQ", url: "/faq/", desc: "Common questions about privacy, cost, file limits and browser support", category: "Page" },
 ];
