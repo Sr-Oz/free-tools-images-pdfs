@@ -539,6 +539,18 @@ img { max-width: 100%; }
   transform: translateY(-4px) scale(1.015);
 }
 
+/* Scroll-reveal: cards fade in as they enter the viewport. Scoped under a
+   JS-added class so cards stay fully visible if JS never runs. */
+.reveal-ready .tool-grid .tool-card {
+  opacity: 0;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, opacity 0.5s ease;
+}
+.reveal-ready .tool-grid .tool-card.in-view { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .tool-grid .tool-card { transition: none; }
+}
+
 /* Blog index: featured hero */
 .blog-hero {
   position: relative;

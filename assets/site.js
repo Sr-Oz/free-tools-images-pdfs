@@ -109,3 +109,32 @@
   const el = document.getElementById("year");
   if (el) el.textContent = new Date().getFullYear();
 })();
+
+(function scrollReveal() {
+  const cards = document.querySelectorAll(".tool-grid .tool-card");
+  if (!cards.length || !("IntersectionObserver" in window)) return;
+
+  document.documentElement.classList.add("reveal-ready");
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    cards.forEach((card) => card.classList.add("in-view"));
+    return;
+  }
+
+  cards.forEach((card, i) => {
+    card.style.transitionDelay = `${(i % 4) * 70}ms`;
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  cards.forEach((card) => observer.observe(card));
+})();
