@@ -40,6 +40,7 @@ window.SEARCH_INDEX = [
   { title: "Round Corners / Circle Crop", url: "/round-corners-image/", desc: "Round an image's corners or crop it to a circle", category: "Image Tool" },
   { title: "Watermark Image", url: "/watermark-image/", desc: "Stamp custom text across one or more images", category: "Image Tool" },
   { title: "Social Media Cropper", url: "/social-media-cropper/", desc: "Crop to exact Instagram/X/YouTube/LinkedIn/Facebook sizes", category: "Image Tool" },
+  { title: "Collage Maker", url: "/collage-maker/", desc: "Combine several photos into one grid, row or column image", category: "Image Tool" },
 
   // Utilities
   { title: "Convert to Markdown", url: "/convert-to-markdown/", desc: "Convert a PDF, Word (.docx) or HTML file to Markdown", category: "Utility" },

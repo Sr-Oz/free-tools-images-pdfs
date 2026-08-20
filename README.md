@@ -26,6 +26,7 @@ https://sr-oz.github.io/free-tools-images-pdfs/
 | Round Corners / Circle Crop | `/round-corners-image/` | Round an image's corners or crop it to a circle |
 | Watermark Image | `/watermark-image/` | Stamp custom text across one or more images |
 | Social Media Cropper | `/social-media-cropper/` | Crop to exact Instagram/X/YouTube/LinkedIn/Facebook sizes |
+| Collage Maker | `/collage-maker/` | Combine several photos into one grid, row or column image |
 
 ### PDF tools
 | Tool | URL | What it does |
